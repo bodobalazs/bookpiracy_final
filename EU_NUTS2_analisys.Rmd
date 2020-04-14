@@ -1,0 +1,780 @@
+---
+title: "EU regional models"
+author: "Bodo balazs, Daniel Antal, CFA"
+date: "04/05/2020"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+bibliography:
+- packages.bib
+- eurostat_bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse) # includes dplyr, tidyr and ggplot2
+library(sf)        # for the map plotting
+library(randomForest); library(caret) # for random forest
+library(iml)  # better interpretation of random forest results
+library(sjPlot); library(sjmisc)  # interaction in regression
+library(MASS)
+library(jtools)
+library(huxtable)
+library (car)
+require(caret); require(randomForest)
+
+#code to visualize data on the map
+source("helper_code/create_choropleth.R")
+
+# data is compiled elsewhere. 
+#uncomment the next line if you want to rerun data prepararion
+#source("helper_code/prepare_data.R")
+load("raw_data/all_data_for_analysis.rda")
+```
+
+
+The dataset in analysis is comprised of different, directly measured, and imputed sources. SOmetimes Data was available on the NUTS2 level directly for the observed period. SOmetimes we had to calculate it from NUT1 level data. SOmetimes we had to impute it from other years. The following table summarizes the different data sources and their provenance.  
+```{r data source analysis}
+
+dataset_source_statistics
+```
+
+
+Ultimately we arrive to a dataset with 260 NUTS2 regions, and 18 variables. Below is amap of complete cases:
+
+```{r completemap, eval= FALSE}
+complete_df %>%
+  mutate ( time = 2013 ) %>%
+  dplyr::select ( geo, researchers_total, time ) %>%
+  dplyr::rename ( values = researchers_total ) %>%
+  create_choropleth(., level = 2)
+```
+
+
+### Dataset
+
+```{r correlation }
+
+
+correlations <- nuts2_data %>%
+  dplyr::select ( -geo ) %>% 
+  dplyr::filter ( complete.cases(.)) %>%
+  as.matrix() %>%
+  cor() 
+
+correlations [, 2]  %>% 
+  as.data.frame() %>%
+  rownames_to_column() %>%
+  purrr::set_names ( ., c("variable", "cor")) %>%
+  dplyr::filter ( ! grepl( "count", variable )) %>% 
+  dplyr::mutate ( variable = forcats::fct_reorder(variable, -cor )) %>%
+  ggplot (., aes ( x = variable, 
+                   y = cor, 
+                   fill = cor )) +
+  geom_col(  ) +
+  scale_fill_gradient2( high = "#007CBB", 
+                        mid = 'white', 
+                        low = "#DB001C", 
+                        midpoint = 0) +
+  labs ( title = "Correlation with Count Data", 
+         fill = 'Correlation', y = "", x = "") +
+  theme (
+    axis.text.x = element_text (angle = 30, hjust = 1, size = rel(0.85))
+  )
+
+```
+So far, we have not considered the spatial distribution of the data, only the correlation of various data levels among territorial units. If the spatial geography of the environment is relevant to the data, then apart from correlation, we should see a level autocorrelation by nearer territorial units. We have examined the spatial autocorrelation using the `spdep` package of Bivand, Pebesma and Gomez-Rubio [@spdep2013].
+
+```{r mcmoran, echo=FALSE}
+#we use the full download dataset, rather than the one complete with EUROSTAT data, so we can include all European NUTS2 regions for his abalysis 
+download_data <- readRDS( file.path("raw_data","downloads_nuts_2016.rds")) 
+
+moran_analysis_spdf <-  geodata@data %>%
+  dplyr::left_join (.,  
+  download_data %>%
+     dplyr::select ( id, count ) %>%
+     dplyr::mutate ( count = ifelse (is.na(count), 0, count)),
+  by = 'id' )
+
+moran_i_spdf <-  geodata@data %>%
+  dplyr::left_join (.,  
+  download_data %>%
+     dplyr::select ( id, count ),  by = 'id' ) %>%
+     dplyr::filter  ( !is.na(count )) 
+
+
+moran_analysis_spdf_gdp_pps <-  geodata@data %>%
+  dplyr::left_join (.,  
+             nuts2_data %>%
+               dplyr::select ( geo, gdp_pps ) %>%
+               dplyr::mutate ( id = geo),
+             by = 'id' ) %>%
+     dplyr::filter  ( !is.na(gdp_pps)) 
+
+
+summary ( moran_i_spdf$count )
+summary ( moran_analysis_spdf_gdp_pps$gdp_pps )
+
+
+geodata_full   <- geodata [which ( moran_i_spdf$id %in% geodata@data$id), ]
+geodata_gdp_full <- geodata [which ( moran_analysis_spdf_gdp_pps$id %in% geodata@data$id), ]
+
+w <- spdep::poly2nb(geodata_full, row.names=geodata_full$id )
+w_gdp <- spdep::poly2nb(geodata_gdp_full, row.names=geodata_gdp_full$id )
+#neighbor lists
+ww <- spdep::nb2listw(w, style='B', zero.policy=TRUE)
+ww2 <- spdep::nb2listw(w_gdp, style='B', zero.policy=TRUE)
+
+
+set.seed(2019)
+spdep::moran.mc(x = moran_i_spdf %>%
+                  dplyr::select ( count ) %>% 
+                  unlist () %>%
+                  as.numeric(),       
+                ww, 
+                nsim=999,
+                zero.policy = TRUE)
+
+set.seed(2019)
+spdep::moran.mc(x = moran_analysis_spdf_gdp_pps %>%
+                  dplyr::select ( gdp_pps ) %>% 
+                  unlist () %>%
+                  as.numeric(),       
+                ww2, 
+                nsim=999,
+                zero.policy = TRUE)
+
+```
+
+Moran's I statistic takes the value of 0.042 with a p-value of 0.094, so we can only reject the randomness of downloads at a 90% significance level. The positive z value means that the downloads are clustering, i.e. NUTS2 regions with high download numbers tend to be neighbors of NUTS2 regions with high download numbers.  Similarly, running the same test for GDP adjusted by purchasing power standard, we see a very similar level of spatial autocorrelation.
+
+
+## Interaction with environmental variables
+
+Next, we created a two-step modelling where we first explored the basic geographical and demographical forces at play, and then we turned our attention to social, cultural and economic variables. We normalized the variables in two steps to make them comparable for modelling.  We created variables that are related to the number of populations, number of researcher population or the size of the NUTS2 regional area.  In the next step we scaled the variables to unit variance, so that they have equal weight in the variable selection process.
+We took a first look at this data with two methods. First, we created all possible linear regression equations and two-variable multiple linear regression between the count data and the socio-economic variables. We also used the random forest algorithm to rank the importance of socio-economic environmental variables in explaining the difference in the level of book piracy. The logic of the two approaches is similar. We use a well-defined searching algorithm to find a relationship between the levels of socio-economic environmental variables and download count numbers.
+
+### Linear regression models
+
+To understand the interaction of environmental variables and count data, we created all possible linear regressions 'explaining' the variability of count data in the following steps:
+
+- We created the initial linear regression
+- We checked for outliers, and removed them
+- Re-run the regression model, and selected those whose coefficients were significant on 1.96 level
+- We ordered the remaining 38 models by adjusted R squares.
+
+```{r linregsummary, out.width='90%', message=FALSE, echo=FALSE}
+# To re-run the many models with the same dataset as used here.
+#uncomment the next line if you want to rerun the lingreg models
+#source ( 'helper_code/all_linreg_model_combinations.R')
+coefficients<-readRDS('raw_data/all_linreg_coefficients.rds')
+
+#display coefficients
+coefficients %>%
+  dplyr::select ( names, values, adj.r.squared ) %>%
+  mutate ( names = gsub("_", " ", names )) %>%
+  ggplot ( ., aes ( x = adj.r.squared, 
+                    y = values, 
+                    alpha = adj.r.squared)) +
+  geom_point() +
+  geom_hline (yintercept = 0, linetype = 'dashed') +
+  scale_y_continuous( limits = c(-0.2, 0.2)) +
+  facet_wrap ( facets = "names", ncol = 4) +
+  labs ( y = 'coefficient values',
+         x = "adjusted R-squared", 
+         title = "Strength & Consistency of Coefficients", 
+         subtitle = "Multiple regressions, based on scaled variables, and no outliers") +
+  theme ( legend.position = 'bottom')
+```
+
+The coefficients are relatively consistent, with the exception of the level of daily interet users in the area.  The most important variables are the level of GDP, number of researchers in the area and HR resources in science and technology in the area (all increases the number of pirate book downloads), and disposble income, which decreases it.
+
+## Random forest models
+
+In the folloowing I created three sets of analysis: one that uses count per researcher as the dependent variable, One that uses downoad per capita as download veriable, and one that uses raw count as a dependent variable.
+The reason for that is that if i use dl/researcher variable as dependent, I may not be able to capture and explain the downloads that possibly come from non-researchers, while if I use dl/capita, then i may find independent variables that account for the probessional (researcher downloads) and others that are moe charctristic for no-professionals.
+
+## count per capita
+
+```{r var_select, eval=TRUE, message=FALSE, echo=FALSE}
+#count per capita
+var_select_df <- complete_scaled %>% 
+  dplyr::select ( -researchers_total, 
+                  -population_total,
+                  -count_per_million,
+                  -count_per_thousand_researchers,
+                  -one_of(c("area_land_filled", "count", 
+                            "count_per_area", 
+                            "count_per_researcher",
+                            "count_per_pop_density"))) 
+
+
+## Tuning this model
+set.seed(2019) # for reproducability, the random number seed 2019 is used.
+best_mtry_var_select <- tuneRF(dplyr::select ( var_select_df, 
+                                     -geo,
+                                     -count_per_capita),
+                   as.vector(var_select_df$count_per_capita), 
+                   mtyStart = 1, 
+                   stepFactor=1,
+                   improve=1e-5, ntree=500, 
+                   plot = FALSE, trace = FALSE) #do not plot results...
+var_select.rf <- randomForest(count_per_capita ~ . ,
+                            dplyr::select ( var_select_df, 
+                                     -geo ),
+                            mtry = as.numeric(best_mtry_var_select[1]),
+                            ntree=5000 )
+
+var_select.rf$importance  %>% as.data.frame() %>%
+  rownames_to_column(., var = "variable") %>%
+  set_names ( ., c("variable", "IncNodePurity")) %>%
+  arrange ( -IncNodePurity)
+```
+
+Edu attainment, disposable income may be relevant for the whole population, beyond just researchers.
+
+```{r feature_importance, fig.cap="Understanding the importance of all variables explaining downloads per capita", out.width='90%', out.width='90%', eval=TRUE}
+
+#count per capita
+predictor_var_select = Predictor$new(
+  var_select.rf,
+  data = dplyr::select ( var_select_df , -geo, - count_per_capita),
+  y = as.numeric(var_select_df$count_per_capita))
+
+imp <- FeatureImp$new(predictor_var_select, loss = "mae", n.repetitions = 10)
+
+plot(imp)
+```
+
+
+```{r interaction, fig.cap="Understanding the interaction of all variables with others", out.width='90%', eval=TRUE}
+#This code takes several minutes to run if uncommented.
+run_in_function <- function() {
+  interact <- Interaction$new(predictor_var_select)
+  plot(interact) #causes knitr issues, something is wrong with the plot, maybe the size, I saved it and print int from file.
+
+}
+#run_in_function()
+#I saved the result here:
+knitr::include_graphics('bodo_0504_percapita_interactions.png')
+```
+
+### count per capita Best model
+
+
+```{r bestmodel, fig.cap="The best model for environment, research and development budget and Internet skills", out.width='90%', eval=TRUE, echo=FALSE}
+# for reproducability, the random number seed 2019 is used.
+set.seed(2019)
+
+best_df <- complete_scaled %>% 
+  dplyr::select (count_per_capita, 
+                 gdp_pps_hab, 
+                 researcher_employment_pct,
+                 disposable_income,
+                 edu_attainment_total, 
+                 hr_scitech_pct,
+                 internet_use_banking_pc)
+
+#A simple random forest 
+best.rf <-  randomForest(count_per_capita ~ . ,
+                            best_df,
+                            mtry = 5,
+                            ntree=5000 )
+
+best_predictor = Predictor$new(
+  best.rf,
+  data = best_df ,
+  y = "count_per_capita")
+
+imp_best <- FeatureImp$new(best_predictor, loss = "mae")
+
+plot(imp_best)
+
+best.rf$importance  %>% as.data.frame() %>%
+  rownames_to_column(., var = "variable") %>%
+  set_names ( ., c("variable", "IncNodePurity")) %>%
+  arrange ( -IncNodePurity)
+
+#interact <- Interaction$new(best_predictor)
+#plot(interact) #causes knitr issues, something is wrong with the plot, maybe the size, I saved it and print int from file.
+
+
+```
+
+
+### Linear Regressions
+
+
+
+```{r scatterplot}
+#first lets see how in the best model data anbd correlations look like
+
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
+{
+    usr <- par("usr"); on.exit(par(usr))
+    par(usr = c(0, 1, 0, 1))
+    r <- cor(x, y)
+    txt <- format(c(r, 0.123456789), digits = digits)[1]
+    txt <- paste0(prefix, txt)
+    if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
+    text(0.5, 0.5, txt)
+}
+
+correlations_bestmodel <- complete_df %>%
+  dplyr::select (count_per_capita, 
+                 gdp_pps_hab, 
+                 researcher_employment_pct,
+                 disposable_income,
+                 edu_attainment_total,
+                 hr_scitech_pct,
+                 internet_use_banking_pc) %>%
+  as.matrix() %>%
+  pairs(., lower.panel = panel.smooth,
+        upper.panel = panel.cor,
+      gap=0, row1attop=FALSE, 
+      main="Correlation coefficients on the upper panels, scatter plots in the lower panels with LOESS smooths")
+
+
+
+```
+
+To be able to use poisson and quasipoisson models I use a count per million variable, which is the rounded value of cpunt per million inhabitants.
+
+I test models with and without the scitechemployment percentage, and found that that variable comes with horrible multicillinearity. so i decided to drop it. I also switched  gdp_pps_hab to GDP_pps because though it had the most importance, it  also suffered from multicollinearity.
+
+``` {r linear models, out.width='90%'}
+
+message ("Not scaled, but original variables. DV: count per million inhabitants")
+
+
+#poisson with scitech hr
+percapita_plm2 <- glm (count_per_million ~ gdp_pps_hab +
+                 researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 hr_scitech_pct +  
+                 internet_use_banking_pc
+                 , data = complete_df, poisson )
+
+
+#poisson withoutr scitech hr
+percapita_plm1 <- glm (count_per_million ~ gdp_pps_hab +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc
+                , data = complete_df, poisson )
+
+#Switch to gdp pps
+
+percapita_plm3 <- glm (count_per_million ~ gdp_pps +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc
+                , data = complete_df, poisson )
+
+#qpoisson
+percapita_qplm3 <- glm (count_per_million ~ gdp_pps +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc
+                , data = complete_df, quasipoisson)
+
+vif(percapita_qplm3)
+
+summary(percapita_plm3)
+summary(percapita_qplm3)
+
+#<<<<<<< HEAD
+export_summs(percapita_plm3,percapita_qplm3, digits=10)
+=======
+#export_summs(plm3,qplm3, digits=10)
+#>>>>>>> 7f73e4cff74e8e51bb945c00c02009fe187d12f0
+```
+The  model offers the following  findings:
+- gdp is has a significant positive effect in te poisson regression, but has not in the qpoisson model. 
+- the per capita dowloads grow with the a higher percentage of researchers in the labor pool, and with higher disposable income. These point to a structural demand effect (economic/ research activity drives demand for scientific literature), and and individual demand effect:  higher disposable income does not lower piracy, but actually creates more demand.
+- on the other hand, per capita downloads are moderated by better online skills. The negative effect of online banking use may point to a higher use of legal sources, such as online and offline purchases, butwe should also consider that online proficency provides the skills to hide the online traces of illegal activities via the use of VPNs and Tor brosing.
+
+DANI: vajon miert nem szignifikans a GDP? hova lesz az a hatas?
+
+```{r check predicted vs actual}
+plot_model(percapita_qplm3, type = "pred")
+plot(percapita_qplm3)
+
+```
+
+
+
+# Count per researcher
+
+Here we model the per researcher download counts as dependent variables.
+
+```{r var_select_results, eval=TRUE}
+#random forest count per researcher  
+
+var_select_df <- complete_scaled %>% 
+  dplyr::select ( -researchers_total, 
+                  -population_total,
+                  -count_per_million,
+                  -count_per_capita,
+                  -count_per_thousand_researchers,
+                  -researcher_employment_pct,
+                  -one_of(c("area_land_filled", "count", 
+                            "count_per_area", 
+                            "count_per_pop_density"))) 
+
+
+var_select.rf <- randomForest(count_per_researcher ~ . ,
+                            dplyr::select ( var_select_df, 
+                                     -geo ),
+                            mtry = as.numeric(best_mtry_var_select[1]),
+                            ntree=5000 )
+
+var_select.rf$importance  %>% as.data.frame() %>%
+  rownames_to_column(., var = "variable") %>%
+  set_names ( ., c("variable", "IncNodePurity")) %>%
+  arrange ( -IncNodePurity)
+```
+
+
+
+
+```{r var_select_results, eval=TRUE}
+#count per researcher 
+var_select.rf <- randomForest(count_per_researcher ~ . ,
+                            dplyr::select ( var_select_df, 
+                                     -geo ),
+                            mtry = as.numeric(best_mtry_var_select[1]),
+                            ntree=5000 )
+
+var_select.rf$importance  %>% as.data.frame() %>%
+  rownames_to_column(., var = "variable") %>%
+  set_names ( ., c("variable", "IncNodePurity")) %>%
+  arrange ( -IncNodePurity)
+
+
+predictor_var_select = Predictor$new(
+  var_select.rf,
+  data = dplyr::select ( var_select_df , -geo, 
+                         -count_per_researcher ),
+  y = as.numeric(var_select_df$count_per_researcher))
+
+imp <- FeatureImp$new(predictor_var_select, loss = "mae", n.repetitions = 100)
+
+plot(imp)
+
+```
+
+```{r interaction, fig.cap="Understanding the interaction of all variables with others", out.width='90%', eval=TRUE}
+#This code takes several minutes to run if uncommented.
+#interact <- Interaction$new(predictor_var_select)
+
+#plot(interact) #causes knitr issues, something is wrong with the plot, maybe the size, I saved it and print int from file.
+
+#I saved the result here:
+knitr::include_graphics('bodo_0504_perresearchers_interactions.png')
+```
+
+
+```{r bestmodel, fig.cap="The best model for environment, research and development budget and Internet skills", out.width='90%', eval=TRUE, echo=FALSE}
+# for reproducability, the random number seed 2019 is used.
+set.seed(2019)
+
+best_df <- complete_scaled %>% 
+  dplyr::select (count_per_researcher, 
+                 internet_use_banking_pc,
+                 disposable_income,
+                 edu_attainment_total,
+                 gdp_pps_hab, 
+                 gerd)
+
+#A simple random forest 
+best.rf <-  randomForest(count_per_researcher ~ . ,
+                            best_df,
+                            mtry = 5,
+                            ntree=5000 )
+
+best_predictor = Predictor$new(
+  best.rf,
+  data = best_df ,
+  y = "count_per_researcher")
+
+imp_best <- FeatureImp$new(best_predictor, loss = "mae")
+
+plot(imp_best)
+
+best.rf$importance  %>% as.data.frame() %>%
+  rownames_to_column(., var = "variable") %>%
+  set_names ( ., c("variable", "IncNodePurity")) %>%
+  arrange ( -IncNodePurity)
+
+#interact <- Interaction$new(best_predictor)
+#plot(interact) #causes knitr issues, something is wrong with the plot, maybe the size, I saved it and print int from file.
+
+
+```
+
+
+### Linear Regressions
+
+as before I created a download per thousand researchers variable, which i rounded, so it could be run on Poisson models.
+
+
+```{r scatterplot}
+#first lets see how in the best model data anbd correlations look like
+
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
+{
+    usr <- par("usr"); on.exit(par(usr))
+    par(usr = c(0, 1, 0, 1))
+    r <- cor(x, y)
+    txt <- format(c(r, 0.123456789), digits = digits)[1]
+    txt <- paste0(prefix, txt)
+    if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
+    text(0.5, 0.5, txt)
+}
+
+correlations_bestmodel <- complete_df %>%
+  dplyr::select (count_per_researcher, 
+                 internet_use_banking_pc,
+                 disposable_income,
+                 edu_attainment_total,
+                 gdp_pps_hab, 
+                 gerd) %>%
+  as.matrix() %>%
+  pairs(., lower.panel = panel.smooth,
+        upper.panel = panel.cor,
+      gap=0, row1attop=FALSE, 
+      main="Correlation coefficients on the upper panels, scatter plots in the lower panels with LOESS smooths")
+
+
+
+```
+
+I also tested models, with and without scitech workforce because of high milticollinearity. here interestingly the gdp_pps_hab did not raise multicollinearity issues
+
+``` {r linear models, out.width='90%'}
+
+message ("Not scaled, but original variables.")
+
+
+#with scitech
+perresearcher_plm2 <- glm (count_per_thousand_researchers ~ gdp_pps_hab  + disposable_income+ edu_attainment_total+gerd+ internet_use_banking_pc+hr_scitech_pct
+                , data = complete_df, poisson )
+
+#without
+perresearcher_plm1 <- glm (count_per_thousand_researchers ~ gdp_pps  + disposable_income+ edu_attainment_total+gerd+ internet_use_banking_pc
+                , data = complete_df, poisson )
+
+#qpoisso model
+perresearcher_qplm1 <- glm (count_per_thousand_researchers ~ gdp_pps  + disposable_income+ edu_attainment_total+gerd+ internet_use_banking_pc
+                , data = complete_df, quasipoisson )
+
+
+#vif(perresearcher_qplm1)
+summary(perresearcher_qplm1)
+
+```
+
+since the VIF check points to a high multicolleinearity with hr_scitech_pct, we remove that variable from the analysis.
+Since the poisson models shows high overdispersion, we run a quasipoisson model. there the effects of the GDP and disposable income become non-significant. 
+
+These results point to similar conclusions. the the per researcher download volume:
+
+- is independent of the gdp  but are affected by
+- the R&D expenditure, internet profieiency and the higher education attainment.
+Regions with more  internet savvy populations, and with higher R&D spending and higher disposable income download less per researcher.
+
+```{r plot models}
+
+plot_model(perresearcher_qplm1, type = "pred")
+```
+
+
+
+# Count Regression Models
+
+``` {r count models, out.width='90%'}
+message ("Not scaled, but original variables.")
+
+#count without R&D
+count_plm2 <- glm (count ~ gdp_pps +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc, 
+                 data = complete_df, poisson )
+
+#with R&D
+count_plm3 <- glm (count ~ gdp_pps +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc +
+                  gerd
+                , data = complete_df, poisson )
+
+count_plm4 <- glm (count ~ gdp_pps +  
+                    researcher_employment_pct +
+                    disposable_income +
+                    edu_attainment_total +
+                    internet_use_banking_pc +
+                    gerd+
+                    internet_purchases_last_year_pc
+                    , data = complete_df, poisson )
+
+car::vif(count_plm4)
+summary (count_plm4)
+
+#<<<<<<< HEAD
+#=======
+summary (count_plm3)
+#>>>>>>> 7f73e4cff74e8e51bb945c00c02009fe187d12f0
+#qpoisson
+count_qplm2 <- glm (count ~ gdp_pps +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc,
+                 data = complete_df, quasipoisson)
+
+count_qplm3<- glm (count ~ gdp_pps +  researcher_employment_pct +
+                 disposable_income +
+                 edu_attainment_total +
+                 internet_use_banking_pc +
+                gerd,
+                data = complete_df, quasipoisson )
+count_qplm4 <- glm (count ~ gdp_pps +  
+                    researcher_employment_pct +
+                    disposable_income +
+                    edu_attainment_total +
+                    internet_use_banking_pc +
+                    gerd +
+                    internet_purchases_last_year_pc,
+                    data = complete_df, quasipoisson )
+
+summary (count_qplm3)
+summary (count_qplm4)
+export_summs(count_qplm2,count_qplm3,count_qplm4, digits=10, statistics = "all")
+
+```
+
+```{r plot model}
+plot_model(count_qplm2, type = "pred")
+```
+
+in the total count model multicollinearity forces us to use GDP_PPS and drop the sci hitech variables. Addin R&D or online purchases does not make the model much better and it is not significant in the qpoission models.
+
+if we use the total count, rather than the per capita, GDP becomes significant, and positive, so is researcher share in the population. internet savvy has negative significant effect. 
+
+
+# comparing the Three Models
+
+if we compare the three models (per capita, per researcher, and absultute download counts), we find that consistent results.
+researcher employement has a positive effect, internet savvyness has a negative effect. 
+
+in one model more gdp results in more downloads, but we also see that igher R&D ecxpenditure can lower download counts. 
+
+```{r 3 best models}
+
+jtools::export_summs(percapita_qplm3, perresearcher_qplm1, 
+                     count_qplm2, digits=10, statistics = "all")
+```
+Just for fun I did a simple linear regression for all 3 dependent variables. They do ot yield different results from the qpoission models, but their error terms are much uglier.
+
+regions with higher gdp and higher researcher share in the workforce download more, while higher online proficency lowers donload numbers, proibably due to the positive effects of e-commerce, and the negative effects of better hiding.
+
+## rendom forest for raw count and corresponding linear model
+
+```{r normal linear regressions}
+
+#lets do a radnom forest for count variables first
+
+var_select_df <- complete_df %>% 
+  dplyr::select ( -researchers_total, 
+                  -population_total,
+                  -count_per_million,
+                  -count_per_capita,
+                  -count_per_thousand_researchers,
+                  -count_per_researcher,
+                  -one_of(c("area_land_filled",  
+                            "count_per_area", 
+                            "count_per_pop_density"))) 
+
+
+var_select.rf <- randomForest(count ~ . ,
+                            dplyr::select ( var_select_df, 
+                                     -geo ),
+                            mtry = as.numeric(best_mtry_var_select[1]),
+                            ntree=5000)
+
+importance (var_select.rf)
+varImpPlot (var_select.rf, sort=TRUE)
+
+var_select.rf$importance  %>% as.data.frame() %>%
+  rownames_to_column(., var = "variable") %>%
+  set_names ( ., c("variable", "IncNodePurity")) %>%
+  arrange (-IncNodePurity)
+
+var_select.rf$importance
+
+
+predictor_var_select = Predictor$new(
+  var_select.rf,
+  data = dplyr::select ( var_select_df , -geo, 
+                         -count ),
+  y = as.numeric(var_select_df$count))
+
+imp <- FeatureImp$new(predictor_var_select, loss = "mae", n.repetitions = 100)
+
+plot(imp)
+
+
+count_lm4 <- lm (count ~ gdp_pps +  
+
+                    researcher_employment_pct +
+                    disposable_income +
+                    edu_attainment_total +
+                    internet_use_banking_pc +
+                    gerd+
+                    internet_purchases_last_year_pc
+                    , data = complete_df)
+vif(count_lm4)
+summary(count_lm4)
+export_summs(percapita_lm2,persearcher_lm2,count_lm2, digits=10, statistics = "all")
+plot(count_lm4)
+
+```
+
+The random forest on the raw count variable identified the same independent variables as relevant. one eception was the employment total variable, but that was highly correlated with the gdp_pps variable, so we had to omit it from the the liner regression.
+the standard linear model shows the same as the poisson and q possion models:
+- downloads grow wuth wealth, researcher share, and disposable income, but are moderated by only savvy and R&D investment.
+online purchases are not significant, neither is the level of education.
+the model fit is comparable to the qpoisson model fits.
+we also have to note that linear models behave extremely bad in high count regions, worse than qpoisson models.  We address this pronlem separately. 
+
+
+
+
+
+#interaction models
+
+Finally, to check how the effect of wealth and researcher activity interacts we run a simple interaction model. 
+
+##simple count variable, GDP and researcher share
+
+```{r interactions, out.width='90%'}
+message("With Interactions ------------------------")
+
+
+interaction_qplm1<-glm (count  ~ gdp_pps * researcher_employment_pct , data = complete_df, quasipoisson )
+summary (interaction_qplm1)
+plot_model(interaction_qplm1, type = "eff", terms=c("researcher_employment_pct[0.1,1.9]","gdp_pps [10000,150000]"))
+
+#per capita model does not yield meaningful interactio. only researcher share significant 
+interaction_qplm2 <-glm (count_per_million  ~ gdp_pps * researcher_employment_pct , data = complete_df, quasipoisson )
+
+#per researcherh models yield little interesting stuff gdp is not relevant
+interaction_qplm3<-glm (count_per_thousand_researchers ~ gdp_pps * internet_use_banking_pc , data = complete_df, quasipoisson )
+summary (qplm3)
+```
+a simple interaction at the count model shows that in richer regions download more even if they have a the same share of researchers as poorer regions, and the count grows faster as the share grows.
+This confirms our original hypothesis.

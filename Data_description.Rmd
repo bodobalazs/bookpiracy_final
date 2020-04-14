@@ -15,7 +15,7 @@ library(tidyr)
 library(zoo)
 library(eurostat)
 library(regdata)
-library(satellitereport)
+library(satellitereport) #devtools::install_github("antaldaniel/satellitereport")
 library(knitr)
 library(ggplot2)
 

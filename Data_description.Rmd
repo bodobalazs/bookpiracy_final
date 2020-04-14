@@ -1,0 +1,257 @@
+---
+title: "Bookpiracy Data Description"
+author: "Daniel Antal, CFA"
+date: "4/14/2020"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, out.width = '90%', fig.align = 'center')
+library(dplyr)
+library(tidyr)
+library(zoo)
+library(eurostat)
+library(regdata)
+library(satellitereport)
+library(knitr)
+library(ggplot2)
+
+example <- data.frame ( 
+  geo = c(rep("FR63", 7), "FRI", "FRI2", "FRI2"),
+  time = as.Date(paste0(as.character(2010:2019), "-01-01")), 
+  code13 = c(rep("FR63", 7), "FR6", "FR63", "FR63"),
+  code16 = c(rep("FRI1", 7), "FRI", "FRI1", "FRI1"),
+  change = 'recoded',
+  resolution = c(rep ('FR63=FRI2',7), "FR6=FRI", rep ('FR63=FRI2',2)),
+  nuts_level = c(rep(2, 7), 1, 2, 2), 
+  name = c(rep("Limousin", 7), "AQUITAINE-LIMOUSIN-POITOU-CHARENTES", 
+           rep("Limousin", 2)),
+  values = c(rep(NA_real_, 3), 51,52,55, NA_real_, 57,56, NA_real_), 
+  method = c(rep("missing", 3), rep("actual", 3), "missing", rep("actual", 3)),
+    stringsAsFactors = FALSE
+  )
+
+summary_dir <- file.path('summary_plots')
+
+```
+
+## Data handling
+
+Let's take a purely hypothetical but easy to understand example for data available in Limousin, France.  In this hypothetical data frame, data is coded according to the old region codes till 2016, and in 2017 only for the region larger Aquitaine-Limousin-Poitou-Charentes. 
+
+```{r example1}
+knitr::kable(example)
+```
+
+In this case, the Limousin region's boundaries did not change, but Limousin got a new NUTS2 code, "FRI".  The data for the year 2013 is available in the dataset, but under the earlier code "FR63".
+
+```{r example2}
+example %>% eurostat::recode_to_nuts_2016() %>% kable()
+```
+
+While the year 2017 is of no interest to our models, for simpler demonstration we remain with this example. In this case, we do not have actual data for Limousine (FRI1), but we have data for the NUTS1 level larger region Aquitaine-Limousin-Poitou-Charentes.
+
+In reality, this problem is unlikely to present itself for one region. In the case of some statistics based on Eurobarometer and other relatively small sample surveys, for the larger member states the statistics is only calculated at NUTS1 (larger region) level.  If the larger region statistic is an unknown weighted averages of the smaller constituent NUTS2 regions, we can safely impute the larger regions's value to the smaller regions. 
+
+In this hypothetical example, the value of Aquitaine-Limousin-Poitou-Charentes is in fact an average value of Aquitaine, Limousin, Poitou and Charentes. 
+
+
+```{r example3}
+example %>%
+  eurostat::recode_to_nuts_2016() %>%
+  select ( -change, -resolution) %>%
+  mutate ( method = ifelse ( geo == "FRI", 
+                    yes = paste0("imputed from NUTS1 ", method), 
+                    no = method)) %>%
+  mutate ( geo = ifelse ( geo == "FRI", "FRI1", geo), 
+           name = "Limousine", 
+           code13 = "FR63", 
+           code16 = "FRI1") %>%
+  kable()
+```
+
+We have used the zoo package to approximate the regional time series.  In the case of (linear) interpolation, the zoo package refers back to the basic stats::approx function. We used zoo because of its better interface for programatic use. 
+
+```{r example4}
+values <- example %>% 
+  eurostat::recode_to_nuts_2016()  %>%
+  select ( values ) %>%
+  unlist () %>% as.numeric()
+
+cat(paste0 ( "values = " , paste (values, collapse = ","), "\n" ))
+approximated <- zoo::na.approx(object = values, maxgap = 3, na.rm=FALSE )
+cat(paste0 ( "approximated = " , paste (approximated, collapse = ",") ), "\n")
+nocb <- zoo::na.locf(object = approximated, fromLast=TRUE,
+                     maxgap= Inf, na.rm=FALSE )
+cat(paste0 ( "nocb = " , paste (nocb, collapse = ",") ), "\n")
+locf <- zoo::na.locf(object = nocb, fromLast=FALSE,
+                     maxgap= Inf, na.rm=FALSE )
+
+cat(paste0 ( "locf = " , paste (locf, collapse = ",") ), "\n")
+```
+
+To sum up, these are the actual changes in the hypothetical example. 
+
+```{r example5}
+example %>%
+  eurostat::recode_to_nuts_2016() %>%
+  select ( -change, -resolution) %>%
+  mutate ( method = ifelse ( geo == "FRI", 
+                    yes = paste0("imputed from NUTS1 ", method), 
+                    no = method)) %>%
+  select ( -nuts_level ) %>%
+  mutate ( geo = ifelse ( geo == "FRI", "FRI1", geo), 
+           code13 = "FR63", 
+           code16 = "FRI1", 
+           name = 'Limousine', 
+           values = locf, 
+           method = c(rep("nocb", 3), 
+                      rep ("actual", 3),
+                      "imputed from NUTS1 actual", 
+                      rep ( "actual", 2), 
+                      "locf")) %>%
+  kable()
+```
+
+\newpage
+## Demography
+
+Our data is environmental data and not microdata.  We do not know who downloaded books or journal articles, therefore we cannot directly search a relationship between demographic variables, and we do not even know how many individuals used the same IP address to download books. However, we know that environments with more people are more likely to attract downloads, because, apart from robots that we tried to exclude from the dataset, the demand for books is driven by people. 
+
+We have found that more people are likely to attract more downloads, which is a very trivial relationship.  To overcome this trivial affect, we normalized the download count data with various demographic variables.  We started with the total population of the regions.  This data is available for almost all NUTS2 regions, with the exception of newly created regions in Hungary and Poland. In these few cases we used the first available population data for the new regions, in other words, we used the ‘next observation carry backwards’ filling algorithm.
+
+
+```{r population}
+knitr::include_graphics(file.path(summary_dir, "tgs00096_total_t_nr.jpg"))
+```
+
+
+### Researchers 
+
+Normalizing with the total population gives an equal chance for attributing downloads to uneducated old people, newborn babies, and adult scientific researchers.  In order to try to get a better picture, we also normalized download count data with the researcher population of the regions.
+
+
+```{r researchers}
+knitr::include_graphics(file.path(summary_dir, "rd_p_persreg_rse_t_total_fte.jpg"))
+```
+
+This statistic is available with many indicators in the Eurostat data warehouse, for example, in some regions we can find the total researchers employed in the business sector, the non-profit sector and by the government.  However, such interesting breakdown is not reported by all countries, so we used the most available headline indicator that contains all researchers regardless of sector and sex. 
+
+### Researchers Alternative
+
+An alternative indicator is the full-time equivalent version of researchers in all sectors and all sexes. Given that we work with environmental data, correcting for part-time workers is very unlikely to add more detail to or analysis.  Because this indicator is very highly correlated with the alternative researcher count, both indicators should not be used paralel in our models.
+
+```{r researchers2}
+knitr::include_graphics(file.path(summary_dir, "tgs00043_rse_t_total_pc_emp_fte.jpg"))
+
+```
+
+\newpage
+## Internet Environment
+
+Book piracy is an online activity, so we naturally sought a relationship with the territorial differences of internet availability and internet use.  Internet use data is available from various pan-European surveys, which are not made with large enough sample sizes to cover all NUTS2 regions of Europe.  Because of the limited national sample size and the sample selection method, for larger countries, like in the case of France and Germany, Eurostat only publishes the data on the higher NUTS1 level.  The United Kingdom has a mixed surveying, which results in more detailed data for Northern Ireland than for Great Britain, i.e. England, Scotland and Wales. 
+
+For a NUTS2 level analysis, we imputed the NUTS1 level data to the NUTS2 regions within each larger NUTS1 region.  This imputation is valid for the statistic, because it is a territorial average value of survey responses.  The imputation simply uses the larger area average values for the smaller areas contained in the broader region.
+
+Projecting the NUTS1 level data to NUTS2 level data will not increase the amount of information present in our models.  If we combine this data with other, more granular NUTS2 level information, than the information content of our models may increase.  Another approach is to use NUTS1 level data for all variables, in effect, discarding the NUTS2 regions of these countries (country parts) and adding NUTS1 regions into the analysis.  This is a valid approach, too. Given that NUTS1-NUTS2 level regions do not have a strictly set size and homogeneity criterion, there is a relatively wide level of variety in the different NUTS2 level environments.  The mixed use of NUTS1 and NUTS2 level information would be problematic with indicators of dispersion, which are sensitive to aggregation level, or the number of observations that are considered.  (For example, the standard deviation of income is likely to be different in a larger NUTS1 region than its constituent NUTS2 regions.) This problem is not present with survey response averages or total summaries of gross domestic product. 
+
+### Individuals who ordered goods or services 
+
+Individuals who ordered goods or services is a very important environmental variable, because it shows the environments ability to conduct online transactions, and to contact legal, purchasing transactions.  We can test various hypothesis regarding environments that have a less developed internet purchasing environment; we can test if unpaid, illegal transactions are likely to substitute for paid transactions, or if the general inability to make purchases may be caused by a general inability for functional internet use.
+
+```{r internetorders}
+knitr::include_graphics(file.path(summary_dir, "isoc_r_blt12_i_i_blt12_pc_ind.jpg"))
+```
+
+In this case NUTS1 level data was used in the case of Lithuania and Greece, which had changes in smaller NUTS2 regional boundaries, and the data for the year 2013 is not available for the old smaller regions.  
+
+### Frequency of Internet Use & Activities
+
+The frequency of use and activities statistics are many indicators that are available for daily internet users, less frequent users, and people who had not used the internet for at least a year. There are various activities that are measured for these population groups, for example, the use of social networks or internet banking. 
+
+```{r internetuse}
+knitr::include_graphics(file.path(summary_dir, "isoc_r_iuse_i_i_iubk_pc_ind.jpg"))
+```
+
+Internet banking use is an important environmental variable, because it shows both the ability to participate in legal purchasing transactions, and the social skills to use the internet for more complex activities that need more trust.  The use of social networks is also important, because book torrent sites live in the shadowy parts of the internet, and information on their availability is mainly communicated via personal networking channels, and not, for example, via mainstream internet portals or via internet advertisement.
+
+\newpage
+## Economic Environment
+
+The economic environment proved to be a very important indicator in determining illegal book downloading intensities, though it is impossible to give a clear casual link between the gross domestic product, disposable income and download counts. Richer regions have higher and better employment conditions, and they can usually support more research and development activities.  Researchers are themselves are more concentrated in richer regions.  Rich regions also tend to have a better research and internet infrastructure, and a more skilled internet user population, given that people in rich regions had a far longer history of using the internet on a daily basis than in poor regions.
+
+### Employment
+
+Employment is related to the GDP, because a large part of the regional GDP is the regional income of employees in the region.  It is also a demographic variable.  Higher level of employment usually correlates with a more active population, and a higher likelihood of research and development activities.
+
+
+```{r employment}
+knitr::include_graphics(file.path(summary_dir, "lfst_r_lfe2emp_t_y_ge15_ths.jpg"))
+```
+
+### Regional Gross Domestic Product in Million Euros
+
+The regional GDP is a very strong environmental variable, because it effects a region's ability to support research institutions, educational institutions, research jobs.  Very poor regions are also losing active age population and therefore the potential base of illegal book downloaders.
+
+
+```{r gpd}
+knitr::include_graphics(file.path(summary_dir, "tgs00003_mio_eur.jpg"))
+```
+
+### Regional Gross Domestic Product in Million PPS
+
+The regional GDP is not only available in million euros, but also in PPS values, which are price-adjusted versions of the GDP indicator on purchasing power standards.
+
+```{r gpdpps}
+knitr::include_graphics(file.path(summary_dir, "tgs00004_mio_pps.jpg"))
+```
+
+### Regional Gross Domestic Product in Million PPS Per Capita
+
+The regional GDP is not only available in absolute million euros and PPS, but on a per capita basis, too. Depending on the model type we use, this formulation may be more or less handy to use.
+
+```{r gpdppshab}
+knitr::include_graphics(file.path(summary_dir, "tgs00005_pps_hab.jpg"))
+```
+
+### Disposable Income of Private Households
+
+The disposable income of private households is related to their ability to purchase computers and other devices, subscribe to internet access, and the ability to purchase books via legal channels. However, because disposable income is a part of employee compensation in the region, which is an important part of the GDP aggregate, this variable is very highly correlated with the GDP variables, and may not be used together with those indicators in the same models.
+
+```{r dispincome}
+knitr::include_graphics(file.path(summary_dir, "tgs00026_bal_b6n_pps_hab.jpg"))
+
+```
+
+\newpage
+## Research Environment And Education Level 
+
+The book torrent websites are mainly focusing on scientific literature, and we believe that environments with a higher research and development output are more likely to attract downloads.  
+
+### Human Resources in Science & Technology
+
+The human resources of science and technology are indicators that may add further detail to our main demographic variable, the research count. The statistic is available for many subpopulations, but we do not use sectoral or sex breakups, because on an environmental level they do not add more useful detail to our analysis.  
+
+```{r hrst}
+knitr::include_graphics(file.path(summary_dir, "tgs00038_hrst_pc_act.jpg"))
+```
+
+### Intramural R&D Expenditure
+
+Intramural R&D Expenditure is related to the regional GDP, because it is a small but not insignificant part of it, but it is a more focused indicator for R&D activities. It may add detail to our models if illegal downloads are not related to the general regional economy but to R&D activities.
+
+```{r gerd}
+knitr::include_graphics(file.path(summary_dir, "tgs00042_total_pc_gdp.jpg"))
+```
+
+### Tertiary Educational Attainment (age group 25-64)
+
+Tertiary Educational Attainment is an auxilliary variable to researchers.  We believe that regions where the people have higher educational levels read more, and are more likely to read in foreign languages.  The most widely used book language in the torrent sites was English, followed by Russian, which are foreign language in most European regions. Regions with a more educated population attract more downloads.
+
+```{r eduattain}
+knitr::include_graphics(file.path(summary_dir, "tgs00109_ed5-8_y25-64_t_pc.jpg"))
+```
+       

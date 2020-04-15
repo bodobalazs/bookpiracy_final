@@ -1,7 +1,7 @@
 ---
 title: "Bookpiracy Data Description"
 author: "Daniel Antal, CFA"
-date: "4/14/2020"
+date: "4/15/2020"
 output:
   word_document: default
   pdf_document: default
@@ -119,8 +119,10 @@ example %>%
 \newpage
 ## Land Area
 
+The land area is created from various, related statistics. Whenever possible, we used the land area, and not the total surace area to exclude large water bodies - these are marked with 'imputed other'. In some cases,we imputed data manually from national sources. 
+
 ```{r land}
-#knitr::include_graphics(file.path(summary_dir, "tgs00096_total_t_nr.jpg"))
+knitr::include_graphics(file.path(summary_dir, "tgs00002_reg_area3_indicators.jpg"))
 ```
 \newpage
 ## Demography

@@ -1,10 +1,10 @@
 ---
 title: "Bookpiracy Data Description"
 author: "Daniel Antal, CFA"
-date: "4/14/2020"
+date: "4/15/2020"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 
@@ -117,6 +117,14 @@ example %>%
 ```
 
 \newpage
+## Land Area
+
+The land area is created from various, related statistics. Whenever possible, we used the land area, and not the total surace area to exclude large water bodies - these are marked with 'imputed other'. In some cases,we imputed data manually from national sources. 
+
+```{r land}
+knitr::include_graphics(file.path(summary_dir, "tgs00002_reg_area3_indicators.jpg"))
+```
+\newpage
 ## Demography
 
 Our data is environmental data and not microdata.  We do not know who downloaded books or journal articles, therefore we cannot directly search a relationship between demographic variables, and we do not even know how many individuals used the same IP address to download books. However, we know that environments with more people are more likely to attract downloads, because, apart from robots that we tried to exclude from the dataset, the demand for books is driven by people. 
@@ -135,7 +143,7 @@ Normalizing with the total population gives an equal chance for attributing down
 
 
 ```{r researchers}
-knitr::include_graphics(file.path(summary_dir, "rd_p_persreg_rse_t_total_fte.jpg"))
+knitr::include_graphics(file.path(summary_dir, "rd_p_persreg_total_t_total_fte.jpg"))
 ```
 
 This statistic is available with many indicators in the Eurostat data warehouse, for example, in some regions we can find the total researchers employed in the business sector, the non-profit sector and by the government.  However, such interesting breakdown is not reported by all countries, so we used the most available headline indicator that contains all researchers regardless of sector and sex. 

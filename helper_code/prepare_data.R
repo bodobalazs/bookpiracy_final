@@ -7,17 +7,13 @@ library(tidyverse)
 #bookpiracy_var_stat - data description
 #bookpiracy_wide - 
 #landuse - 
-load ("raw_data/bookpiracy_2020-04-02.rda") 
+load ("raw_data/bookpiracy_2020-04-15.rda") 
 
-#add NUTS2 surface area
-area_land <- landuse %>%
-  dplyr::select ( geo, values, method ) %>%
-  mutate ( indicator  = 'area_land_filled')
 
 #add number of researchers per region
 researchers <- bookpiracy %>%
   dplyr::select ( geo, indicator, values, method ) %>%
-  filter ( indicator == 'rd_p_persreg_rse_t_total_fte' ) %>%
+  filter ( indicator == 'rd_p_persreg_total_t_total_fte' ) %>%
   dplyr::select ( geo, values, method ) %>%
   mutate ( indicator  = 'researchers_total' )
 
@@ -48,7 +44,6 @@ unique(bookpiracy_long$indicator)
 
 #nuts2dataset is the base dataframe for the analysis n long format it contains incomplete cases
 nuts2_dataset <- bookpiracy_long %>%
-  rbind (., area_land )%>%
   left_join (  indicator_renaming, by = "indicator")  %>%
   mutate ( indicator = ifelse(is.na(new_name), 
                               indicator, new_name) ) %>%
@@ -83,7 +78,7 @@ complete_scaled <- complete_df %>%
   dplyr::mutate_if( is.numeric, scale ) %>%
   dplyr::mutate_if( is.numeric, as.numeric)
 
-dataset_source_statistics<-nuts2_dataset %>%
+dataset_source_statistics <- nuts2_dataset %>%
   add_count ( indicator, method ) %>%
   distinct ( indicator, method, n  ) %>%
   spread ( method, n )
@@ -100,4 +95,6 @@ dataset_source_statistics<-nuts2_dataset %>%
 #  dplyr::select ( -missings ) %>%
 #  gather ( indicator_name, values, -one_of("geo"))  %>%
 #  dplyr::mutate ( values = as.numeric(values)) 
-save(complete_df, complete_scaled, nuts2_data, nuts2_dataset_scaled,dataset_source_statistics, geodata, file="raw_data/all_data_for_analysis.rda")
+save(complete_df, complete_scaled, nuts2_data, 
+     nuts2_dataset_scaled,dataset_source_statistics, 
+     geodata, file="raw_data/all_data_for_analysis.rda")

@@ -117,6 +117,12 @@ example %>%
 ```
 
 \newpage
+## Land Area
+
+```{r land}
+#knitr::include_graphics(file.path(summary_dir, "tgs00096_total_t_nr.jpg"))
+```
+\newpage
 ## Demography
 
 Our data is environmental data and not microdata.  We do not know who downloaded books or journal articles, therefore we cannot directly search a relationship between demographic variables, and we do not even know how many individuals used the same IP address to download books. However, we know that environments with more people are more likely to attract downloads, because, apart from robots that we tried to exclude from the dataset, the demand for books is driven by people. 

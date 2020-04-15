@@ -3,8 +3,8 @@ title: "Bookpiracy Data Description"
 author: "Daniel Antal, CFA"
 date: "4/15/2020"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 
@@ -143,7 +143,7 @@ Normalizing with the total population gives an equal chance for attributing down
 
 
 ```{r researchers}
-knitr::include_graphics(file.path(summary_dir, "rd_p_persreg_rse_t_total_fte.jpg"))
+knitr::include_graphics(file.path(summary_dir, "rd_p_persreg_total_t_total_fte.jpg"))
 ```
 
 This statistic is available with many indicators in the Eurostat data warehouse, for example, in some regions we can find the total researchers employed in the business sector, the non-profit sector and by the government.  However, such interesting breakdown is not reported by all countries, so we used the most available headline indicator that contains all researchers regardless of sector and sex. 

@@ -25,7 +25,8 @@ library (car)
 require(caret); require(randomForest)
 
 #code to visualize data on the map
-source("helper_code/create_choropleth.R")
+#devtools::install_github("antaldaniel/satellitereport")
+#satellitereport::create_choropleth()
 
 # data is compiled elsewhere. 
 #uncomment the next line if you want to rerun data prepararion
@@ -33,30 +34,28 @@ source("helper_code/create_choropleth.R")
 load("raw_data/all_data_for_analysis.rda")
 ```
 
-
 The dataset in analysis is comprised of different, directly measured, and imputed sources. SOmetimes Data was available on the NUTS2 level directly for the observed period. SOmetimes we had to calculate it from NUT1 level data. SOmetimes we had to impute it from other years. The following table summarizes the different data sources and their provenance.  
-```{r data source analysis}
 
+```{r data source analysis}
 dataset_source_statistics
 ```
 
-
-Ultimately we arrive to a dataset with 260 NUTS2 regions, and 18 variables. Below is amap of complete cases:
+Ultimately we arrive to a dataset with 265 NUTS2 regions, 7 versions of the explained variables, 17 explanatory variables, and one metadata variable (the regional code.) Below is a map of complete cases:
 
 ```{r completemap, eval= FALSE}
 complete_df %>%
   mutate ( time = 2013 ) %>%
   dplyr::select ( geo, researchers_total, time ) %>%
   dplyr::rename ( values = researchers_total ) %>%
-  create_choropleth(., level = 2)
+  satellitereport::create_choropleth(., level = 2, n = 7, 
+                                     style = 'quantile', 
+                                     na_color = 'red')
 ```
 
 
 ### Dataset
 
 ```{r correlation }
-
-
 correlations <- nuts2_data %>%
   dplyr::select ( -geo ) %>% 
   dplyr::filter ( complete.cases(.)) %>%
@@ -84,6 +83,7 @@ correlations [, 2]  %>%
   )
 
 ```
+
 So far, we have not considered the spatial distribution of the data, only the correlation of various data levels among territorial units. If the spatial geography of the environment is relevant to the data, then apart from correlation, we should see a level autocorrelation by nearer territorial units. We have examined the spatial autocorrelation using the `spdep` package of Bivand, Pebesma and Gomez-Rubio [@spdep2013].
 
 ```{r mcmoran, echo=FALSE}
@@ -168,7 +168,7 @@ To understand the interaction of environmental variables and count data, we crea
 # To re-run the many models with the same dataset as used here.
 #uncomment the next line if you want to rerun the lingreg models
 #source ( 'helper_code/all_linreg_model_combinations.R')
-coefficients<-readRDS('raw_data/all_linreg_coefficients.rds')
+coefficients <- readRDS('raw_data/all_linreg_coefficients.rds')
 
 #display coefficients
 coefficients %>%
@@ -306,7 +306,6 @@ best.rf$importance  %>% as.data.frame() %>%
 ### Linear Regressions
 
 
-
 ```{r scatterplot}
 #first lets see how in the best model data anbd correlations look like
 
@@ -332,7 +331,8 @@ correlations_bestmodel <- complete_df %>%
   as.matrix() %>%
   pairs(., lower.panel = panel.smooth,
         upper.panel = panel.cor,
-      gap=0, row1attop=FALSE, 
+      gap=0, 
+      row1attop=FALSE, 
       main="Correlation coefficients on the upper panels, scatter plots in the lower panels with LOESS smooths")
 
 
@@ -387,7 +387,7 @@ summary(percapita_qplm3)
 
 #<<<<<<< HEAD
 export_summs(percapita_plm3,percapita_qplm3, digits=10)
-=======
+#=======
 #export_summs(plm3,qplm3, digits=10)
 #>>>>>>> 7f73e4cff74e8e51bb945c00c02009fe187d12f0
 ```
@@ -431,12 +431,12 @@ var_select.rf <- randomForest(count_per_researcher ~ . ,
                             mtry = as.numeric(best_mtry_var_select[1]),
                             ntree=5000 )
 
-var_select.rf$importance  %>% as.data.frame() %>%
-  rownames_to_column(., var = "variable") %>%
-  set_names ( ., c("variable", "IncNodePurity")) %>%
+var_select.rf$importance  %>%
+  as.data.frame() %>%
+  #rownames_to_column(., var = "variable") %>%
+  #set_names ( ., c("variable", "IncNodePurity")) %>%
   arrange ( -IncNodePurity)
 ```
-
 
 
 
@@ -449,8 +449,8 @@ var_select.rf <- randomForest(count_per_researcher ~ . ,
                             ntree=5000 )
 
 var_select.rf$importance  %>% as.data.frame() %>%
-  rownames_to_column(., var = "variable") %>%
-  set_names ( ., c("variable", "IncNodePurity")) %>%
+  #rownames_to_column(., var = "variable") %>%
+  #set_names ( ., c("variable", "IncNodePurity")) %>%
   arrange ( -IncNodePurity)
 
 
@@ -460,7 +460,9 @@ predictor_var_select = Predictor$new(
                          -count_per_researcher ),
   y = as.numeric(var_select_df$count_per_researcher))
 
-imp <- FeatureImp$new(predictor_var_select, loss = "mae", n.repetitions = 100)
+imp <- FeatureImp$new(predictor_var_select,
+                      loss = "mae",
+                      n.repetitions = 100)
 
 plot(imp)
 
@@ -729,7 +731,6 @@ plot(imp)
 
 
 count_lm4 <- lm (count ~ gdp_pps +  
-
                     researcher_employment_pct +
                     disposable_income +
                     edu_attainment_total +
@@ -755,11 +756,11 @@ we also have to note that linear models behave extremely bad in high count regio
 
 
 
-#interaction models
+# interaction models
 
 Finally, to check how the effect of wealth and researcher activity interacts we run a simple interaction model. 
 
-##simple count variable, GDP and researcher share
+## simple count variable, GDP and researcher share
 
 ```{r interactions, out.width='90%'}
 message("With Interactions ------------------------")

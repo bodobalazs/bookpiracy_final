@@ -257,7 +257,7 @@ run_in_function <- function() {
 }
 #run_in_function()
 #I saved the result here:
-knitr::include_graphics('bodo_0504_percapita_interactions.png')
+knitr::include_graphics('images_graphs/percapita_interactions_0416.png')
 ```
 
 ### count per capita Best model
@@ -328,8 +328,9 @@ correlations_bestmodel <- complete_df %>%
                  edu_attainment_total,
                  hr_scitech_pct,
                  internet_use_banking_pc) %>%
+      dplyr::mutate_if( is.numeric, as.numeric)%>%
   as.matrix() %>%
-  pairs(., lower.panel = panel.smooth,
+  pairs(lower.panel = panel.smooth,
         upper.panel = panel.cor,
       gap=0, 
       row1attop=FALSE, 
@@ -507,8 +508,6 @@ imp_best <- FeatureImp$new(best_predictor, loss = "mae")
 plot(imp_best)
 
 best.rf$importance  %>% as.data.frame() %>%
-  rownames_to_column(., var = "variable") %>%
-  set_names ( ., c("variable", "IncNodePurity")) %>%
   arrange ( -IncNodePurity)
 
 #interact <- Interaction$new(best_predictor)
@@ -545,7 +544,7 @@ correlations_bestmodel <- complete_df %>%
                  gdp_pps_hab, 
                  gerd) %>%
   as.matrix() %>%
-  pairs(., lower.panel = panel.smooth,
+  pairs( lower.panel = panel.smooth,
         upper.panel = panel.cor,
       gap=0, row1attop=FALSE, 
       main="Correlation coefficients on the upper panels, scatter plots in the lower panels with LOESS smooths")
@@ -712,8 +711,6 @@ importance (var_select.rf)
 varImpPlot (var_select.rf, sort=TRUE)
 
 var_select.rf$importance  %>% as.data.frame() %>%
-  rownames_to_column(., var = "variable") %>%
-  set_names ( ., c("variable", "IncNodePurity")) %>%
   arrange (-IncNodePurity)
 
 var_select.rf$importance
@@ -775,7 +772,7 @@ interaction_qplm2 <-glm (count_per_million  ~ gdp_pps * researcher_employment_pc
 
 #per researcherh models yield little interesting stuff gdp is not relevant
 interaction_qplm3<-glm (count_per_thousand_researchers ~ gdp_pps * internet_use_banking_pc , data = complete_df, quasipoisson )
-summary (qplm3)
+summary (interaction_qplm3)
 ```
 a simple interaction at the count model shows that in richer regions download more even if they have a the same share of researchers as poorer regions, and the count grows faster as the share grows.
 This confirms our original hypothesis.

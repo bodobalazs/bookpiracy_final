@@ -1,6 +1,6 @@
 library(tidyverse)
 library(broom)
-load (file = "raw_data/all_data_for_analysis.rda")
+load (file = "data/all_data_for_analysis.rda")
 
 ## Auxilliary functions for looping ----------------------
 is_all_significant <- function(summaries, critical_value = 1.96) {

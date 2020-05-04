@@ -1,6 +1,6 @@
 library(tidyverse)
 library(broom)
-load (file = "data/all_data_for_analysis.rda")
+load (file = file.path("data", "all_data_for_analysis.rda"))
 
 ## Auxilliary functions for looping ----------------------
 is_all_significant <- function(summaries, critical_value = 1.96) {
@@ -15,7 +15,8 @@ get_outlier_obs <- function(m) {
 
 df_no_outliers <- function ( df = mtcars, outliers ) {
   
-  df <- df %>% rownames_to_column() %>%
+  df <- df %>%
+    rownames_to_column() %>%
     left_join ( tibble::enframe( outliers ) %>%
                   rename ( rowname = name, 
                            outlier = value ), by ='rowname') %>%
@@ -92,7 +93,13 @@ rerun_models <- function(x, y) {
   
 }
 
-## parameter combinations ------------------------------------
+
+names (  eurostat_eurobarometer_data)
+## Create parameter combinations ------------------------------------
+
+nuts2_dataset_scaled <- eurostat_eurobarometer_data %>%
+  dplyr::select ( -starts_with("count_per") )
+
 mt_model_parameters <- crossing(x1 = names(nuts2_dataset_scaled)[-1], 
                                 x2= names(nuts2_dataset_scaled)[-1])%>%
   rbind ( tibble ( x1 = names(nuts2_dataset_scaled)[-1], 
@@ -169,4 +176,5 @@ coefficients  <- collect_results_2 %>%
   left_join ( coefficient_values , by = 'rowname') 
 
 
-saveRDS(coefficients, 'raw_data/all_linreg_coefficients.rds')
+saveRDS(coefficients, file.path('data-raw','all_linreg_coefficients.rds' ))
+        

@@ -6,7 +6,7 @@ library(tidyverse)
 #bookpiracy_var_stat - data description
 #bookpiracy_wide - 
 #landuse - 
-load ("raw_data/bookpiracy_2020-04-15.rda") 
+load (file.path('data-raw', 'bookpiracy_2020-04-15.rda'))
 
 # load the Eurobarometer variable
 # The data is available and described in on Zenodo
@@ -15,7 +15,7 @@ load ("raw_data/bookpiracy_2020-04-15.rda")
 # https://figshare.com/articles/Regionalized_Cultural_Access_and_Participation_Books_And_Libraries_And_Science_Attitudes_Variables/12170190
 
 eurobarometer <- read.csv (
-  file.path('raw_data', 
+  file.path('data-raw', 
             'books_library_eurobarometer_79_2.csv'), 
   stringsAsFactors = FALSE) 
 
@@ -37,8 +37,7 @@ researchers <- bookpiracy %>%
 bookpiracy_long <- bookpiracy %>%
   filter ( ! grepl("rd_p_persreg", indicator )) %>%
   dplyr::select ( geo, values, indicator, method ) %>%
-  rbind ( ., researchers ) %>%
-  rbind (., eb_vars )
+  rbind ( ., researchers ) 
 
 # The geodata is a administrative boundary map of the NUTS2 regions in the
 # NUTS2016 definitions, as provided by Eurostat and Eurographics.
@@ -49,7 +48,7 @@ geodata <- readRDS ( 'raw_data/geodata.rds' )
 # add download counts 
 # the data was prepared by .....R
 
-download_data <- readRDS( file.path("raw_data","downloads_nuts_2016.rds")
+download_data <- readRDS( file.path("data-raw","downloads_nuts_2016.rds")
 ) %>%
   dplyr::rename ( geo = id, 
                   values = count ) %>%
@@ -59,7 +58,7 @@ download_data <- readRDS( file.path("raw_data","downloads_nuts_2016.rds")
   mutate ( values = ifelse(is.na(values), 0, values))
 
 # rename variables to meaningful names -------------------------
-indicator_renaming <- read.csv("raw_data/indicator_renaming.csv", 
+indicator_renaming <- read.csv("data-raw/indicator_renaming.csv", 
                                stringsAsFactors = FALSE)
 
 unique(bookpiracy_long$indicator) # var names BEFORE renaming
@@ -79,7 +78,7 @@ unique(nuts2_dataset$indicator) # var names AFTER renaming
 
 # create data frame with different relative dowload counts 
 
-nuts2_data  <- nuts2_dataset %>%
+eurostat_data  <- nuts2_dataset %>%
   dplyr::select ( -method ) %>% # all 2013 filtered
   tidyr::spread ( indicator, values ) %>%
   dplyr::mutate ( count_per_million = round(1000000*count / population_total),
@@ -92,18 +91,43 @@ nuts2_data  <- nuts2_dataset %>%
       count_per_researcher = {
         count / researchers_total } ) 
 
-
 #complete_df is the base dataset for analysis. it only contains complete cases
-complete_df <- nuts2_data %>% 
+eurostat_complete_data <- eurostat_data %>% 
   filter ( complete.cases(.) )
 
-#create datasets with scaled varibles
-nuts2_dataset_scaled <- nuts2_data %>%
-  dplyr::mutate_if( is.numeric, scale )  
+eurostat_eurobarometer_data <- nuts2_dataset %>%
+  bind_rows ( eb_vars  ) %>%
+  select (-method) %>%
+  tidyr::spread ( indicator, values ) %>%
+  dplyr::mutate ( count_per_million = round(1000000*count / population_total),
+                  count_per_capita = count / population_total, 
+                  count_per_area   = count / area_land_filled,
+                  count_per_thousand_researchers = round(1000*count / researchers_total),
+                  count_per_researcher  = count / researchers_total) %>%
+  dplyr::mutate ( count_per_pop_density = {count /
+      ( population_total / area_land_filled)} ,
+      count_per_researcher = {
+        count / researchers_total } ) 
 
-complete_scaled <- complete_df %>%
-  dplyr::mutate_if( is.numeric, scale ) %>%
-  dplyr::mutate_if( is.numeric, as.numeric)
+eurostat_eurobarometer_complete_data <-  eurostat_eurobarometer_data %>%
+  filter(complete.cases(.))
+
+#create datasets with scaled varibles
+eurostat_scaled <- eurostat_data  %>%
+  dplyr::mutate_at( vars(-starts_with("count"), 
+                         -geo), scale )  
+
+eurostat_eurobarometer_scaled <- eurostat_eurobarometer_data  %>%
+  dplyr::mutate_at( vars(-starts_with("count"), 
+                         -geo), scale )   
+
+eurostat_complete_scaled <- eurostat_complete_data %>%
+  dplyr::mutate_at( vars(-starts_with("count"), 
+                         -geo), scale )
+
+eurostat_eurobarometer_complete_scaled <- eurostat_complete_data %>%
+  dplyr::mutate_at( vars(-starts_with("count"), 
+                         -geo), scale )
 
 dataset_source_statistics <- nuts2_dataset %>%
   add_count ( indicator, method ) %>%
@@ -122,12 +146,11 @@ dataset_source_statistics <- nuts2_dataset %>%
 #  dplyr::select ( -missings ) %>%
 #  gather ( indicator_name, values, -one_of("geo"))  %>%
 #  dplyr::mutate ( values = as.numeric(values)) 
-save(complete_df, complete_scaled, nuts2_data, 
-     nuts2_dataset_scaled,dataset_source_statistics, 
+save(eurostat_data, 
+     eurostat_complete_data, eurostat_complete_scaled,
+     eurostat_eurobarometer_data,
+     eurostat_eurobarometer_complete_data,
+     eurostat_eurobarometer_scaled,
+     dataset_source_statistics, 
      geodata,
-     file="raw_data/all_data_for_analysis.rda") # THIS SHOULD GO TO /data
-
-save(complete_df, complete_scaled, nuts2_data, 
-     nuts2_dataset_scaled,dataset_source_statistics, 
-     geodata,
-     file="data/all_data_for_analysis.rda")
+     file=file.path("data", "all_data_for_analysis.rda"))

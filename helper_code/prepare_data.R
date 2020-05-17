@@ -46,7 +46,7 @@ bookpiracy_long <- bookpiracy %>%
 geodata <- readRDS ( 'raw_data/geodata.rds' )
 
 # add download counts 
-# the data was prepared by .....R
+# the data was prepared by count_over_nuts_2.R
 
 download_data <- readRDS( file.path("data-raw","downloads_nuts_2016.rds")
 ) %>%
@@ -79,7 +79,7 @@ unique(nuts2_dataset$indicator) # var names AFTER renaming
 # create data frame with different relative dowload counts 
 
 eurostat_data  <- nuts2_dataset %>%
-  dplyr::select ( -method ) %>% # all 2013 filtered
+  dplyr::select ( -method ) %>% 
   tidyr::spread ( indicator, values ) %>%
   dplyr::mutate ( count_per_million = round(1000000*count / population_total),
                   count_per_capita = count / population_total, 
@@ -109,46 +109,39 @@ eurostat_eurobarometer_data <- nuts2_dataset %>%
       count_per_researcher = {
         count / researchers_total } ) 
 
-eurostat_eurobarometer_complete_data <-  eurostat_eurobarometer_data %>%
+eurostat_eurobarometer_complete_data <- eurostat_eurobarometer_data %>%
   drop_na()
 
 #create datasets with scaled varibles
-eurostat_scaled <- eurostat_data  %>%
-  dplyr::mutate_at(vars_select(names(eurostat_data),-starts_with("count"), -geo), scale)  
+eurostat_scaled <- dplyr::mutate_at(.tbl = eurostat_data, 
+                                    .vars = dplyr::vars(-starts_with("count"), 
+                                                        -all_of("geo")), 
+                                    .funs = scale )  
 
 eurostat_eurobarometer_scaled <- eurostat_eurobarometer_data  %>%
-  dplyr::mutate_at( vars_select(names(eurostat_eurobarometer_data),-starts_with("count"), 
-                         -geo), scale )   
+  dplyr::mutate_at( dplyr::vars(-starts_with("count"),
+                                -all_of(c("geo"))), scale )   
 
 eurostat_complete_scaled <- eurostat_complete_data %>%
-  dplyr::mutate_at( vars_select(names(eurostat_complete_data),-starts_with("count"), 
-                         -geo), scale )
+  dplyr::mutate_at( dplyr::vars(-starts_with("count"), 
+                                -all_of(c("geo"))), scale )
 
-eurostat_eurobarometer_complete_scaled <- eurostat_eurobarometer_complete_data %>%
-  dplyr::mutate_at( vars_select(names(eurostat_eurobarometer_complete_data),-starts_with("count"), 
-                         -geo), scale )
+eurostat_eurobarometer_complete_scaled <- eurostat_complete_data %>%
+  dplyr::mutate_at( dplyr::vars(-starts_with("count"), 
+                                -all_of(c("geo"))), scale )
+
 
 dataset_source_statistics <- nuts2_dataset %>%
-  add_count ( indicator, method ) %>%
+  dplyr::group_by( method, indicator ) %>%
+  dplyr::add_count ( ) %>%
   distinct ( indicator, method, n  ) %>%
   spread ( method, n )
 
-#nuts2_dataset_scaled_by_geo <- nuts2_dataset_scaled %>%
-#  dplyr::filter ( !is.na(count)) %>%
-#  dplyr::mutate ( missings = rowSums(is.na(.))) %>%
-#  dplyr::arrange ( rev(missings) ) 
-
-#scaled_wide <- nuts2_dataset_scaled_by_geo %>%
-#  dplyr::filter ( missings == 0 ) 
-
-#scaled <- scaled_wide %>%
-#  dplyr::select ( -missings ) %>%
-#  gather ( indicator_name, values, -one_of("geo"))  %>%
-#  dplyr::mutate ( values = as.numeric(values)) 
 save(eurostat_data, 
      eurostat_complete_data, 
      eurostat_complete_scaled,
      eurostat_eurobarometer_data,
+     eurostat_eurobarometer_scaled,
      eurostat_eurobarometer_complete_data,
      eurostat_eurobarometer_complete_scaled,
      dataset_source_statistics, 

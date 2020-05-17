@@ -148,13 +148,4 @@ dataset_source_statistics <- nuts2_dataset %>%
 #  dplyr::select ( -missings ) %>%
 #  gather ( indicator_name, values, -one_of("geo"))  %>%
 #  dplyr::mutate ( values = as.numeric(values)) 
-save(eurostat_data, 
-     eurostat_complete_data, 
-     eurostat_complete_scaled,
-     eurostat_eurobarometer_data,
-     eurostat_eurobarometer_scaled,
-     eurostat_eurobarometer_complete_data,
-     eurostat_eurobarometer_complete_scaled,
-     dataset_source_statistics, 
-     geodata,
-     file=file.path("data", "all_data_for_analysis.rda"))
+

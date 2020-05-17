@@ -67,16 +67,17 @@ fit_model <- function (...) {
   
 }
 
+#CHANGE HERE THE DEPENDENT VARIABLES IF NEEDED!
 run_models <- function(y) {
   x1 = unlist(y)[1] 
   x2 = unlist(y)[2]
   
   if ( !is.na(x2) ) {
-    my_formula <- as.formula ( paste0( 'count_per_area ~', x1, "+", x2))
+    my_formula <- as.formula ( paste0( 'count_per_capita ~', x1, "+", x2))
   } else {
-    my_formula <- as.formula ( paste0( 'count_per_area ~', x1))
+    my_formula <- as.formula ( paste0( 'count_per_capita ~', x1))
   }
-  lm ( my_formula, as.data.frame(nuts2_dataset_scaled))
+  lm ( my_formula, as.data.frame(eurostat_eurobarometer_data))
 }
 
 
@@ -124,7 +125,7 @@ collect_results <- mt_model_parameters %>%
            augmented  = map (.x = models, .f= broom::augment), 
            influental = map(.x = models, influence.measures), 
            outliers = map(.x = influental, get_outlier_obs), 
-           data = map ( .x = outliers, ~df_no_outliers(df = nuts2_dataset_scaled, 
+           data = map ( .x = outliers, ~df_no_outliers(df = eurostat_eurobarometer_data, 
                                                        outliers = .x))
   )
 

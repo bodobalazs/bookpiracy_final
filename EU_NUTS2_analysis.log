@@ -1,0 +1,4542 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.4.16)  15 MAY 2020 16:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**EU_NUTS2_analysis.tex
+(./EU_NUTS2_analysis.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06> (c:/texlive/2020/texmf-dist/tex/latex/base/ar
+ticle.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(c:/texlive/2020/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (c:/texlive/2020/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen135
+)) (c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+) (c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks17
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks18
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) (c:/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+(c:/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)) (c:/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (c:/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) (c:/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
+) (c:/texlive/2020/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (c:/texlive/2020/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (c:/texlive/2020/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+\MT@toks=\toks24
+\MT@count=\count187
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen144
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count188
+(c:/texlive/2020/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
+\MT@outer@space=\skip52
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(c:/texlive/2020/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+)) (c:/texlive/2020/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
+(c:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+(c:/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (c:/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (c:/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count189
+)) (c:/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (c:/texlive/2020/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2020/01/24 v 0.09 modify URL breaks
+(c:/texlive/2020/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) (c:/texlive/2020/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(c:/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+(c:/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (c:/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (c:/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (c:/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen145
+\Hy@linkcounter=\count190
+\Hy@pagecounter=\count191
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (c:/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count192
+Package hyperref Info: Option `unicode' set `true' on input line 4421.
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count193
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen146
+(c:/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(c:/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count194
+\Field@Width=\dimen147
+\Fld@charsize=\dimen148
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+(c:/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count195
+\c@Item=\count196
+\c@Hfootnote=\count197
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+(c:/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+)
+\Fld@listcount=\count198
+\c@bookmark@seq@number=\count199
+(c:/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(c:/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip53
+) (c:/texlive/2020/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
+\BKM@id=\count266
+)) (c:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(c:/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count267
+\Gm@cntv=\count268
+\c@Gm@tempcnt=\count269
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks25
+) (c:/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count270
+\FV@InFile=\read2
+\FV@TabBox=\box47
+\c@FancyVerbLine=\count271
+\FV@StepNumber=\count272
+\FV@OutFile=\write3
+) (c:/texlive/2020/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip54
+\fb@frw=\dimen157
+\fb@frh=\dimen158
+\FrameRule=\dimen159
+\FrameSep=\dimen160
+) (c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen161
+\Gin@req@width=\dimen162
+) (c:/texlive/2020/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+) (c:/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen163
+\ar@mcellbox=\box48
+\extrarowheight=\dimen164
+\NC@list=\toks26
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box49
+) (c:/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+(c:/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen165
+\captionmargin@=\dimen166
+\captionwidth=\dimen167
+\caption@tempdima=\dimen168
+\caption@indent=\dimen169
+\caption@parindent=\dimen170
+\caption@hangindent=\dimen171
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count273
+\c@continuedfloat=\count274
+Package caption Info: hyperref package is loaded.
+) (c:/texlive/2020/texmf-dist/tex/latex/siunitx/siunitx.sty (c:/texlive/2020/te
+xmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-04-06 L3 programming layer (loader) 
+(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count275
+\l__pdf_internal_box=\box50
+)) (c:/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-03-06 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count276
+\g__xparse_grabber_int=\count277
+\l__xparse_m_args_int=\count278
+\l__xparse_v_nesting_int=\count279
+)
+Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
+(c:/texlive/2020/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2020-03-06 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box51
+\l__siunitx_tmp_dim=\dimen172
+\l__siunitx_tmp_int=\count280
+\l__siunitx_number_mantissa_length_int=\count281
+\l__siunitx_number_uncert_length_int=\count282
+\l__siunitx_round_int=\count283
+\l__siunitx_process_decimal_int=\count284
+\l__siunitx_process_uncertainty_int=\count285
+\l__siunitx_process_fixed_int=\count286
+\l__siunitx_process_integer_min_int=\count287
+\l__siunitx_process_precision_int=\count288
+\l__siunitx_group_min_int=\count289
+\l__siunitx_angle_marker_box=\box52
+\l__siunitx_angle_unit_box=\box53
+\l__siunitx_angle_marker_dim=\dimen173
+\l__siunitx_angle_unit_dim=\dimen174
+\l__siunitx_unit_int=\count290
+\l__siunitx_unit_denominator_int=\count291
+\l__siunitx_unit_numerator_int=\count292
+\l__siunitx_unit_prefix_int=\count293
+\l__siunitx_unit_prefix_base_int=\count294
+\l__siunitx_unit_prefix_gram_int=\count295
+\l__siunitx_number_product_int=\count296
+\c__siunitx_one_fill_skip=\skip57
+\l__siunitx_table_unit_align_skip=\skip58
+\l__siunitx_table_exponent_dim=\dimen175
+\l__siunitx_table_integer_dim=\dimen176
+\l__siunitx_table_mantissa_dim=\dimen177
+\l__siunitx_table_marker_dim=\dimen178
+\l__siunitx_table_result_dim=\dimen179
+\l__siunitx_table_uncert_dim=\dimen180
+\l__siunitx_table_fill_pre_dim=\dimen181
+\l__siunitx_table_fill_post_dim=\dimen182
+\l__siunitx_table_fill_mid_dim=\dimen183
+\l__siunitx_table_pre_box=\box54
+\l__siunitx_table_post_box=\box55
+\l__siunitx_table_mantissa_box=\box56
+\l__siunitx_table_result_box=\box57
+\l__siunitx_table_number_align_skip=\skip59
+\l__siunitx_table_text_align_skip=\skip60
+(c:/texlive/2020/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+)) (c:/texlive/2020/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks27
+\minrowclearance=\skip61
+) (c:/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip62
+\multirow@cntb=\count297
+\multirow@dima=\skip63
+\bigstrutjot=\dimen184
+) (c:/texlive/2020/texmf-dist/tex/latex/tools/hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+) (c:/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count298
+\calc@Bcount=\count299
+\calc@Adimen=\dimen185
+\calc@Bdimen=\dimen186
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count300
+\calc@Cskip=\skip66
+) (c:/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen187
+\TX@old@table=\dimen188
+\TX@old@col=\dimen189
+\TX@target=\dimen190
+\TX@delta=\dimen191
+\TX@cols=\count301
+\TX@ftn=\toks28
+) (c:/texlive/2020/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box58
+) (c:/texlive/2020/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen192
+\WF@size=\dimen193
+\c@WF@wrappedlines=\count302
+\WF@box=\box59
+\WF@everypar=\toks29
+Package: wrapfig 2003/01/31  v 3.6
+) (./EU_NUTS2_analysis.aux)
+\openout1 = `EU_NUTS2_analysis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Info: Redefining \microtypecontext on input line 118.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+LaTeX Info: Redefining \showhyphens on input line 118.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+) (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count303
+\scratchdimen=\dimen194
+\scratchbox=\box60
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count306
+\MPscratchDim=\dimen195
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks31
+) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+(c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box61
+Package hyperref Info: Link coloring OFF on input line 118.
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count309
+)
+LaTeX Info: Redefining \ref on input line 118.
+LaTeX Info: Redefining \pageref on input line 118.
+LaTeX Info: Redefining \nameref on input line 118.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(c:/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dictionary-En
+glish.dict
+Dictionary: translator-basic-dictionary, Language: English 
+) (c:/texlive/2020/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+18.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+18.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+118.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+118.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 118.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 118.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 118.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 118
+.
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 118
+.
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+118.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+118.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 120.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 120.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 120.
+<EU_NUTS2_analysis_files/figure-latex/completemap-1.pdf, id=4, 469.755pt x 325.
+215pt>
+File: EU_NUTS2_analysis_files/figure-latex/completemap-1.pdf Graphic file (type
+ pdf)
+<use EU_NUTS2_analysis_files/figure-latex/completemap-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/completemap-1.pdf
+  used on input line 140.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[1
+
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./EU_NUTS2_anal
+ysis_files/figure-latex/completemap-1.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/completemap eurobarometer-1.pdf, id=24, 4
+69.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/completemap eurobarometer-1.pdf Grap
+hic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/completemap eurobarometer-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/completemap eurob
+arometer-1.pdf  used on input line 149.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+62.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 163.
+<EU_NUTS2_analysis_files/figure-latex/count descriptives-1.pdf, id=25, 469.755p
+t x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/count descriptives-1.pdf Graphic fil
+e (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/count descriptives-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/count descriptive
+s-1.pdf  used on input line 180.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[2 <./EU_NUTS2_analysis_files/figure-latex/completemap eurobarometer-1.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/count descriptives-2.pdf, id=42, 469.755p
+t x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/count descriptives-2.pdf Graphic fil
+e (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/count descriptives-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/count descriptive
+s-2.pdf  used on input line 188.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[3 <./EU_NUTS2_analysis_files/figure-latex/count descriptives-1.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+00.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<EU_NUTS2_analysis_files/figure-latex/correlation-1.pdf, id=52, 469.755pt x 325
+.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/correlation-1.pdf Graphic file (type
+ pdf)
+<use EU_NUTS2_analysis_files/figure-latex/correlation-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/correlation-1.pdf
+  used on input line 231.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[4 <./EU_NUTS2_analysis_files/figure-latex/count descriptives-2.pdf>] [5 <./EU_
+NUTS2_analysis_files/figure-latex/correlation-1.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/percapita_scatterplot-1.pdf, id=76, 469.7
+55pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_scatterplot-1.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_scatterplot-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_scatter
+plot-1.pdf  used on input line 325.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[6] [7 <./EU_NUTS2_analysis_files/figure-latex/percapita_scatterplot-1.pdf>]
+Underfull \vbox (badness 10000) detected at line 415
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 415
+ []
+
+[8]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+477.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 686.
+
+
+Overfull \hbox (318.20627pt too wide) in alignment at lines 686--686
+[][][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9]
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 740--740
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 740--740
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 740--740
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-1.pdf, id=1
+08, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-1.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-1.pdf  used on input line 746.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[10]
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-2.pdf, id=1
+16, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-2.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-2.pdf  used on input line 753.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[11 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-1.pdf
+>]
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-3.pdf, id=1
+29, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-3.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-3.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-3.pdf  used on input line 760.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-4.pdf, id=1
+30, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-4.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-4.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-4.pdf  used on input line 761.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-5.pdf, id=1
+31, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-5.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-5.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-5.pdf  used on input line 762.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-6.pdf, id=1
+32, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-6.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-6.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-6.pdf  used on input line 763.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-7.pdf, id=1
+33, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-7.pdf 
+Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-7.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/percapita_predict
+ed_vs_actual-7.pdf  used on input line 764.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--765
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--765
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--765
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--765
+[]
+ []
+
+[12 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-2.pdf
+>] [13 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-3.
+pdf>] [14 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual
+-4.pdf>] [15 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_act
+ual-5.pdf>]
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (32.91533pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (42.25793pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (58.19951pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (40.49925pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (22.05353pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (31.31502pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (27.52588pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (108.52841pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (74.34802pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (61.28146pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (109.32324pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (34.52722pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (84.4633pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (35.25157pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (42.7151pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_million[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (39.44902pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_capita[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (31.30954pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_area[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (106.65523pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_thousand_researchers[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (56.18527pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_researcher[]  
+ []
+
+
+Overfull \hbox (67.2702pt too wide) in paragraph at lines 4935--4935
+[][]\T1/lmr/m/n/10 (-20) count_per_pop_density[]  
+ []
+
+
+Overfull \hbox (92.17218pt too wide) in alignment at lines 4935--4935
+[][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 4840.66994pt on input line 4938.
+
+[16 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-6.pdf
+>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17 <./EU_NUTS2_analysis_files/figure-latex/percapita_predicted_vs_actual-7.pdf
+>] [18]
+Overfull \hbox (146.98413pt too wide) in alignment at lines 5258--5258
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-1.pdf, id=202
+, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-1.pdf Gr
+aphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/perresearcher lin
+ear models-1.pdf  used on input line 5270.
+(pdftex.def)             Requested size: 422.7756pt x 292.6908pt.
+<EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-2.pdf, id=203
+, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-2.pdf Gr
+aphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/perresearcher lin
+ear models-2.pdf  used on input line 5271.
+(pdftex.def)             Requested size: 422.7756pt x 292.6908pt.
+<EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-3.pdf, id=204
+, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-3.pdf Gr
+aphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-3.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/perresearcher lin
+ear models-3.pdf  used on input line 5272.
+(pdftex.def)             Requested size: 422.7756pt x 292.6908pt.
+<EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-4.pdf, id=205
+, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-4.pdf Gr
+aphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-4.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/perresearcher lin
+ear models-4.pdf  used on input line 5273.
+(pdftex.def)             Requested size: 422.7756pt x 292.6908pt.
+
+Overfull \hbox (378.0184pt too wide) in paragraph at lines 5270--5274
+[][] []
+ []
+
+
+Overfull \hbox (378.0184pt too wide) in paragraph at lines 5270--5274
+[] [] 
+ []
+
+[19 <./EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-1.pdf> 
+<./EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-2.pdf>]
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5307--5307
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5307--5307
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5307--5307
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5307--5307
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5307--5307
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+<EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-1.pdf, id=221, 
+469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-1.pdf Grap
+hic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot perresearche
+r models-1.pdf  used on input line 5313.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[20 <./EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-3.pdf> 
+<./EU_NUTS2_analysis_files/figure-latex/perresearcher linear models-4.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-2.pdf, id=236, 
+469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-2.pdf Grap
+hic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot perresearche
+r models-2.pdf  used on input line 5320.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[21 <./EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-1.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-3.pdf, id=249, 
+469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-3.pdf Grap
+hic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-3.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot perresearche
+r models-3.pdf  used on input line 5327.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[22 <./EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-2.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-4.pdf, id=262, 
+469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-4.pdf Grap
+hic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-4.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot perresearche
+r models-4.pdf  used on input line 5334.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[23 <./EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-3.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-5.pdf, id=275, 
+469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-5.pdf Grap
+hic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-5.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot perresearche
+r models-5.pdf  used on input line 5341.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[24 <./EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-4.pdf>] [
+25 <./EU_NUTS2_analysis_files/figure-latex/plot perresearcher models-5.pdf>] [2
+6]
+Underfull \vbox (badness 4805) detected at line 5511
+ []
+
+[27] [28]
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 5836.
+
+
+Overfull \hbox (266.98413pt too wide) in alignment at lines 5836--5836
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5848--5848
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5848--5848
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5848--5848
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5848--5848
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 5848--5848
+[]\T1/lmtt/m/n/10 ## Model has log-transformed predictors. Consider using \TS1/
+lmtt/m/n/10 `\T1/lmtt/m/n/10 terms="gdp_pps [exp]"\TS1/lmtt/m/n/10 ` \T1/lmtt/m
+/n/10 to back-transform scale.[] 
+ []
+
+<EU_NUTS2_analysis_files/figure-latex/plot best count model-1.pdf, id=316, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot best count model-1.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot best count model-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot best count m
+odel-1.pdf  used on input line 5854.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/plot best count model-2.pdf, id=317, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot best count model-2.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot best count model-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot best count m
+odel-2.pdf  used on input line 5861.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[29 <./EU_NUTS2_analysis_files/figure-latex/plot best count model-1.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot best count model-3.pdf, id=330, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot best count model-3.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot best count model-3.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot best count m
+odel-3.pdf  used on input line 5868.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[30 <./EU_NUTS2_analysis_files/figure-latex/plot best count model-2.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot best count model-4.pdf, id=343, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot best count model-4.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot best count model-4.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot best count m
+odel-4.pdf  used on input line 5875.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[31 <./EU_NUTS2_analysis_files/figure-latex/plot best count model-3.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/plot best count model-5.pdf, id=357, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/plot best count model-5.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/plot best count model-5.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/plot best count m
+odel-5.pdf  used on input line 5882.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[32 <./EU_NUTS2_analysis_files/figure-latex/plot best count model-4.pdf>]
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 6159.
+
+
+Overfull \hbox (237.42789pt too wide) in alignment at lines 6159--6159
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33 <./EU_NUTS2_analysis_files/figure-latex/plot best count model-5.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/interactions-1.pdf, id=384, 469.755pt x 3
+25.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/interactions-1.pdf Graphic file (typ
+e pdf)
+<use EU_NUTS2_analysis_files/figure-latex/interactions-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/interactions-1.pd
+f  used on input line 6231.
+(pdftex.def)             Requested size: 422.7756pt x 292.6908pt.
+[34] [35 <./EU_NUTS2_analysis_files/figure-latex/interactions-1.pdf>] [36]
+Overfull \hbox (122.8749pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab+internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (1.92609pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (122.8749pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab+internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (54.22058pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (122.8749pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc+gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (1.92609pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (122.8749pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc+gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (54.22058pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (157.05528pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab+internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (1.92609pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (157.05528pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab+internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (88.40097pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (157.05528pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc+gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (1.92609pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (157.05528pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc+gdp_pps_hab[]  
+ []
+
+
+Overfull \hbox (88.40097pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (213.9663pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+erobarometer_79_2_is_visit_public_libr
+ary[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (213.9663pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+erobarometer_79_2_is_visit_public_libr
+ary[]  
+ []
+
+
+Overfull \hbox (136.05049pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library[]  
+ []
+
+
+Overfull \hbox (210.17715pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+erobarometer_79_2_is_visit_public_libra
+ry[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (210.17715pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+erobarometer_79_2_is_visit_public_libra
+ry[]  
+ []
+
+
+Overfull \hbox (136.05049pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library[]  
+ []
+
+
+Overfull \hbox (213.9663pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library+high_skilled
+_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (213.9663pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library+high_skilled
+_pc[]  
+ []
+
+
+Overfull \hbox (136.05049pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library[]  
+ []
+
+
+Overfull \hbox (210.17715pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library+hr_scitech_p
+ct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (210.17715pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library+hr_scitech_p
+ct[]  
+ []
+
+
+Overfull \hbox (136.05049pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) erobarometer_79_2_is_visit_public_library[]  
+ []
+
+
+Overfull \hbox (132.13638pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (132.13638pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (54.22058pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (128.34724pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (128.34724pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (54.22058pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (132.13638pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (132.13638pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (54.22058pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (128.34724pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (128.34724pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (54.22058pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_banking_pc[]  
+ []
+
+
+Overfull \hbox (166.31677pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (166.31677pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (88.40097pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (162.52763pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (162.52763pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (88.40097pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (166.31677pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (166.31677pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (88.40097pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (162.52763pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (162.52763pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (88.40097pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (119.06982pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (119.06982pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (41.15402pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (115.28069pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (115.28069pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (41.15402pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (119.06982pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (119.06982pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (41.15402pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (115.28069pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (115.28069pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (41.15402pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) internet_use_daily_pc[]  
+ []
+
+
+Overfull \hbox (142.25166pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (142.25166pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (64.33586pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (138.46252pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (138.46252pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (64.33586pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (142.25166pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (142.25166pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (64.33586pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (138.46252pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (138.46252pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (64.33586pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researcher_employment_pct[]  
+ []
+
+
+Overfull \hbox (65.88736pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total+gdp_pps[]  
+ []
+
+
+Overfull \hbox (65.88736pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total+gdp_pps[]  
+ []
+
+
+Overfull \hbox (20.37181pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (65.88736pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps+employment_total[]  
+ []
+
+
+Overfull \hbox (65.88736pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps+employment_total[]  
+ []
+
+
+Overfull \hbox (20.37181pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (90.70369pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+area_land_filled[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (90.70369pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+area_land_filled[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (86.91455pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+area_land_filled[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (86.91455pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+area_land_filled[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (90.70369pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (90.70369pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (86.91455pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (86.91455pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (59.91533pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps+population_total[]  
+ []
+
+
+Overfull \hbox (59.91533pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps+population_total[]  
+ []
+
+
+Overfull \hbox (14.39978pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (59.91533pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total+gdp_pps[]  
+ []
+
+
+Overfull \hbox (59.91533pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total+gdp_pps[]  
+ []
+
+
+Overfull \hbox (14.39978pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (190.42952pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total+eurobarometer_79_2_is_student[]  
+
+ []
+
+
+Overfull \hbox (85.62923pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student[]  
+ []
+
+
+Overfull \hbox (190.42952pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total+eurobarometer_79_2_is_student[]  
+
+ []
+
+
+Overfull \hbox (38.07207pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (190.42952pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student+edu_attainment_total[]  
+
+ []
+
+
+Overfull \hbox (85.62923pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student[]  
+ []
+
+
+Overfull \hbox (190.42952pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student+edu_attainment_total[]  
+
+ []
+
+
+Overfull \hbox (38.07207pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) edu_attainment_total[]  
+ []
+
+
+Overfull \hbox (43.78299pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total+gdp[]  
+ []
+
+
+Overfull \hbox (43.78299pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total+gdp[]  
+ []
+
+
+Overfull \hbox (20.37181pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (43.78299pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp+employment_total[]  
+ []
+
+
+Overfull \hbox (43.78299pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp+employment_total[]  
+ []
+
+
+Overfull \hbox (20.37181pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) employment_total[]  
+ []
+
+
+Overfull \hbox (85.31424pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc+hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (11.18758pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (85.31424pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct+high_skilled_pc[]  
+ []
+
+
+Overfull \hbox (7.39844pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) hr_scitech_pct[]  
+ []
+
+
+Overfull \hbox (36.19907pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp+area_land_filled[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (36.19907pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp+area_land_filled[]  
+ []
+
+
+Overfull \hbox (36.19907pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+gdp[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (36.19907pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+gdp[]  
+ []
+
+
+Overfull \hbox (37.81096pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total+gdp[]  
+ []
+
+
+Overfull \hbox (37.81096pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total+gdp[]  
+ []
+
+
+Overfull \hbox (14.39978pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (37.81096pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp+population_total[]  
+ []
+
+
+Overfull \hbox (37.81096pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp+population_total[]  
+ []
+
+
+Overfull \hbox (14.39978pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) population_total[]  
+ []
+
+
+Overfull \hbox (94.64024pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+researchers_total[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (94.64024pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+researchers_total[]  
+ []
+
+
+Overfull \hbox (15.12413pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (94.64024pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researchers_total+area_land_filled[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (94.64024pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researchers_total+area_land_filled[]  
+ []
+
+
+Overfull \hbox (15.12413pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) researchers_total[]  
+ []
+
+
+Overfull \hbox (174.48795pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student+disposable_income[]  
+ []
+
+
+Overfull \hbox (22.1305pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (174.48795pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student+disposable_income[]  
+ []
+
+
+Overfull \hbox (85.62923pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student[]  
+ []
+
+
+Overfull \hbox (174.48795pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) disposable_income+eurobarometer_79_2_is_student[]  
+ []
+
+
+Overfull \hbox (22.1305pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) disposable_income[]  
+ []
+
+
+Overfull \hbox (174.48795pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) disposable_income+eurobarometer_79_2_is_student[]  
+ []
+
+
+Overfull \hbox (85.62923pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) eurobarometer_79_2_is_student[]  
+ []
+
+
+Overfull \hbox (58.30344pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps+area_land_filled[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (58.30344pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) gdp_pps+area_land_filled[]  
+ []
+
+
+Overfull \hbox (58.30344pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+gdp_pps[]  
+ []
+
+
+Overfull \hbox (12.78789pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled[]  
+ []
+
+
+Overfull \hbox (58.30344pt too wide) in paragraph at lines 7515--7515
+[][]\T1/lmr/m/n/10 (-20) area_land_filled+gdp_pps[]  
+ []
+
+
+Overfull \hbox (62.9853pt too wide) in alignment at lines 7515--7515
+[][][][][][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 1195.66994pt on input line 7518.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (22.40619pt too wide) in paragraph at lines 7676--7676
+[][]\T1/lmr/m/n/10 (-20) internet_purchases_last_year_pc[]  
+ []
+
+
+Overfull \hbox (23.20102pt too wide) in paragraph at lines 7676--7676
+[][]\T1/lmr/m/n/10 (-20) internet_use_social_networks_pc[]  
+ []
+
+
+Overfull \hbox (24.80713pt too wide) in alignment at lines 7676--7676
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images_graphs/000001.png, id=412, 442.65375pt x 273.27094pt>
+File: images_graphs/000001.png Graphic file (type png)
+<use images_graphs/000001.png>
+Package pdftex.def Info: images_graphs/000001.png  used on input line 7698.
+(pdftex.def)             Requested size: 442.67966pt x 273.28693pt.
+[37]
+<images_graphs/percapita_interactions_0416.png, id=424, 526.96875pt x 325.215pt
+>
+File: images_graphs/percapita_interactions_0416.png Graphic file (type png)
+<use images_graphs/percapita_interactions_0416.png>
+Package pdftex.def Info: images_graphs/percapita_interactions_0416.png  used on
+ input line 7714.
+(pdftex.def)             Requested size: 422.79778pt x 260.92664pt.
+[38 <./images_graphs/000001.png>]
+Overfull \hbox (12.79999pt too wide) in alignment at lines 7860--7860
+[] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (12.79999pt too wide) in alignment at lines 8022--8022
+[] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<EU_NUTS2_analysis_files/figure-latex/perresearcher correlations_eurobarometer-
+1.pdf, id=430, 469.755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/perresearcher correlations_eurobarom
+eter-1.pdf Graphic file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/perresearcher correlations_eurobarome
+ter-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/perresearcher cor
+relations_eurobarometer-1.pdf  used on input line 8035.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[39 <./images_graphs/percapita_interactions_0416.png>]
+Underfull \vbox (badness 10000) detected at line 8087
+ []
+
+[40 <./EU_NUTS2_analysis_files/figure-latex/perresearcher correlations_eurobaro
+meter-1.pdf>]
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 8371.
+
+
+Overfull \hbox (400.28932pt too wide) in alignment at lines 8371--8371
+[][][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[41]
+Overfull \hbox (70.99341pt too wide) in paragraph at lines 8425--8425
+[]\T1/lmtt/m/n/10 ##     researcher_employment_pct + internet_use_banking_pc + 
+erobarometer_79_2_is_visit_public_library,[] 
+ []
+
+[42] [43]
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 8824.
+
+
+Overfull \hbox (321.98413pt too wide) in alignment at lines 8824--8824
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<EU_NUTS2_analysis_files/figure-latex/raw linreg models-1.pdf, id=467, 469.755p
+t x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw linreg models-1.pdf Graphic file
+ (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw linreg models-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw linreg models
+-1.pdf  used on input line 8836.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/raw linreg models-2.pdf, id=468, 469.755p
+t x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw linreg models-2.pdf Graphic file
+ (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw linreg models-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw linreg models
+-2.pdf  used on input line 8837.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/raw linreg models-3.pdf, id=469, 469.755p
+t x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw linreg models-3.pdf Graphic file
+ (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw linreg models-3.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw linreg models
+-3.pdf  used on input line 8838.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/raw linreg models-4.pdf, id=470, 469.755p
+t x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw linreg models-4.pdf Graphic file
+ (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw linreg models-4.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw linreg models
+-4.pdf  used on input line 8839.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 8836--8840
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8836--8840
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8836--8840
+[]
+ []
+
+[44 <./EU_NUTS2_analysis_files/figure-latex/raw linreg models-1.pdf>] [45 <./EU
+_NUTS2_analysis_files/figure-latex/raw linreg models-2.pdf>] [46 <./EU_NUTS2_an
+alysis_files/figure-latex/raw linreg models-3.pdf>]
+<EU_NUTS2_analysis_files/figure-latex/raw count linref plot-1.pdf, id=498, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw count linref plot-1.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw count linref plot-1.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw count linref 
+plot-1.pdf  used on input line 8862.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/raw count linref plot-2.pdf, id=499, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw count linref plot-2.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw count linref plot-2.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw count linref 
+plot-2.pdf  used on input line 8863.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/raw count linref plot-3.pdf, id=500, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw count linref plot-3.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw count linref plot-3.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw count linref 
+plot-3.pdf  used on input line 8864.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<EU_NUTS2_analysis_files/figure-latex/raw count linref plot-4.pdf, id=501, 469.
+755pt x 325.215pt>
+File: EU_NUTS2_analysis_files/figure-latex/raw count linref plot-4.pdf Graphic 
+file (type pdf)
+<use EU_NUTS2_analysis_files/figure-latex/raw count linref plot-4.pdf>
+Package pdftex.def Info: EU_NUTS2_analysis_files/figure-latex/raw count linref 
+plot-4.pdf  used on input line 8865.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 8862--8866
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8862--8866
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8862--8866
+[]
+ []
+
+[47 <./EU_NUTS2_analysis_files/figure-latex/raw linreg models-4.pdf>] [48 <./EU
+_NUTS2_analysis_files/figure-latex/raw count linref plot-1.pdf>] [49 <./EU_NUTS
+2_analysis_files/figure-latex/raw count linref plot-2.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8867.
+[50 <./EU_NUTS2_analysis_files/figure-latex/raw count linref plot-3.pdf>] [51 <
+./EU_NUTS2_analysis_files/figure-latex/raw count linref plot-4.pdf>] [52] [53] 
+[54] [55] [56] [57] [58] [59]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8867.
+(./EU_NUTS2_analysis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8867.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 8867.
+ ) 
+Here is how much of TeX's memory you used:
+ 18172 strings out of 480607
+ 320449 string characters out of 5907502
+ 2547143 words of memory out of 5000000
+ 33517 multiletter control sequences out of 15000+600000
+ 600910 words of font info for 119 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,16n,46p,816b,861s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2020
+/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2020/texmf-dist/fonts/enc
+/dvips/lm/lm-ec.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbx10.pf
+b><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/
+type1/public/lm/lmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr
+12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/
+2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/texlive/2020/texmf-dist/fo
+nts/type1/public/lm/lmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/l
+m/lmtti10.pfb>
+Output written on EU_NUTS2_analysis.pdf (59 pages, 2890400 bytes).
+PDF statistics:
+ 734 PDF objects out of 1000 (max. 8388607)
+ 579 compressed objects within 6 object streams
+ 126 named destinations out of 1000 (max. 500000)
+ 16756 words of extra memory for PDF output out of 17280 (max. 10000000)
+

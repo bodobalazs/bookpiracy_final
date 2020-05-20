@@ -598,10 +598,16 @@ The following table shows the results of this approach for the smaller, dataset 
 #uncomment the next line if you want to rerun the lingreg models
 #source ( 'helper_code/all_linreg_model_combinations.R')
 coefficients <- readRDS(
-  file.path('data-raw','all_linreg_coefficients.rds') )
+  file.path('data','all_linreg_coefficients_count_per_thousand_researchers.rds') )
 
 #display coefficients
 knitr::kable(coefficients[order(-coefficients$r.squared),])
+
+#strange, because ighly correlatedvariables seem to be in the top models. lets do a manual check
+test<-lm ('count_per_thousand_researchers ~ internet_use_banking_pc + internet_use_daily_pc', data=eurostat_eurobarometer_complete_data)
+
+summary(test)$coefficients
+
 ```
 
 This approach shows results which are consistent with the deductive models.  Wealth, the percentage of knowledge workers in the workforce has positive effects, online proficiency (in all forms) has a negative effect. What is new are the emergence of tow of the new EUROBAROMETER variables: the share of population who visited a public library at least once in the last 12 months (with a negative sign), and the percentage of students in he population (with a positive one).
@@ -792,13 +798,10 @@ cpc_var_select_eb.rf <- randomForest(count_per_capita ~ . ,
 The Eurobarometer variables, while not as important as the 'hard' environmental variables, are more important than the general internet use variables (derived from other surveys by Eurostat.)
 
 ``` {r randomforest_results_eurobarometer, echo=FALSE, results='asis'}
+
 cpc_var_select_eb.rf$importance  %>%
-  as.data.frame() %>% # importance = IncNodePurity
-  mutate ( variable = row.names(.)) %>%
-  purrr::set_names( c("importance", "variable") ) %>%  
-  dplyr::select ( all_of(c("variable", "importance")) ) %>%
-  arrange ( -importance ) %>%
-  knitr::kable()
+  as.data.frame() %>%
+  arrange ( -IncNodePurity)
 ```
 
 Educational attainment, disposable income may be relevant for the whole population, beyond just researchers.
@@ -858,14 +861,17 @@ data.frame(
 
 ```{r perresearcher_var_select_results_eurobarometer, eval=FALSE, echo=FALSE}
 #count per researcher 
+
+
 cpr_predictor_var_select_count_per_researcher = Predictor$new(
   cpr_var_select_eb_researcher.rf,
-  data = dplyr::select ( cpr_var_select_eb_researcher.rf , -geo, 
-                         -count_per_researcher ),
-  y = as.numeric(cpr_var_select_eb_researcher.rf$count_per_researcher))
+  data = dplyr::select ( cpr_var_select_eb_df , -geo, 
+                         -count_per_researcher),
+  y = as.numeric(cpr_var_select_eb_df$count_per_researcher))
+
 
 cpr_imp_count_per_researcher <- FeatureImp$new(
-  cpr_predictor_var_select,
+  cpr_predictor_var_select_count_per_researcher,
   loss = "mae",
   n.repetitions = 10)
 
@@ -911,7 +917,6 @@ percapita_qplm3_3 <- glm (count_per_million ~
 percapita_qplm3_4 <- glm (count_per_million ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                          internet_use_banking_pc+
                           eb_limited_library_supply,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
@@ -923,24 +928,89 @@ percapita_qplm3_5 <- glm (count_per_million ~
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
+percapita_qplm3_1b <- glm (count_per_million ~ 
+                          log(gdp_pps) +
+                          researcher_employment_pct +
+                           eb_is_visit_public_library+
+                            internet_use_banking_pc,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
+
 
 export_summs(percapita_qplm3_1, 
              percapita_qplm3_2, 
              percapita_qplm3_3, 
              percapita_qplm3_4,
              percapita_qplm3_5,
+             percapita_qplm3_1b,
              digits=3, 
              statistics = c("null.deviance", "deviance")
              )
+```
+In the per capita download models only the library visit variable is found to be significant, with a negative sign, suggesting that library users download less. This effect, however is onl present without the online proficiency variable. If we add that to the model, both lose significance, hinting at the possibility that the two variables describe a similar, latent phonemon.  
 
+## per researcher and raw count models
+```{r eurobarometer count regressions}
 perresearcher_qplm3_1 <- glm (count_per_thousand_researchers ~ 
                           log(gdp_pps) +
-                          researcher_employment_pct +
-                        eb_is_visit_public_library,
+                          eb_is_read_book,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
-summary(perresearcher_qplm3_1)
+perresearcher_qplm3_2 <- glm (count_per_thousand_researchers ~ 
+                          log(gdp_pps) +
+                          eb_is_student,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
+perresearcher_qplm3_3 <- glm (count_per_thousand_researchers ~ 
+                          log(gdp_pps) +
+                          eb_is_visit_public_library,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
+perresearcher_qplm3_4 <- glm (count_per_thousand_researchers ~ 
+                          log(gdp_pps) +
+                          eb_limited_library_supply,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
+perresearcher_qplm3_5 <- glm (count_per_thousand_researchers ~ 
+                          log(gdp_pps) +
+                          eb_supports_open_access_science,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
+
+perresearcher_qplm3_1b <- glm (count_per_thousand_researchers ~ 
+                              log(gdp_pps)  + log(disposable_income) + 
+                              edu_attainment_total + gerd +
+                              internet_use_banking_pc,
+                            data = eurostat_eurobarometer_complete_data, 
+                            family = quasipoisson )
+
+perresearcher_qplm3_1c <- glm (count_per_thousand_researchers ~ 
+                              log(gdp_pps)  + log(disposable_income) + 
+                              edu_attainment_total + gerd +
+                          internet_use_banking_pc +
+                            eb_is_read_book,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
+
+export_summs(perresearcher_qplm3_1,
+             perresearcher_qplm3_1b,
+             perresearcher_qplm3_1c,
+             perresearcher_qplm3_2, 
+             perresearcher_qplm3_3, 
+             perresearcher_qplm3_4,
+             perresearcher_qplm3_5,
+             digits=3, 
+             statistics = c("null.deviance", "deviance")
+             )
+```
+
+With the per researcher model we found interesting results which point to the infrastructural effect of shadow library usage: lower  per reserahcer download counts are associated with higher library use, and betterlibrary supply. These findings, however should be treated with caution. The effect of GDP is not significant, and if we add the variables revevant in other models, this effect disappears. 
+
+
+
+
+```{r raw count eurobarometer models}
 
 rawcount_qplm3_1 <- glm (count ~ 
                           log(gdp_pps) +
@@ -958,7 +1028,6 @@ rawcount_qplm3_2 <- glm (count ~
 summary(rawcount_qplm3_2)
 ```
 
-We found no significant effect of any of the eurobarometer variables for the per capita or per researcher downloads, only in the raw count model is the share the library users has a marginally significant, negative effect, which is not strong enough to speak of a replacement effect, especially given that scholarly pirates are most probably avid readers and library users as well.  
 
 # Other - simple random models, just for the sake of doing it
 

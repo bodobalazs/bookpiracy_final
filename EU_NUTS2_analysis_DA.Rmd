@@ -823,10 +823,10 @@ raw_var_select.rf$importance  %>%
 plot(raw_imp)
 ```
 
-The random forest on the raw count variable identified the same independent variables as relevant. one eception was the employment total variable, but that was highly correlated with the gdp_pps variable, so we had to omit it from the the liner regression.
-
+The random forest on the raw count variable identified the same independent variables as relevant. one eception was the employment total variable, but that was highly correlated with the `gdp_pps` variable, so we had to omit it from the the liner regression.
 
 Here are the results of the per capita, per researchers, and raw count simple liear models.
+
 ``` {r raw linreg models}
 
 percapita_lm <- lm (count_per_million ~ gdp_pps +
@@ -906,6 +906,7 @@ interaction_qplm3 <- glm (count_per_thousand_researchers ~
 
 summary (interaction_qplm3)
 ```
+
 Other interaction models with per capita and per researcher dependent variables, and wealth and researcher employment and online savvy do not yield significant results. 
 
 

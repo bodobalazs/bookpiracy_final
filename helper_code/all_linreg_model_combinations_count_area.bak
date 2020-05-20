@@ -17,15 +17,14 @@ get_outlier_obs <- function(m) {
 }
 
 ## Remove outliers
-df_no_outliers <- function (outliers, 
-                            df = nuts2_dataset_scaled ) {
+df_no_outliers <- function (outliers , df = nuts2_dataset_scaled ) {
   
   df <- df %>%
     rownames_to_column() %>%
     left_join ( tibble::enframe( outliers ) %>%
                   rename ( rowname = name, 
                            outlier = value ), by ='rowname') %>%
-    dplyr::filter ( ! outlier) %>%
+    filter ( ! outlier) %>%
     dplyr::select (-outlier)
 }
 
@@ -81,24 +80,23 @@ fit_model <- function (...) {
   
 }
 
-params <- collect_results$params[[18]]
+y = collect_results_2$params[[18]]
+
 ## Run the models
-run_models <- function(params, 
+run_models <- function(y, 
                        target_variable = 'count_per_area', 
                        model_df = nuts2_dataset_scaled) {
-  x1 = unlist(params)[1] 
-  x2 = unlist(params)[2]
-  
-  vars_to_select <- as.character(
-    c("geo", target_variable, x1,x2)
-  )
+  x1 = unlist(y)[1] 
+  x2 = unlist(y)[2]
   
   model_data <- model_df  %>% 
-    dplyr::select ( tidyselect::all_of(vars_to_select) ) %>%
-    tidyr::pivot_longer ( cols = -one_of('geo')) %>%
-    dplyr::filter ( complete.cases(.)) %>%
-    tidyr::pivot_wider ( names_from = 'name', values_from = 'value') %>%
-    dplyr::filter ( complete.cases(.))
+    select ( all_of(c("geo",
+                      as.character(c(target_variable, x1,x2)))
+                    )) %>%
+    pivot_longer ( cols = -one_of('geo')) %>%
+    filter ( complete.cases(.)) %>%
+    pivot_wider ( names_from = 'name', values_from = 'value') %>%
+    filter ( complete.cases(.))
   
   if ( !is.na(x2) ) {
     my_formula <- as.formula ( paste0( target_variable, ' ~ ', x1, "+", x2))
@@ -110,7 +108,7 @@ run_models <- function(params,
 }
 
 possibly_run_models <- function(y) {
-  purrr::possibly(run_models, otherwise=NULL)(params = y)
+  purrr::possibly(run_models, otherwise=NULL)(y)
 
 }
 
@@ -120,13 +118,13 @@ rerun_models <- function(x, y,
   x2 = unlist(y)[2]
   
   model_data <- x  %>% 
-    dplyr::select ( all_of(c("geo",
+    select ( all_of(c("geo",
                       as.character(c(target_variable, x1,x2)))
     )) %>%
-    tidyr::pivot_longer ( cols = -one_of('geo')) %>%
-    dplyr::filter ( complete.cases(.)) %>%
-    tidyr::pivot_wider ( names_from = 'name', values_from = 'value') %>%
-    dplyr::filter ( complete.cases(.))
+    pivot_longer ( cols = -one_of('geo')) %>%
+    filter ( complete.cases(.)) %>%
+    pivot_wider ( names_from = 'name', values_from = 'value') %>%
+    filter ( complete.cases(.))
   
   if ( !is.na(x2) ) {
     my_formula <- as.formula ( paste0( 'count_per_area ~', x1, "+", x2))
@@ -144,8 +142,7 @@ nuts2_dataset_scaled <- eurostat_eurobarometer_scaled %>%
                             "count_per_researcher", 
                             "count_per_capita", 
                             "count_per_thousand_researchers", 
-                            "count_per_pop_density", 
-                            "count")) )
+                            "count_per_pop_density")) )
 
 mt_model_parameters <- crossing(x1 = names(eurostat_eurobarometer_scaled)[-1], 
                                 x2 = names(eurostat_eurobarometer_scaled)[-1])%>%
@@ -162,9 +159,9 @@ collect_results <- mt_model_parameters %>%
   rownames_to_column() %>%
   nest ( var_select = c(x1, x2) ) %>%
   dplyr::select (-"rowname") %>%
-  mutate ( params  = map(var_select,  .f=get_params),   #select params and run models
-           models  = map(.x = params, .f=possibly_run_models)) %>%
-  mutate ( summaries = map (.x = models, 
+  mutate ( params  = map(var_select,  .f=get_params), 
+           models  = map(.x = params, .f=possibly_run_models), 
+           summaries = map (.x = models, 
                             .f=purrr::possibly(summary, NULL)), 
            all_significant = map(.x = summaries, 
                                  .f = purrr::possibly(is_all_significant, NULL )), 
@@ -174,16 +171,16 @@ collect_results <- mt_model_parameters %>%
            influental = map(.x = models, 
                             purrr::possibly(influence.measures, NULL)), 
            outliers = map(.x = influental, 
-                          purrr::possibly(get_outlier_obs, NULL))) %>%
-  mutate (data = map ( .x = outliers,  # create a data frame for next step
-                       .f= possibly_without_outliers )
+                          purrr::possibly(get_outlier_obs, NULL)), 
+           data = map ( .x = outliers,
+                        .f= possibly_without_outliers )
            )
 
-collect_results$params[[18]]
-collect_results$models[[18]]
+collect_results$summaries[[18]]
+collect_results$outliers[[18]]
 
 ## Results without outliers -------------------------------------------
-collect_results_2 <- collect_results %>%  #rerun without outliers
+collect_results_2 <- collect_results %>%
   mutate ( models  = map2(.x = .$data, .y =.$params, rerun_models ),
            summaries = map (.x = models, .f=summary))  %>%
   mutate ( all_significant = map(.x = summaries, .f = possibly(
@@ -245,7 +242,5 @@ coefficients  <- collect_results_2 %>%
   left_join ( coefficient_values , by = 'rowname') 
 
 
-saveRDS(coefficients, file.path('data',
-                                'all_linreg_coefficients_count_per_area.rds')
-        )
+saveRDS(coefficients, file.path('data-raw','all_linreg_coefficients_count_area.rds' ))
         

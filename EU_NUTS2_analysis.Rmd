@@ -629,7 +629,6 @@ cpc_var_select_df <- eurostat_complete_scaled %>%
                             "count_per_researcher",
                             "count_per_pop_density"))) 
 
-
 ## Tuning this model
 set.seed(2019) # for reproducability, the random number seed 2019 is used.
 cpc_best_mtry_var_select <- tuneRF(dplyr::select ( cpc_var_select_df, 
@@ -686,131 +685,9 @@ run_in_function <- function() {
 knitr::include_graphics('images_graphs/percapita_interactions_0416.png')
 ```
 
-## count per capita - with eurobarometer
+# Eurobarometer variables 
 
-```{r var_select_eurobarometer, eval=TRUE, message=FALSE, echo=FALSE}
-#count per capita
-cpc_var_select_df <- eurostat_eurobarometer_complete_scaled %>% 
-  dplyr::select ( -researchers_total, 
-                  -population_total,
-                  -count_per_million,
-                  -count_per_thousand_researchers,
-                  -one_of(c("area_land_filled", "count", 
-                            "count_per_area", 
-                            "count_per_researcher",
-                            "count_per_pop_density"))) 
-
-
-## Tuning this model
-set.seed(2019) # for reproducability, the random number seed 2019 is used.
-cpc_best_mtry_var_select <- tuneRF(dplyr::select ( cpc_var_select_df, 
-                                     -geo,
-                                     -count_per_capita),
-                   as.vector(cpc_var_select_df$count_per_capita), 
-                   mtyStart = 1, 
-                   stepFactor=1,
-                   improve=1e-5, ntree=500, 
-                   plot = FALSE, trace = FALSE) #do not plot results...
-cpc_var_select.rf <- randomForest(count_per_capita ~ . ,
-                            dplyr::select ( cpc_var_select_df, 
-                                     -geo ),
-                            mtry = as.numeric(cpc_best_mtry_var_select[1]),
-                            ntree=5000 )
-```
-
-``` {r randomforest_results_eurobarometer, echo=FALSE}
-cpc_var_select.rf$importance  %>%
-  as.data.frame() %>%
-  arrange ( -IncNodePurity)
-```
-
-Educational attainment, disposable income may be relevant for the whole population, beyond just researchers.
-
-```{r feature_importance_eurobarometer, out.width='90%', out.width='90%', eval=FALSE}
-
-#count per capita
-cpc_predictor_var_select = Predictor$new(
-  cpc_var_select.rf,
-  data = dplyr::select ( cpc_var_select_df , -geo, - count_per_capita),
-  y = as.numeric(cpc_var_select_df$count_per_capita))
-
-cpc_imp <- FeatureImp$new(cpc_predictor_var_select, loss = "mae", n.repetitions = 100)
-plot(cpc_imp)
-```
-
-
-
-## Count per researcher - with eurobarometer
-
-Here we model the per researcher download counts as dependent variables.
-
-```{r perresearcer_var_select_results_eurobarometer, eval=TRUE, echo=FALSE}
-#random forest count per researcher  
-
-cpr_var_select_df <- eurostat_eurobarometer_complete_scaled %>% 
-  dplyr::select ( -researchers_total, 
-                  -population_total,
-                  -count_per_million,
-                  -count_per_capita,
-                  -count_per_thousand_researchers,
-                  -researcher_employment_pct,
-                  -one_of(c("area_land_filled", "count", 
-                            "count_per_area", 
-                            "count_per_pop_density"))) 
-
-
-cpr_var_select.rf <- randomForest(count_per_researcher ~ . ,
-                            dplyr::select ( cpr_var_select_df, 
-                                     -geo ),
-                            mtry = as.numeric(cpc_best_mtry_var_select[1]),
-                            ntree=5000 )
-
-cpr_var_select.rf$importance  %>%
-  as.data.frame() %>%
-  #rownames_to_column(., var = "variable") %>%
-  #set_names ( ., c("variable", "IncNodePurity")) %>%
-  arrange ( -IncNodePurity)
-```
-
-
-
-```{r perresearcher_var_select_results_eurobarometer, eval=FALSE, echo=FALSE}
-#count per researcher 
-cpr_var_select.rf <- randomForest(count_per_researcher ~ . ,
-                            dplyr::select ( cpr_var_select_df, 
-                                     -geo ),
-                            mtry = as.numeric(cpc_best_mtry_var_select[1]),
-                            ntree=5000 )
-
-cpr_var_select.rf$importance  %>% as.data.frame() %>%
-  #rownames_to_column(., var = "variable") %>%
-  #set_names ( ., c("variable", "IncNodePurity")) %>%
-  arrange ( -IncNodePurity)
-
-
-cpr_predictor_var_select = Predictor$new(
-  cpr_var_select.rf,
-  data = dplyr::select ( cpr_var_select_df , -geo, 
-                         -count_per_researcher ),
-  y = as.numeric(cpr_var_select_df$count_per_researcher))
-
-cpr_imp <- FeatureImp$new(cpr_predictor_var_select,
-                      loss = "mae",
-                      n.repetitions = 10)
-
-plot(cpr_imp)
-```
-
-```{r perresearcher_interaction,out.width='90%', eval=TRUE, echo=FALSE}
-#This code takes several minutes to run if uncommented.
-#cpr_interact <- Interaction$new(cpr_predictor_var_select)
-#plot(cpr_interact) #causes knitr issues, something is wrong with the plot, maybe the size, I saved it and print int from file.
-
-```
-
-## Linear Regression with EUROBAROMETER
-
-Since the random forest indicated that the EUROBAROMETER variables might be relevant, we tried to enrich our earlier, simplest models with them.  
+## Correlations
 
 ```{r perresearcher correlations_eurobarometer, echo=FALSE}
 #first lets see how in the best model data anbd correlations look like
@@ -833,11 +710,11 @@ cpr_correlations_bestmodel <- eurostat_eurobarometer_complete_data %>%
                  edu_attainment_total,
                  gdp_pps_hab, 
                  gerd,
-                 erobarometer_79_2_is_visit_public_library,
-                 erobarometer_79_2_is_read_book,
-                 erobarometer_79_2_limited_library_supply,
-                 erobarometer_79_2_supports_open_access_science,
-                 eurobarometer_79_2_is_student
+                 eb_is_visit_public_library,
+                 eb_is_read_book,
+                 eb_limited_library_supply,
+                 eb_supports_open_access_science,
+                 eb_is_student
                  ) %>%
   as.matrix() %>%
   pairs( lower.panel = panel.smooth,
@@ -847,22 +724,25 @@ cpr_correlations_bestmodel <- eurostat_eurobarometer_complete_data %>%
 ```
 
 ```{r correlationeb, echo=FALSE }
+library(ggplot2)
 correlations_eb <- eurostat_eurobarometer_complete_data %>%
   dplyr::select( -starts_with("count_")) %>%
   dplyr::select ( -geo ) %>% 
   as.matrix() %>%
   cor() 
 
-correlations_eb [, "count"]  %>% 
-  as.data.frame() %>%
-  rownames_to_column() %>%
-  purrr::set_names ( ., c("variable", "cor")) %>%
+correlations_eb_df <- data.frame ( 
+  variable = row.names(correlations_eb), 
+  cor = as.numeric(correlations_eb [, "count"])) %>%
   dplyr::filter ( ! grepl( "count", variable )) %>% 
-  dplyr::mutate ( variable = forcats::fct_reorder(variable, -cor )) %>%
-  ggplot (., aes ( x = variable, 
-                   y = cor, 
-                   fill = cor )) +
-  geom_col(  ) +
+  dplyr::mutate ( variable = forcats::fct_reorder(variable, -cor ))
+
+
+ggplot (correlations_eb_df, 
+        aes ( x = variable, 
+              y = cor, 
+              fill = cor )) +
+  geom_col() +
   scale_fill_gradient2( high = "#007CBB", 
                         mid = 'white', 
                         low = "#DB001C", 
@@ -874,13 +754,14 @@ correlations_eb [, "count"]  %>%
   )
 ```
 
-The EUROBAROMETER internet access variable is similarly correlated to the EUROSTAT access variable. It is calculated from a different survey, and with slightly different weighting, but the effect is the same. Supporting open access to scientific results is positively correlated with the count data, and perceived low quality of public library supply is negatively correlated.
 
-## Random Forest with Eurobarometer
+Let's start first with the random forest variable selection process. 
 
-```{r varselecteb, eval=TRUE, message=FALSE, echo=FALSE}
+## Count per capita - with eurobarometer
+
+```{r var_select_eurobarometer, eval=TRUE, message=FALSE, echo=FALSE}
 #count per capita
-cpc_var_select_eb_df <- eurostat_eurobarometer_complete_data  %>% 
+cpc_var_select_eb_df <- eurostat_eurobarometer_complete_scaled %>% 
   dplyr::select ( -researchers_total, 
                   -population_total,
                   -count_per_million,
@@ -893,39 +774,122 @@ cpc_var_select_eb_df <- eurostat_eurobarometer_complete_data  %>%
 
 ## Tuning this model
 set.seed(2019) # for reproducability, the random number seed 2019 is used.
-cpc_best_mtry_var_eb_select <- tuneRF(
-           dplyr::select ( cpc_var_select_eb_df, 
-                          -geo,
-                          -count_per_capita),
+cpc_best_mtry_eb_var_select <- tuneRF(
+  dplyr::select ( cpc_var_select_eb_df, 
+                  -geo, -count_per_capita),
                    as.vector(cpc_var_select_eb_df$count_per_capita), 
                    mtyStart = 1, 
                    stepFactor=1,
                    improve=1e-5, ntree=500, 
                    plot = FALSE, trace = FALSE) #do not plot results...
-
 cpc_var_select_eb.rf <- randomForest(count_per_capita ~ . ,
-                            dplyr::select ( cpc_var_select_eb_df,
-                                            -all_of("geo")),
-                            mtry = as.numeric(
-                              cpc_best_mtry_var_eb_select[1]),
+                            dplyr::select ( cpc_var_select_eb_df, 
+                                     -geo ),
+                            mtry = as.numeric(cpc_best_mtry_eb_var_select[1]),
                             ntree=5000 )
 ```
 
-``` {r randomforestebresults, echo=FALSE}
+The Eurobarometer variables, while not as important as the 'hard' environmental variables, are more important than the general internet use variables (derived from other surveys by Eurostat.)
+
+``` {r randomforest_results_eurobarometer, echo=FALSE, results='asis'}
 cpc_var_select_eb.rf$importance  %>%
-  as.data.frame() %>%
-  rownames_to_column(., var = "variable") %>%
-  set_names ( ., c("variable", "IncNodePurity")) %>%
-  arrange ( -IncNodePurity) %>%
-knitr::kable()
+  as.data.frame() %>% # importance = IncNodePurity
+  mutate ( variable = row.names(.)) %>%
+  purrr::set_names( c("importance", "variable") ) %>%  
+  dplyr::select ( all_of(c("variable", "importance")) ) %>%
+  arrange ( -importance ) %>%
+  knitr::kable()
 ```
+
+Educational attainment, disposable income may be relevant for the whole population, beyond just researchers.
+
+```{r feature_importance_eurobarometer, out.width='90%', out.width='90%', eval=FALSE}
+
+#count per capita
+cpc_predictor_eb_var_select = Predictor$new(
+  cpc_var_select_eb.rf,
+  data = dplyr::select ( cpc_var_select_eb_df,
+                         -geo, - count_per_capita),
+  y = as.numeric(cpc_var_select_eb_df$count_per_capita))
+
+cpc_imp_eb_count_per_capita <- FeatureImp$new(
+                          cpc_predictor_eb_var_select, 
+                          loss = "mae", 
+                          n.repetitions = 100)
+plot(cpc_imp_eb_count_per_capita)
+```
+
+## Count per researcher - with eurobarometer
+
+Here we model the `count_per_researcher` download counts as dependent variables. Library visits from the environment are becoming even more important.
+
+```{r perresearcer_var_select_results_eurobarometer, eval=TRUE, echo=FALSE}
+# random forest count per researcher  
+
+cpr_var_select_eb_df <- eurostat_eurobarometer_complete_scaled %>% 
+  dplyr::select ( -researchers_total, 
+                  -population_total,
+                  -count_per_million,
+                  -count_per_capita,
+                  -count_per_thousand_researchers,
+                  -researcher_employment_pct,
+                  -one_of(c("area_land_filled", "count", 
+                            "count_per_area", 
+                            "count_per_pop_density"))) 
+
+
+cpr_var_select_eb_researcher.rf <- randomForest(
+  count_per_researcher ~ . ,
+  dplyr::select ( cpr_var_select_eb_df,  -geo ),
+  mtry = as.numeric(cpc_best_mtry_var_select[1]),
+                            ntree=5000 )
+
+importance <- cpr_var_select_eb_researcher.rf$importance 
+
+data.frame( 
+  variable = row.names(importance), 
+  importance = as.numeric(importance)
+  ) %>%
+  arrange ( -importance ) %>%
+  knitr::kable()
+```
+
+
+
+```{r perresearcher_var_select_results_eurobarometer, eval=FALSE, echo=FALSE}
+#count per researcher 
+cpr_predictor_var_select_count_per_researcher = Predictor$new(
+  cpr_var_select_eb_researcher.rf,
+  data = dplyr::select ( cpr_var_select_eb_researcher.rf , -geo, 
+                         -count_per_researcher ),
+  y = as.numeric(cpr_var_select_eb_researcher.rf$count_per_researcher))
+
+cpr_imp_count_per_researcher <- FeatureImp$new(
+  cpr_predictor_var_select,
+  loss = "mae",
+  n.repetitions = 10)
+
+plot(cpr_imp_count_per_researcher)
+```
+
+```{r perresearcher_interaction,out.width='90%', eval=TRUE, echo=FALSE}
+#This code takes several minutes to run if uncommented.
+#cpr_interact <- Interaction$new(cpr_predictor_var_select)
+#plot(cpr_interact) #causes knitr issues, something is wrong with the plot, maybe the size, I saved it and print int from file.
+
+```
+
+## Linear Regression with EUROBAROMETER
+
+Since the random forest indicated that the EUROBAROMETER variables might be relevant, we tried to enrich our earlier, simplest models with them.  
+
+The EUROBAROMETER internet access variable is similarly correlated to the EUROSTAT access variable. It is calculated from a different survey, and with slightly different weighting, but the effect is the same. Supporting open access to scientific results is positively correlated with the count data, and perceived low quality of public library supply is negatively correlated.
 
 ```{r eurobarometer qpoission}
 percapita_qplm3_1 <- glm (count_per_million ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                          internet_use_banking_pc+
-                        erobarometer_79_2_is_visit_public_library,
+                           eb_is_visit_public_library,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
@@ -933,16 +897,14 @@ percapita_qplm3_1 <- glm (count_per_million ~
 percapita_qplm3_2 <- glm (count_per_million ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                          internet_use_banking_pc+
-                                         erobarometer_79_2_is_read_book,
+                          eb_is_read_book,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
 percapita_qplm3_3 <- glm (count_per_million ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                          internet_use_banking_pc+
-                                         eurobarometer_79_2_is_student,
+                          eb_is_student,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
@@ -950,20 +912,23 @@ percapita_qplm3_4 <- glm (count_per_million ~
                           log(gdp_pps) +
                           researcher_employment_pct +
                           internet_use_banking_pc+
-                          erobarometer_79_2_limited_library_supply,
+                          eb_limited_library_supply,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
 percapita_qplm3_5 <- glm (count_per_million ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                          internet_use_banking_pc+
-                                         erobarometer_79_2_supports_open_access_science,
+                          eb_supports_open_access_science,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
 
-export_summs(percapita_qplm3_1, percapita_qplm3_2, percapita_qplm3_3, percapita_qplm3_4,percapita_qplm3_5,
+export_summs(percapita_qplm3_1, 
+             percapita_qplm3_2, 
+             percapita_qplm3_3, 
+             percapita_qplm3_4,
+             percapita_qplm3_5,
              digits=3, 
              statistics = c("null.deviance", "deviance")
              )
@@ -971,8 +936,7 @@ export_summs(percapita_qplm3_1, percapita_qplm3_2, percapita_qplm3_3, percapita_
 perresearcher_qplm3_1 <- glm (count_per_thousand_researchers ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                          internet_use_banking_pc+
-                        erobarometer_79_2_is_visit_public_library,
+                        eb_is_visit_public_library,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
@@ -981,14 +945,14 @@ summary(perresearcher_qplm3_1)
 rawcount_qplm3_1 <- glm (count ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                        erobarometer_79_2_is_visit_public_library,
+                        eb_is_visit_public_library,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 
 rawcount_qplm3_2 <- glm (count ~ 
                           log(gdp_pps) +
                           researcher_employment_pct +
-                        erobarometer_79_2_limited_library_supply,
+                        eb_limited_library_supply,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 summary(rawcount_qplm3_2)

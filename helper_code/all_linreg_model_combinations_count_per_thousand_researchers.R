@@ -17,14 +17,15 @@ get_outlier_obs <- function(m) {
 }
 
 ## Remove outliers
-df_no_outliers <- function (outliers , df = nuts2_dataset_scaled ) {
+df_no_outliers <- function (outliers, 
+                            df = nuts2_dataset_scaled ) {
   
   df <- df %>%
     rownames_to_column() %>%
     left_join ( tibble::enframe( outliers ) %>%
                   rename ( rowname = name, 
                            outlier = value ), by ='rowname') %>%
-    filter ( ! outlier) %>%
+    dplyr::filter ( ! outlier) %>%
     dplyr::select (-outlier)
 }
 
@@ -80,23 +81,24 @@ fit_model <- function (...) {
   
 }
 
-y = collect_results_2$params[[18]]
-
+params <- collect_results$params[[18]]
 ## Run the models
-run_models <- function(y, 
-                       target_variable = 'count_per_area', 
+run_models <- function(params, 
+                       target_variable = 'count_per_thousand_researchers', 
                        model_df = nuts2_dataset_scaled) {
-  x1 = unlist(y)[1] 
-  x2 = unlist(y)[2]
+  x1 = unlist(params)[1] 
+  x2 = unlist(params)[2]
+  
+  vars_to_select <- as.character(
+    c("geo", target_variable, x1,x2)
+  )
   
   model_data <- model_df  %>% 
-    select ( all_of(c("geo",
-                      as.character(c(target_variable, x1,x2)))
-                    )) %>%
-    pivot_longer ( cols = -one_of('geo')) %>%
-    filter ( complete.cases(.)) %>%
-    pivot_wider ( names_from = 'name', values_from = 'value') %>%
-    filter ( complete.cases(.))
+    dplyr::select ( tidyselect::all_of(vars_to_select) ) %>%
+    tidyr::pivot_longer ( cols = -one_of('geo')) %>%
+    dplyr::filter ( complete.cases(.)) %>%
+    tidyr::pivot_wider ( names_from = 'name', values_from = 'value') %>%
+    dplyr::filter ( complete.cases(.))
   
   if ( !is.na(x2) ) {
     my_formula <- as.formula ( paste0( target_variable, ' ~ ', x1, "+", x2))
@@ -108,28 +110,28 @@ run_models <- function(y,
 }
 
 possibly_run_models <- function(y) {
-  purrr::possibly(run_models, otherwise=NULL)(y)
+  purrr::possibly(run_models, otherwise=NULL)(params = y)
 
 }
 
 rerun_models <- function(x, y, 
-                         target_variable = 'count_per_area') {
+                         target_variable = 'count_per_thousand_researchers') {
   x1 = unlist(y)[1] 
   x2 = unlist(y)[2]
   
   model_data <- x  %>% 
-    select ( all_of(c("geo",
+    dplyr::select ( all_of(c("geo",
                       as.character(c(target_variable, x1,x2)))
     )) %>%
-    pivot_longer ( cols = -one_of('geo')) %>%
-    filter ( complete.cases(.)) %>%
-    pivot_wider ( names_from = 'name', values_from = 'value') %>%
-    filter ( complete.cases(.))
+    tidyr::pivot_longer ( cols = -one_of('geo')) %>%
+    dplyr::filter ( complete.cases(.)) %>%
+    tidyr::pivot_wider ( names_from = 'name', values_from = 'value') %>%
+    dplyr::filter ( complete.cases(.))
   
   if ( !is.na(x2) ) {
-    my_formula <- as.formula ( paste0( 'count_per_area ~', x1, "+", x2))
+    my_formula <- as.formula ( paste0( 'count_per_thousand_researchers ~', x1, "+", x2))
   } else {
-    my_formula <- as.formula ( paste0( 'count_per_area ~', x1))
+    my_formula <- as.formula ( paste0( 'count_per_thousand_researchers ~', x1))
   }
   possibly(lm, NULL)(my_formula, data = model_data)
   
@@ -139,10 +141,11 @@ rerun_models <- function(x, y,
 
 nuts2_dataset_scaled <- eurostat_eurobarometer_scaled %>%
   dplyr::select ( -all_of(c("count_per_million", 
-                            "count_per_researcher", 
                             "count_per_capita", 
-                            "count_per_thousand_researchers", 
-                            "count_per_pop_density")) )
+                            "count_per_area", 
+                            "count_per_pop_density", 
+                            "count_per_researcher",
+                            "count")) )
 
 mt_model_parameters <- crossing(x1 = names(eurostat_eurobarometer_scaled)[-1], 
                                 x2 = names(eurostat_eurobarometer_scaled)[-1])%>%
@@ -159,9 +162,9 @@ collect_results <- mt_model_parameters %>%
   rownames_to_column() %>%
   nest ( var_select = c(x1, x2) ) %>%
   dplyr::select (-"rowname") %>%
-  mutate ( params  = map(var_select,  .f=get_params), 
-           models  = map(.x = params, .f=possibly_run_models), 
-           summaries = map (.x = models, 
+  mutate ( params  = map(var_select,  .f=get_params),   #select params and run models
+           models  = map(.x = params, .f=possibly_run_models)) %>%
+  mutate ( summaries = map (.x = models, 
                             .f=purrr::possibly(summary, NULL)), 
            all_significant = map(.x = summaries, 
                                  .f = purrr::possibly(is_all_significant, NULL )), 
@@ -171,16 +174,16 @@ collect_results <- mt_model_parameters %>%
            influental = map(.x = models, 
                             purrr::possibly(influence.measures, NULL)), 
            outliers = map(.x = influental, 
-                          purrr::possibly(get_outlier_obs, NULL)), 
-           data = map ( .x = outliers,
-                        .f= possibly_without_outliers )
+                          purrr::possibly(get_outlier_obs, NULL))) %>%
+  mutate (data = map ( .x = outliers,  # create a data frame for next step
+                       .f= possibly_without_outliers )
            )
 
-collect_results$summaries[[18]]
-collect_results$outliers[[18]]
+collect_results$params[[18]]
+collect_results$models[[18]]
 
 ## Results without outliers -------------------------------------------
-collect_results_2 <- collect_results %>%
+collect_results_2 <- collect_results %>%  #rerun without outliers
   mutate ( models  = map2(.x = .$data, .y =.$params, rerun_models ),
            summaries = map (.x = models, .f=summary))  %>%
   mutate ( all_significant = map(.x = summaries, .f = possibly(
@@ -242,5 +245,7 @@ coefficients  <- collect_results_2 %>%
   left_join ( coefficient_values , by = 'rowname') 
 
 
-saveRDS(coefficients, file.path('data-raw','all_linreg_coefficients.rds' ))
+saveRDS(coefficients, file.path('data',
+                                'all_linreg_coefficients_count_per_thousand_researchers.rds')
+        )
         

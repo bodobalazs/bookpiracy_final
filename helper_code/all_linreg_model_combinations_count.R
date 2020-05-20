@@ -247,6 +247,6 @@ coefficients_count  <- collect_results_2 %>%
   left_join ( coefficient_values_count, by = 'rowname') 
 
 
-saveRDS(coefficients_count, file.path('data-raw',
+saveRDS(coefficients_count, file.path('data',
                                 'all_linreg_coefficients_count.rds' ))
         

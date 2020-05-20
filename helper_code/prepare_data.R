@@ -23,7 +23,9 @@ eurobarometer <- read.csv (
 ## 2013 and most the questions relate to the previous 12 months.
 
 eb_vars <- eurobarometer %>%
-  dplyr::select ( geo, indicator, values, method )
+  dplyr::select ( geo, indicator, values, method ) %>%
+  dplyr::mutate ( indicator = gsub("erobaro", "eurobaro", indicator)) %>%
+  dplyr::mutate ( indicator = gsub("eurobarometer_79_2", "eb", indicator))
 
 # merge the data ---------------------------------------------------
 # add number of researchers per region 
@@ -96,8 +98,9 @@ eurostat_complete_data <- eurostat_data %>%
   drop_na()
 
 eurostat_eurobarometer_data <- nuts2_dataset %>%
-  bind_rows ( eb_vars  ) %>%
-  dplyr::select (-method) %>%
+  dplyr::select ( -all_of("method") ) %>%
+  bind_rows ( eb_vars %>%
+                dplyr::select  (-all_of("method") )) %>%
   tidyr::spread ( indicator, values ) %>%
   dplyr::mutate ( count_per_million = round(1000000*count / population_total),
                   count_per_capita = count / population_total, 
@@ -111,6 +114,8 @@ eurostat_eurobarometer_data <- nuts2_dataset %>%
 
 eurostat_eurobarometer_complete_data <- eurostat_eurobarometer_data %>%
   drop_na()
+
+names ( eurostat_eurobarometer_complete_data )
 
 #create datasets with scaled varibles
 eurostat_scaled <- dplyr::mutate_at(.tbl = eurostat_data, 
@@ -126,7 +131,7 @@ eurostat_complete_scaled <- eurostat_complete_data %>%
   dplyr::mutate_at( dplyr::vars(-starts_with("count"), 
                                 -all_of(c("geo"))), scale )
 
-eurostat_eurobarometer_complete_scaled <- eurostat_complete_data %>%
+eurostat_eurobarometer_complete_scaled <- eurostat_eurobarometer_complete_data %>%
   dplyr::mutate_at( dplyr::vars(-starts_with("count"), 
                                 -all_of(c("geo"))), scale )
 

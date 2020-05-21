@@ -898,7 +898,13 @@ percapita_qplm3_1 <- glm (count_per_million ~
                            eb_is_visit_public_library,
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
-
+percapita_qplm3_1b <- glm (count_per_million ~ 
+                          log(gdp_pps) +
+                          researcher_employment_pct +
+                           eb_is_visit_public_library+
+                            internet_use_banking_pc,
+                        data = eurostat_eurobarometer_complete_data,
+                        family = quasipoisson)
 
 percapita_qplm3_2 <- glm (count_per_million ~ 
                           log(gdp_pps) +
@@ -938,6 +944,7 @@ percapita_qplm3_1b <- glm (count_per_million ~
 
 
 export_summs(percapita_qplm3_1, 
+             percapita_qplm3_1b,
              percapita_qplm3_2, 
              percapita_qplm3_3, 
              percapita_qplm3_4,
@@ -947,7 +954,7 @@ export_summs(percapita_qplm3_1,
              statistics = c("null.deviance", "deviance")
              )
 ```
-In the per capita download models only the library visit variable is found to be significant, with a negative sign, suggesting that library users download less. This effect, however is onl present without the online proficiency variable. If we add that to the model, both lose significance, hinting at the possibility that the two variables describe a similar, latent phonemon.  
+In the per capita download models only the library visit variable is found to be significant, with a negative sign, suggesting that library users download less. This effect, however is only present without the online proficiency variable. If we add that to the model, both lose significance, hinting at the possibility that the two variables describe a similar, latent phonemon.  
 
 ## per researcher and raw count models
 ```{r eurobarometer count regressions}
@@ -1003,6 +1010,8 @@ export_summs(perresearcher_qplm3_1,
              digits=3, 
              statistics = c("null.deviance", "deviance")
              )
+
+
 ```
 
 With the per researcher model we found interesting results which point to the infrastructural effect of shadow library usage: lower  per reserahcer download counts are associated with higher library use, and betterlibrary supply. These findings, however should be treated with caution. The effect of GDP is not significant, and if we add the variables revevant in other models, this effect disappears. 
@@ -1026,6 +1035,18 @@ rawcount_qplm3_2 <- glm (count ~
                         data = eurostat_eurobarometer_complete_data,
                         family = quasipoisson)
 summary(rawcount_qplm3_2)
+```
+## COarison of the UROBAROMETE models
+
+```{r eurobaromoeter model comparison}
+export_summs(percapita_qplm3_1, 
+             perresearcher_qplm3_3, 
+             perresearcher_qplm3_4,
+             digits=3, 
+             statistics = c("null.deviance", "deviance"),
+             model.names = c("Model 1:DV:count per capita","Model 2a (DV:count per researcher)","Model 2b (DV:count per researcher)")
+             )
+
 ```
 
 

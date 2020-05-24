@@ -4,7 +4,7 @@ This repo will ultimately be turned into a public one to be sent out for reviewe
 
 The manuscript of the paper can be found in the `/paper` folder.
 
-## Raw_data  [should be renamed to data-raw to follow R conventions]
+## data-raw
 
 The `data-raw` folder contains all raw data and pre-processed data for analyis.
 - `bookpiracy_2020-04-15.rda`: contains all the variables obtained and processed from Eurostat

@@ -347,7 +347,9 @@ export_summs(percapita_qplm3, percapita_qplm4, percapita_qplm5, percapita_qplm6,
              statistics = c("null.deviance", "deviance")
              )
 
-#summary (percapita_qplm4)  
+summary (percapita_qplm3)  
+library(rsq)
+rsq(percapita_qplm3)
 ```
 
 We first developed a number of models with download per million as the dependent variable. We found that adding the sci-tech employment variable causes serious multicollinearity issues, so we decided to drop it. We also switched  gdp_pps_hab to the logarithmic form of GDP_pps because it also created multicollinearity issues. We report here only the results of four quasipoission models. 

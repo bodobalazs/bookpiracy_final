@@ -34,7 +34,7 @@ example <- data.frame (
     stringsAsFactors = FALSE
   )
 
-summary_dir <- file.path('summary_plots')
+summary_dir <- file.path('images_graphs/')
 
 ```
 

@@ -1,0 +1,250 @@
+iso3c,date,internet,indicatorID,indicator,iso2c,country
+ARB,2015,16604450,IT.NET.BBND,Fixed broadband subscriptions,1A,Arab World
+CSS,2015,897134,IT.NET.BBND,Fixed broadband subscriptions,S3,Caribbean small states
+CEB,2015,23352642,IT.NET.BBND,Fixed broadband subscriptions,B8,Central Europe and the Baltics
+EAR,2015,99527761,IT.NET.BBND,Fixed broadband subscriptions,V2,Early-demographic dividend
+EAS,2015,379909355,IT.NET.BBND,Fixed broadband subscriptions,Z4,East Asia & Pacific
+EAP,2015,302930227,IT.NET.BBND,Fixed broadband subscriptions,4E,East Asia & Pacific (excluding high income)
+TEA,2015,302931451,IT.NET.BBND,Fixed broadband subscriptions,T4,East Asia & Pacific (IDA & IBRD countries)
+EMU,2015,113421671,IT.NET.BBND,Fixed broadband subscriptions,XC,Euro area
+ECS,2015,224281190,IT.NET.BBND,Fixed broadband subscriptions,Z7,Europe & Central Asia
+ECA,2015,61496494,IT.NET.BBND,Fixed broadband subscriptions,7E,Europe & Central Asia (excluding high income)
+TEC,2015,68762040,IT.NET.BBND,Fixed broadband subscriptions,T7,Europe & Central Asia (IDA & IBRD countries)
+EUU,2015,163803213,IT.NET.BBND,Fixed broadband subscriptions,EU,European Union
+FCS,2015,3354038,IT.NET.BBND,Fixed broadband subscriptions,F1,Fragile and conflict affected situations
+HPC,2015,1964451,IT.NET.BBND,Fixed broadband subscriptions,XE,Heavily indebted poor countries (HIPC)
+HIC,2015,367812799,IT.NET.BBND,Fixed broadband subscriptions,XD,High income
+IBD,2015,472128511,IT.NET.BBND,Fixed broadband subscriptions,XF,IBRD only
+IBT,2015,485445690,IT.NET.BBND,Fixed broadband subscriptions,ZT,IDA & IBRD total
+IDB,2015,4765909,IT.NET.BBND,Fixed broadband subscriptions,XH,IDA blend
+IDX,2015,8551270,IT.NET.BBND,Fixed broadband subscriptions,XI,IDA only
+IDA,2015,13317179,IT.NET.BBND,Fixed broadband subscriptions,XG,IDA total
+LTE,2015,386399408,IT.NET.BBND,Fixed broadband subscriptions,V3,Late-demographic dividend
+LCN,2015,67162370,IT.NET.BBND,Fixed broadband subscriptions,ZJ,Latin America & Caribbean
+LAC,2015,62313492,IT.NET.BBND,Fixed broadband subscriptions,XJ,Latin America & Caribbean (excluding high income)
+TLA,2015,66230605,IT.NET.BBND,Fixed broadband subscriptions,T2,Latin America & the Caribbean (IDA & IBRD countries)
+LDC,2015,7176880,IT.NET.BBND,Fixed broadband subscriptions,XL,Least developed countries: UN classification
+LMY,2015,474522887,IT.NET.BBND,Fixed broadband subscriptions,XO,Low & middle income
+LIC,2015,1622104,IT.NET.BBND,Fixed broadband subscriptions,XM,Low income
+LMC,2015,58834826,IT.NET.BBND,Fixed broadband subscriptions,XN,Lower middle income
+MEA,2015,27453195,IT.NET.BBND,Fixed broadband subscriptions,ZQ,Middle East & North Africa
+MNA,2015,19538518,IT.NET.BBND,Fixed broadband subscriptions,XQ,Middle East & North Africa (excluding high income)
+TMN,2015,19264018,IT.NET.BBND,Fixed broadband subscriptions,T3,Middle East & North Africa (IDA & IBRD countries)
+MIC,2015,472900783,IT.NET.BBND,Fixed broadband subscriptions,XP,Middle income
+NAC,2015,115272000,IT.NET.BBND,Fixed broadband subscriptions,XU,North America
+OED,2015,373143621,IT.NET.BBND,Fixed broadband subscriptions,OE,OECD members
+OSS,2015,2023449,IT.NET.BBND,Fixed broadband subscriptions,S4,Other small states
+PSS,2015,29611,IT.NET.BBND,Fixed broadband subscriptions,S2,Pacific island small states
+PST,2015,349342963,IT.NET.BBND,Fixed broadband subscriptions,V4,Post-demographic dividend
+PRE,2015,1149354,IT.NET.BBND,Fixed broadband subscriptions,V1,Pre-demographic dividend
+SST,2015,2950194,IT.NET.BBND,Fixed broadband subscriptions,S1,Small states
+SAS,2015,24615627,IT.NET.BBND,Fixed broadband subscriptions,8S,South Asia
+TSA,2015,24615627,IT.NET.BBND,Fixed broadband subscriptions,T5,South Asia (IDA & IBRD)
+SSF,2015,3641949,IT.NET.BBND,Fixed broadband subscriptions,ZG,Sub-Saharan Africa
+SSA,2015,3628529,IT.NET.BBND,Fixed broadband subscriptions,ZF,Sub-Saharan Africa (excluding high income)
+TSS,2015,3641949,IT.NET.BBND,Fixed broadband subscriptions,T6,Sub-Saharan Africa (IDA & IBRD countries)
+UMC,2015,414065957,IT.NET.BBND,Fixed broadband subscriptions,XT,Upper middle income
+WLD,2015,842335686,IT.NET.BBND,Fixed broadband subscriptions,1W,World
+AFG,2015,7067,IT.NET.BBND,Fixed broadband subscriptions,AF,Afghanistan
+ALB,2015,242870,IT.NET.BBND,Fixed broadband subscriptions,AL,Albania
+DZA,2015,2269348,IT.NET.BBND,Fixed broadband subscriptions,DZ,Algeria
+AND,2015,30694,IT.NET.BBND,Fixed broadband subscriptions,AD,Andorra
+AGO,2015,153571,IT.NET.BBND,Fixed broadband subscriptions,AO,Angola
+ATG,2015,10000,IT.NET.BBND,Fixed broadband subscriptions,AG,Antigua and Barbuda
+ARG,2015,6855837,IT.NET.BBND,Fixed broadband subscriptions,AR,Argentina
+ARM,2015,286319,IT.NET.BBND,Fixed broadband subscriptions,AM,Armenia
+ABW,2015,19000,IT.NET.BBND,Fixed broadband subscriptions,AW,Aruba
+AUS,2015,6828000,IT.NET.BBND,Fixed broadband subscriptions,AU,Australia
+AUT,2015,2455500,IT.NET.BBND,Fixed broadband subscriptions,AT,Austria
+AZE,2015,1899456,IT.NET.BBND,Fixed broadband subscriptions,AZ,Azerbaijan
+BHS,2015,81018,IT.NET.BBND,Fixed broadband subscriptions,BS,"Bahamas, The"
+BHR,2015,253041,IT.NET.BBND,Fixed broadband subscriptions,BH,Bahrain
+BGD,2015,4892940,IT.NET.BBND,Fixed broadband subscriptions,BD,Bangladesh
+BRB,2015,78269,IT.NET.BBND,Fixed broadband subscriptions,BB,Barbados
+BLR,2015,2903497,IT.NET.BBND,Fixed broadband subscriptions,BY,Belarus
+BEL,2015,4121049,IT.NET.BBND,Fixed broadband subscriptions,BE,Belgium
+BLZ,2015,17379,IT.NET.BBND,Fixed broadband subscriptions,BZ,Belize
+BEN,2015,73263,IT.NET.BBND,Fixed broadband subscriptions,BJ,Benin
+BMU,2015,30000,IT.NET.BBND,Fixed broadband subscriptions,BM,Bermuda
+BTN,2015,27874,IT.NET.BBND,Fixed broadband subscriptions,BT,Bhutan
+BOL,2015,180951,IT.NET.BBND,Fixed broadband subscriptions,BO,Bolivia
+BIH,2015,634987,IT.NET.BBND,Fixed broadband subscriptions,BA,Bosnia and Herzegovina
+BWA,2015,36845,IT.NET.BBND,Fixed broadband subscriptions,BW,Botswana
+BRA,2015,25482478,IT.NET.BBND,Fixed broadband subscriptions,BR,Brazil
+VGB,2015,6660,IT.NET.BBND,Fixed broadband subscriptions,VG,British Virgin Islands
+BRN,2015,34425,IT.NET.BBND,Fixed broadband subscriptions,BN,Brunei Darussalam
+BGR,2015,1614541,IT.NET.BBND,Fixed broadband subscriptions,BG,Bulgaria
+BFA,2015,7210,IT.NET.BBND,Fixed broadband subscriptions,BF,Burkina Faso
+BDI,2015,3639,IT.NET.BBND,Fixed broadband subscriptions,BI,Burundi
+CPV,2015,16568,IT.NET.BBND,Fixed broadband subscriptions,CV,Cabo Verde
+KHM,2015,83504,IT.NET.BBND,Fixed broadband subscriptions,KH,Cambodia
+CMR,2015,16000,IT.NET.BBND,Fixed broadband subscriptions,CM,Cameroon
+CAN,2015,13030000,IT.NET.BBND,Fixed broadband subscriptions,CA,Canada
+CYM,2015,27383,IT.NET.BBND,Fixed broadband subscriptions,KY,Cayman Islands
+CAF,2015,900,IT.NET.BBND,Fixed broadband subscriptions,CF,Central African Republic
+TCD,2015,11337,IT.NET.BBND,Fixed broadband subscriptions,TD,Chad
+CHL,2015,2719439,IT.NET.BBND,Fixed broadband subscriptions,CL,Chile
+CHN,2015,277046000,IT.NET.BBND,Fixed broadband subscriptions,CN,China
+COL,2015,5525763,IT.NET.BBND,Fixed broadband subscriptions,CO,Colombia
+COM,2015,2000,IT.NET.BBND,Fixed broadband subscriptions,KM,Comoros
+COD,2015,1000,IT.NET.BBND,Fixed broadband subscriptions,CD,"Congo, Dem. Rep."
+CRI,2015,558656,IT.NET.BBND,Fixed broadband subscriptions,CR,Costa Rica
+CIV,2015,109707,IT.NET.BBND,Fixed broadband subscriptions,CI,Cote d'Ivoire
+HRV,2015,986215,IT.NET.BBND,Fixed broadband subscriptions,HR,Croatia
+CUB,2015,8157,IT.NET.BBND,Fixed broadband subscriptions,CU,Cuba
+CUW,2015,40000,IT.NET.BBND,Fixed broadband subscriptions,CW,Curacao
+CYP,2015,260640,IT.NET.BBND,Fixed broadband subscriptions,CY,Cyprus
+CZE,2015,2946626,IT.NET.BBND,Fixed broadband subscriptions,CZ,Czech Republic
+DNK,2015,2404962,IT.NET.BBND,Fixed broadband subscriptions,DK,Denmark
+DJI,2015,24165,IT.NET.BBND,Fixed broadband subscriptions,DJ,Djibouti
+DMA,2015,15159,IT.NET.BBND,Fixed broadband subscriptions,DM,Dominica
+DOM,2015,686107,IT.NET.BBND,Fixed broadband subscriptions,DO,Dominican Republic
+ECU,2015,1580460,IT.NET.BBND,Fixed broadband subscriptions,EC,Ecuador
+EGY,2015,3826410,IT.NET.BBND,Fixed broadband subscriptions,EG,"Egypt, Arab Rep."
+SLV,2015,353001,IT.NET.BBND,Fixed broadband subscriptions,SV,El Salvador
+GNQ,2015,3799,IT.NET.BBND,Fixed broadband subscriptions,GQ,Equatorial Guinea
+ERI,2015,500,IT.NET.BBND,Fixed broadband subscriptions,ER,Eritrea
+EST,2015,384129,IT.NET.BBND,Fixed broadband subscriptions,EE,Estonia
+ETH,2015,478000,IT.NET.BBND,Fixed broadband subscriptions,ET,Ethiopia
+FRO,2015,17792,IT.NET.BBND,Fixed broadband subscriptions,FO,Faroe Islands
+FJI,2015,12734,IT.NET.BBND,Fixed broadband subscriptions,FJ,Fiji
+FIN,2015,1729897,IT.NET.BBND,Fixed broadband subscriptions,FI,Finland
+FRA,2015,26867000,IT.NET.BBND,Fixed broadband subscriptions,FR,France
+PYF,2015,51908,IT.NET.BBND,Fixed broadband subscriptions,PF,French Polynesia
+GAB,2015,11082,IT.NET.BBND,Fixed broadband subscriptions,GA,Gabon
+GMB,2015,3573,IT.NET.BBND,Fixed broadband subscriptions,GM,"Gambia, The"
+GEO,2015,662862,IT.NET.BBND,Fixed broadband subscriptions,GE,Georgia
+DEU,2015,30707429,IT.NET.BBND,Fixed broadband subscriptions,DE,Germany
+GHA,2015,73132,IT.NET.BBND,Fixed broadband subscriptions,GH,Ghana
+GIB,2015,15577,IT.NET.BBND,Fixed broadband subscriptions,GI,Gibraltar
+GRC,2015,3439034,IT.NET.BBND,Fixed broadband subscriptions,GR,Greece
+GRL,2015,10000,IT.NET.BBND,Fixed broadband subscriptions,GL,Greenland
+GRD,2015,19757,IT.NET.BBND,Fixed broadband subscriptions,GD,Grenada
+GTM,2015,459847,IT.NET.BBND,Fixed broadband subscriptions,GT,Guatemala
+GIN,2015,1000,IT.NET.BBND,Fixed broadband subscriptions,GN,Guinea
+GNB,2015,1051,IT.NET.BBND,Fixed broadband subscriptions,GW,Guinea-Bissau
+GUY,2015,53687,IT.NET.BBND,Fixed broadband subscriptions,GY,Guyana
+HTI,2015,1348,IT.NET.BBND,Fixed broadband subscriptions,HT,Haiti
+HND,2015,197379,IT.NET.BBND,Fixed broadband subscriptions,HN,Honduras
+HKG,2015,2347833,IT.NET.BBND,Fixed broadband subscriptions,HK,"Hong Kong SAR, China"
+HUN,2015,2718794,IT.NET.BBND,Fixed broadband subscriptions,HU,Hungary
+ISL,2015,124436,IT.NET.BBND,Fixed broadband subscriptions,IS,Iceland
+IND,2015,16942750,IT.NET.BBND,Fixed broadband subscriptions,IN,India
+IDN,2015,3983000,IT.NET.BBND,Fixed broadband subscriptions,ID,Indonesia
+IRN,2015,8633861,IT.NET.BBND,Fixed broadband subscriptions,IR,"Iran, Islamic Rep."
+IRL,2015,1309467,IT.NET.BBND,Fixed broadband subscriptions,IE,Ireland
+ISR,2015,2173000,IT.NET.BBND,Fixed broadband subscriptions,IL,Israel
+ITA,2015,14900171,IT.NET.BBND,Fixed broadband subscriptions,IT,Italy
+JAM,2015,228890,IT.NET.BBND,Fixed broadband subscriptions,JM,Jamaica
+JPN,2015,38872579,IT.NET.BBND,Fixed broadband subscriptions,JP,Japan
+JOR,2015,320205,IT.NET.BBND,Fixed broadband subscriptions,JO,Jordan
+KAZ,2015,2301000,IT.NET.BBND,Fixed broadband subscriptions,KZ,Kazakhstan
+KEN,2015,135107,IT.NET.BBND,Fixed broadband subscriptions,KE,Kenya
+KIR,2015,117,IT.NET.BBND,Fixed broadband subscriptions,KI,Kiribati
+KOR,2015,20024419,IT.NET.BBND,Fixed broadband subscriptions,KR,"Korea, Rep."
+KWT,2015,55000,IT.NET.BBND,Fixed broadband subscriptions,KW,Kuwait
+KGZ,2015,211521,IT.NET.BBND,Fixed broadband subscriptions,KG,Kyrgyz Republic
+LAO,2015,36839,IT.NET.BBND,Fixed broadband subscriptions,LA,Lao PDR
+LVA,2015,503503,IT.NET.BBND,Fixed broadband subscriptions,LV,Latvia
+LBN,2015,1283258,IT.NET.BBND,Fixed broadband subscriptions,LB,Lebanon
+LSO,2015,2062,IT.NET.BBND,Fixed broadband subscriptions,LS,Lesotho
+LBR,2015,7000,IT.NET.BBND,Fixed broadband subscriptions,LR,Liberia
+LBY,2015,61000,IT.NET.BBND,Fixed broadband subscriptions,LY,Libya
+LIE,2015,15696,IT.NET.BBND,Fixed broadband subscriptions,LI,Liechtenstein
+LTU,2015,833298,IT.NET.BBND,Fixed broadband subscriptions,LT,Lithuania
+LUX,2015,195300,IT.NET.BBND,Fixed broadband subscriptions,LU,Luxembourg
+MAC,2015,169939,IT.NET.BBND,Fixed broadband subscriptions,MO,"Macao SAR, China"
+MKD,2015,362421,IT.NET.BBND,Fixed broadband subscriptions,MK,"Macedonia, FYR"
+MDG,2015,23694,IT.NET.BBND,Fixed broadband subscriptions,MG,Madagascar
+MWI,2015,5855,IT.NET.BBND,Fixed broadband subscriptions,MW,Malawi
+MYS,2015,2738700,IT.NET.BBND,Fixed broadband subscriptions,MY,Malaysia
+MDV,2015,23175,IT.NET.BBND,Fixed broadband subscriptions,MV,Maldives
+MLI,2015,3499,IT.NET.BBND,Fixed broadband subscriptions,ML,Mali
+MLT,2015,163205,IT.NET.BBND,Fixed broadband subscriptions,MT,Malta
+MHL,2015,1000,IT.NET.BBND,Fixed broadband subscriptions,MH,Marshall Islands
+MRT,2015,9638,IT.NET.BBND,Fixed broadband subscriptions,MR,Mauritania
+MUS,2015,197400,IT.NET.BBND,Fixed broadband subscriptions,MU,Mauritius
+MEX,2015,14757686,IT.NET.BBND,Fixed broadband subscriptions,MX,Mexico
+FSM,2015,3277,IT.NET.BBND,Fixed broadband subscriptions,FM,"Micronesia, Fed. Sts."
+MDA,2015,534393,IT.NET.BBND,Fixed broadband subscriptions,MD,Moldova
+MCO,2015,18354,IT.NET.BBND,Fixed broadband subscriptions,MC,Monaco
+MNG,2015,208047,IT.NET.BBND,Fixed broadband subscriptions,MN,Mongolia
+MNE,2015,112394,IT.NET.BBND,Fixed broadband subscriptions,ME,Montenegro
+MAR,2015,1147533,IT.NET.BBND,Fixed broadband subscriptions,MA,Morocco
+MOZ,2015,42570,IT.NET.BBND,Fixed broadband subscriptions,MZ,Mozambique
+MMR,2015,32921,IT.NET.BBND,Fixed broadband subscriptions,MM,Myanmar
+NAM,2015,70408,IT.NET.BBND,Fixed broadband subscriptions,NA,Namibia
+NPL,2015,302705,IT.NET.BBND,Fixed broadband subscriptions,NP,Nepal
+NLD,2015,7029097,IT.NET.BBND,Fixed broadband subscriptions,NL,Netherlands
+NCL,2015,55371,IT.NET.BBND,Fixed broadband subscriptions,NC,New Caledonia
+NZL,2015,1450900,IT.NET.BBND,Fixed broadband subscriptions,NZ,New Zealand
+NIC,2015,116308,IT.NET.BBND,Fixed broadband subscriptions,NI,Nicaragua
+NER,2015,27188,IT.NET.BBND,Fixed broadband subscriptions,NE,Niger
+NGA,2015,14492,IT.NET.BBND,Fixed broadband subscriptions,NG,Nigeria
+NOR,2015,2047146,IT.NET.BBND,Fixed broadband subscriptions,NO,Norway
+OMN,2015,233234,IT.NET.BBND,Fixed broadband subscriptions,OM,Oman
+PAK,2015,1793199,IT.NET.BBND,Fixed broadband subscriptions,PK,Pakistan
+PLW,2015,1224,IT.NET.BBND,Fixed broadband subscriptions,PW,Palau
+PAN,2015,316168,IT.NET.BBND,Fixed broadband subscriptions,PA,Panama
+PNG,2015,15000,IT.NET.BBND,Fixed broadband subscriptions,PG,Papua New Guinea
+PRY,2015,220858,IT.NET.BBND,Fixed broadband subscriptions,PY,Paraguay
+PER,2015,1999459,IT.NET.BBND,Fixed broadband subscriptions,PE,Peru
+PHL,2015,4870182,IT.NET.BBND,Fixed broadband subscriptions,PH,Philippines
+POL,2015,7265546,IT.NET.BBND,Fixed broadband subscriptions,PL,Poland
+PRT,2015,3142188,IT.NET.BBND,Fixed broadband subscriptions,PT,Portugal
+PRI,2015,662278,IT.NET.BBND,Fixed broadband subscriptions,PR,Puerto Rico
+QAT,2015,237774,IT.NET.BBND,Fixed broadband subscriptions,QA,Qatar
+ROU,2015,4262132,IT.NET.BBND,Fixed broadband subscriptions,RO,Romania
+RUS,2015,26881463,IT.NET.BBND,Fixed broadband subscriptions,RU,Russian Federation
+RWA,2015,21125,IT.NET.BBND,Fixed broadband subscriptions,RW,Rwanda
+WSM,2015,2084,IT.NET.BBND,Fixed broadband subscriptions,WS,Samoa
+SMR,2015,11641,IT.NET.BBND,Fixed broadband subscriptions,SM,San Marino
+STP,2015,1314,IT.NET.BBND,Fixed broadband subscriptions,ST,Sao Tome and Principe
+SAU,2015,3564976,IT.NET.BBND,Fixed broadband subscriptions,SA,Saudi Arabia
+SEN,2015,100611,IT.NET.BBND,Fixed broadband subscriptions,SN,Senegal
+SRB,2015,1320230,IT.NET.BBND,Fixed broadband subscriptions,RS,Serbia
+SYC,2015,13420,IT.NET.BBND,Fixed broadband subscriptions,SC,Seychelles
+SGP,2015,1486200,IT.NET.BBND,Fixed broadband subscriptions,SG,Singapore
+SVK,2015,1273812,IT.NET.BBND,Fixed broadband subscriptions,SK,Slovak Republic
+SVN,2015,564046,IT.NET.BBND,Fixed broadband subscriptions,SI,Slovenia
+SLB,2015,1420,IT.NET.BBND,Fixed broadband subscriptions,SB,Solomon Islands
+SOM,2015,82000,IT.NET.BBND,Fixed broadband subscriptions,SO,Somalia
+ZAF,2015,1409347,IT.NET.BBND,Fixed broadband subscriptions,ZA,South Africa
+SSD,2015,150,IT.NET.BBND,Fixed broadband subscriptions,SS,South Sudan
+ESP,2015,13542906,IT.NET.BBND,Fixed broadband subscriptions,ES,Spain
+LKA,2015,625917,IT.NET.BBND,Fixed broadband subscriptions,LK,Sri Lanka
+KNA,2015,16376,IT.NET.BBND,Fixed broadband subscriptions,KN,St. Kitts and Nevis
+LCA,2015,28426,IT.NET.BBND,Fixed broadband subscriptions,LC,St. Lucia
+VCT,2015,16960,IT.NET.BBND,Fixed broadband subscriptions,VC,St. Vincent and the Grenadines
+SDN,2015,27683,IT.NET.BBND,Fixed broadband subscriptions,SD,Sudan
+SUR,2015,52691,IT.NET.BBND,Fixed broadband subscriptions,SR,Suriname
+SWZ,2015,6000,IT.NET.BBND,Fixed broadband subscriptions,SZ,Swaziland
+SWE,2015,3496240,IT.NET.BBND,Fixed broadband subscriptions,SE,Sweden
+CHE,2015,3716240,IT.NET.BBND,Fixed broadband subscriptions,CH,Switzerland
+SYR,2015,729261,IT.NET.BBND,Fixed broadband subscriptions,SY,Syrian Arab Republic
+TJK,2015,6000,IT.NET.BBND,Fixed broadband subscriptions,TJ,Tajikistan
+TZA,2015,106000,IT.NET.BBND,Fixed broadband subscriptions,TZ,Tanzania
+THA,2015,6229000,IT.NET.BBND,Fixed broadband subscriptions,TH,Thailand
+TLS,2015,1028,IT.NET.BBND,Fixed broadband subscriptions,TL,Timor-Leste
+TGO,2015,63108,IT.NET.BBND,Fixed broadband subscriptions,TG,Togo
+TON,2015,2458,IT.NET.BBND,Fixed broadband subscriptions,TO,Tonga
+TTO,2015,278522,IT.NET.BBND,Fixed broadband subscriptions,TT,Trinidad and Tobago
+TUN,2015,573977,IT.NET.BBND,Fixed broadband subscriptions,TN,Tunisia
+TUR,2015,9504594,IT.NET.BBND,Fixed broadband subscriptions,TR,Turkey
+TKM,2015,3000,IT.NET.BBND,Fixed broadband subscriptions,TM,Turkmenistan
+TUV,2015,1000,IT.NET.BBND,Fixed broadband subscriptions,TV,Tuvalu
+UGA,2015,80724,IT.NET.BBND,Fixed broadband subscriptions,UG,Uganda
+UKR,2015,4978813,IT.NET.BBND,Fixed broadband subscriptions,UA,Ukraine
+ARE,2015,1234447,IT.NET.BBND,Fixed broadband subscriptions,AE,United Arab Emirates
+GBR,2015,24686486,IT.NET.BBND,Fixed broadband subscriptions,GB,United Kingdom
+USA,2015,102212000,IT.NET.BBND,Fixed broadband subscriptions,US,United States
+URY,2015,900933,IT.NET.BBND,Fixed broadband subscriptions,UY,Uruguay
+UZB,2015,1787786,IT.NET.BBND,Fixed broadband subscriptions,UZ,Uzbekistan
+VUT,2015,4297,IT.NET.BBND,Fixed broadband subscriptions,VU,Vanuatu
+VEN,2015,2580080,IT.NET.BBND,Fixed broadband subscriptions,VE,"Venezuela, RB"
+VNM,2015,7657619,IT.NET.BBND,Fixed broadband subscriptions,VN,Vietnam
+VIR,2015,9000,IT.NET.BBND,Fixed broadband subscriptions,VI,Virgin Islands (U.S.)
+PSE,2015,274500,IT.NET.BBND,Fixed broadband subscriptions,PS,West Bank and Gaza
+YEM,2015,395000,IT.NET.BBND,Fixed broadband subscriptions,YE,"Yemen, Rep."
+ZMB,2015,23390,IT.NET.BBND,Fixed broadband subscriptions,ZM,Zambia
+ZWE,2015,163987,IT.NET.BBND,Fixed broadband subscriptions,ZW,Zimbabwe

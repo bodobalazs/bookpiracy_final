@@ -1,0 +1,234 @@
+iso3c,date,gdp,indicatorID,indicator,iso2c,country
+ARB,2015,16302.3637597421,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",1A,Arab World
+CSS,2015,15342.8721738577,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",S3,Caribbean small states
+CEB,2015,25832.1833276396,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",B8,Central Europe and the Baltics
+EAR,2015,8752.08793028581,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",V2,Early-demographic dividend
+EAS,2015,16106.1505782633,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",Z4,East Asia & Pacific
+EAP,2015,12954.553909817,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",4E,East Asia & Pacific (excluding high income)
+TEA,2015,13092.2258171368,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",T4,East Asia & Pacific (IDA & IBRD countries)
+EMU,2015,40854.5328459452,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XC,Euro area
+ECS,2015,30641.7264229506,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",Z7,Europe & Central Asia
+ECA,2015,19200.9593815614,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",7E,Europe & Central Asia (excluding high income)
+TEC,2015,19821.0197459895,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",T7,Europe & Central Asia (IDA & IBRD countries)
+EUU,2015,38448.446532756,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",EU,European Union
+FCS,2015,4068.52152635132,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",F1,Fragile and conflict affected situations
+HPC,2015,2201.92927625856,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XE,Heavily indebted poor countries (HIPC)
+HIC,2015,45750.5484536508,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XD,High income
+IBD,2015,12335.6804592451,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XF,IBRD only
+IBT,2015,10138.1707303677,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZT,IDA & IBRD total
+IDB,2015,5130.71367826888,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XH,IDA blend
+IDX,2015,2726.91112685405,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XI,IDA only
+IDA,2015,3534.60234553986,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XG,IDA total
+LTE,2015,15939.1150497909,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",V3,Late-demographic dividend
+LCN,2015,15238.2407651753,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZJ,Latin America & Caribbean
+LAC,2015,14777.0022417197,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XJ,Latin America & Caribbean (excluding high income)
+TLA,2015,15153.9439683498,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",T2,Latin America & the Caribbean (IDA & IBRD countries)
+LDC,2015,2536.89827652392,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XL,Least developed countries: UN classification
+LMY,2015,9965.60102402738,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XO,Low & middle income
+LIC,2015,1652.96277113702,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XM,Low income
+LMC,2015,6464.1822861158,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XN,Lower middle income
+MEA,2015,18636.0686096141,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZQ,Middle East & North Africa
+MNA,2015,12259.2039956279,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XQ,Middle East & North Africa (excluding high income)
+TMN,2015,12348.2618215752,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",T3,Middle East & North Africa (IDA & IBRD countries)
+MIC,2015,10931.5445802433,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XP,Middle income
+NAC,2015,55281.7729310566,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XU,North America
+OED,2015,40917.2136209585,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",OE,OECD members
+OSS,2015,24742.000226786,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",S4,Other small states
+PSS,2015,5600.70521469997,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",S2,Pacific island small states
+PST,2015,43700.2334219207,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",V4,Post-demographic dividend
+PRE,2015,3718.50608916613,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",V1,Pre-demographic dividend
+SST,2015,21843.8816407844,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",S1,Small states
+SAS,2015,5676.42615216029,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",8S,South Asia
+TSA,2015,5676.42615216029,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",T5,South Asia (IDA & IBRD)
+SSF,2015,3719.11541916565,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZG,Sub-Saharan Africa
+SSA,2015,3716.93655351486,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZF,Sub-Saharan Africa (excluding high income)
+TSS,2015,3719.11541916564,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",T6,Sub-Saharan Africa (IDA & IBRD countries)
+UMC,2015,16133.6065784873,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XT,Upper middle income
+WLD,2015,15696.9486819054,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",1W,World
+AFG,2015,1926.35733615809,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AF,Afghanistan
+ALB,2015,11282.7935754788,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AL,Albania
+DZA,2015,14614.970429045,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",DZ,Algeria
+AGO,2015,6635.24275034319,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AO,Angola
+ATG,2015,21462.2869423222,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AG,Antigua and Barbuda
+ARG,2015,20340.29241926,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AR,Argentina
+ARM,2015,8727.55832544865,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AM,Armenia
+AUS,2015,46095.1655591581,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AU,Australia
+AUT,2015,49938.106289923,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AT,Austria
+AZE,2015,17782.0261527141,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AZ,Azerbaijan
+BHS,2015,22448.5270264115,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BS,"Bahamas, The"
+BHR,2015,46775.7403335698,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BH,Bahrain
+BGD,2015,3335.75979065344,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BD,Bangladesh
+BRB,2015,17527.8328511429,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BB,Barbados
+BLR,2015,18347.1407011402,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BY,Belarus
+BEL,2015,45430.9073823844,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BE,Belgium
+BLZ,2015,8584.22563455672,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BZ,Belize
+BEN,2015,2116.06363772786,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BJ,Benin
+BTN,2015,8245.60530630055,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BT,Bhutan
+BOL,2015,6955.18276973353,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BO,Bolivia
+BIH,2015,11526.4243893206,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BA,Bosnia and Herzegovina
+BWA,2015,16352.545696024,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BW,Botswana
+BRA,2015,15617.3212760458,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BR,Brazil
+BRN,2015,79439.062446088,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BN,Brunei Darussalam
+BGR,2015,18115.2350726374,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BG,Bulgaria
+BFA,2015,1699.87988977636,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BF,Burkina Faso
+BDI,2015,796.960811425412,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",BI,Burundi
+CPV,2015,6302.49439628391,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CV,Cabo Verde
+KHM,2015,3504.41825365613,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KH,Cambodia
+CMR,2015,3502.40788727502,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CM,Cameroon
+CAN,2015,44647.3642265863,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CA,Canada
+CAF,2015,667.042665228989,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CF,Central African Republic
+TCD,2015,2180.45602566801,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TD,Chad
+CHL,2015,22647.4618198874,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CL,Chile
+CHN,2015,14450.094990196,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CN,China
+COL,2015,13827.6727863559,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CO,Colombia
+COM,2015,1504.71658081263,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KM,Comoros
+COD,2015,798.742655360412,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CD,"Congo, Dem. Rep."
+COG,2015,5902.42965114336,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CG,"Congo, Rep."
+CRI,2015,15881.6084683561,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CR,Costa Rica
+CIV,2015,3451.87741812427,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CI,Cote d'Ivoire
+HRV,2015,22492.0651487371,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",HR,Croatia
+CYP,2015,31523.9268785245,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CY,Cyprus
+CZE,2015,33468.7264974291,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CZ,Czech Republic
+DNK,2015,48674.8407494886,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",DK,Denmark
+DJI,2015,3342.9007663676,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",DJ,Djibouti
+DMA,2015,10586.7702932566,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",DM,Dominica
+DOM,2015,14238.8615166575,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",DO,Dominican Republic
+ECU,2015,11446.3651373736,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",EC,Ecuador
+EGY,2015,10750.4563039463,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",EG,"Egypt, Arab Rep."
+SLV,2015,8354.0293562523,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SV,El Salvador
+GNQ,2015,29361.0680537046,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GQ,Equatorial Guinea
+EST,2015,28688.9687744908,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",EE,Estonia
+ETH,2015,1632.5518055136,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ET,Ethiopia
+FJI,2015,9027.54244178825,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",FJ,Fiji
+FIN,2015,42071.1912691938,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",FI,Finland
+FRA,2015,40468.5097199871,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",FR,France
+GAB,2015,17928.7029798014,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GA,Gabon
+GMB,2015,1669.73184738084,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GM,"Gambia, The"
+GEO,2015,9610.54338228378,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GE,Georgia
+DEU,2015,47810.8360109883,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",DE,Germany
+GHA,2015,4184.57761792593,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GH,Ghana
+GRC,2015,26697.2485044179,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GR,Greece
+GRD,2015,13585.5046357208,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GD,Grenada
+GTM,2015,7765.75727079973,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GT,Guatemala
+GIN,2015,1866.77457993172,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GN,Guinea
+GNB,2015,1540.29303317721,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GW,Guinea-Bissau
+GUY,2015,7533.07164673986,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GY,Guyana
+HTI,2015,1758.3344598491,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",HT,Haiti
+HND,2015,4590.81845503349,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",HN,Honduras
+HKG,2015,57071.6705483794,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",HK,"Hong Kong SAR, China"
+HUN,2015,26147.5373739471,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",HU,Hungary
+ISL,2015,47499.6253846535,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IS,Iceland
+IND,2015,6127.29879526461,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IN,India
+IDN,2015,11040.1900843813,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ID,Indonesia
+IRN,2015,17571.2222428653,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IR,"Iran, Islamic Rep."
+IRQ,2015,15897.2403050886,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IQ,Iraq
+IRL,2015,69394.4163829658,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IE,Ireland
+ISR,2015,35888.8758935766,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IL,Israel
+ITA,2015,36640.1155779484,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",IT,Italy
+JAM,2015,8620.35652376923,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",JM,Jamaica
+JPN,2015,40717.3243779285,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",JP,Japan
+JOR,2015,9041.81756496415,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",JO,Jordan
+KAZ,2015,25048.0508078194,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KZ,Kazakhstan
+KEN,2015,3019.57611010062,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KE,Kenya
+KIR,2015,2094.90943188852,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KI,Kiribati
+KOR,2015,35203.734140356,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KR,"Korea, Rep."
+XKX,2015,9687.21771969028,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",XK,Kosovo
+KWT,2015,72918.0037634406,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KW,Kuwait
+KGZ,2015,3447.60825022898,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KG,Kyrgyz Republic
+LAO,2015,6128.35823785121,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LA,Lao PDR
+LVA,2015,24510.1620574717,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LV,Latvia
+LBN,2015,14218.8297179534,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LB,Lebanon
+LSO,2015,2883.8110871885,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LS,Lesotho
+LBR,2015,836.181489038688,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LR,Liberia
+LTU,2015,28783.6667748194,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LT,Lithuania
+LUX,2015,102517.138229939,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LU,Luxembourg
+MAC,2015,106959.839554808,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MO,"Macao SAR, China"
+MKD,2015,13766.3188262972,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MK,"Macedonia, FYR"
+MDG,2015,1466.49746244796,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MG,Madagascar
+MWI,2015,1159.31984189185,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MW,Malawi
+MYS,2015,26623.3283680558,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MY,Malaysia
+MDV,2015,14593.9728660639,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MV,Maldives
+MLI,2015,2043.71810510616,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ML,Mali
+MLT,2015,35873.820787986,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MT,Malta
+MHL,2015,3903.12790717999,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MH,Marshall Islands
+MRT,2015,3835.2310604266,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MR,Mauritania
+MUS,2015,20087.7153801145,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MU,Mauritius
+MEX,2015,16983.4642100695,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MX,Mexico
+FSM,2015,3483.45593668339,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",FM,"Micronesia, Fed. Sts."
+MDA,2015,5054.68247321695,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MD,Moldova
+MNG,2015,12152.1713808006,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MN,Mongolia
+MNE,2015,16272.1956451856,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ME,Montenegro
+MAR,2015,7770.24599129649,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MA,Morocco
+MOZ,2015,1190.75222415194,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MZ,Mozambique
+MMR,2015,5384.86938870142,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",MM,Myanmar
+NAM,2015,10610.5467741171,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NA,Namibia
+NRU,2015,13066.2036179405,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NR,Nauru
+NPL,2015,2464.38903347795,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NP,Nepal
+NLD,2015,49527.6696637249,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NL,Netherlands
+NZL,2015,37426.593064662,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NZ,New Zealand
+NIC,2015,5282.69923560336,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NI,Nicaragua
+NER,2015,963.254845454594,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NE,Niger
+NGA,2015,6038.4623153936,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NG,Nigeria
+NOR,2015,61722.239910673,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",NO,Norway
+OMN,2015,42742.5424946832,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",OM,Oman
+PAK,2015,5000.28383883723,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PK,Pakistan
+PLW,2015,15954.233067023,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PW,Palau
+PAN,2015,22015.3266764872,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PA,Panama
+PNG,2015,4117.31277773882,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PG,Papua New Guinea
+PRY,2015,9199.66938423151,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PY,Paraguay
+PER,2015,12530.8154908355,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PE,Peru
+PHL,2015,7320.49853859333,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PH,Philippines
+POL,2015,26594.7578582656,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PL,Poland
+PRT,2015,29532.3811616848,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PT,Portugal
+PRI,2015,37580.9867618585,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",PR,Puerto Rico
+QAT,2015,127516.908588418,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",QA,Qatar
+ROU,2015,21566.0730483419,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",RO,Romania
+RUS,2015,24691.8336492783,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",RU,Russian Federation
+RWA,2015,1827.18713413489,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",RW,Rwanda
+WSM,2015,5919.35982118632,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",WS,Samoa
+SMR,2015,60028.9243456052,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SM,San Marino
+STP,2015,3137.93905587782,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ST,Sao Tome and Principe
+SAU,2015,54013.8780426308,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SA,Saudi Arabia
+SEN,2015,2442.6430727681,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SN,Senegal
+SRB,2015,13896.1213879743,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",RS,Serbia
+SYC,2015,27180.6170069898,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SC,Seychelles
+SLE,2015,1401.33342448205,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SL,Sierra Leone
+SGP,2015,86139.0836148161,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SG,Singapore
+SVK,2015,29522.0447700489,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SK,Slovak Republic
+SVN,2015,31468.3631714967,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SI,Slovenia
+SLB,2015,2186.63397178464,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SB,Solomon Islands
+ZAF,2015,13164.4759340215,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZA,South Africa
+SSD,2015,1925.44711771138,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SS,South Sudan
+ESP,2015,34818.1205072534,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ES,Spain
+LKA,2015,11779.3639141309,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LK,Sri Lanka
+KNA,2015,25737.6242945524,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",KN,St. Kitts and Nevis
+LCA,2015,12729.7742086845,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",LC,St. Lucia
+VCT,2015,11125.2015046932,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",VC,St. Vincent and the Grenadines
+SDN,2015,4568.66485825461,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SD,Sudan
+SUR,2015,15724.6393919787,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SR,Suriname
+SWZ,2015,8261.74606049962,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SZ,Swaziland
+SWE,2015,47891.2778399445,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",SE,Sweden
+CHE,2015,63648.2880177144,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",CH,Switzerland
+TJK,2015,2811.86988951746,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TJ,Tajikistan
+TZA,2015,2652.53164690112,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TZ,Tanzania
+THA,2015,16225.026951608,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TH,Thailand
+TLS,2015,2044.69996432492,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TL,Timor-Leste
+TGO,2015,1436.89780436926,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TG,Togo
+TON,2015,5526.47869643388,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TO,Tonga
+TTO,2015,33312.6421126914,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TT,Trinidad and Tobago
+TUN,2015,11447.1428010126,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TN,Tunisia
+TUR,2015,24844.8955515439,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TR,Turkey
+TKM,2015,15964.7918355795,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TM,Turkmenistan
+TUV,2015,3539.3935133385,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",TV,Tuvalu
+UGA,2015,1774.0108189895,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",UG,Uganda
+UKR,2015,7949.14900233477,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",UA,Ukraine
+ARE,2015,70254.8315723693,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",AE,United Arab Emirates
+GBR,2015,41579.8634115553,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",GB,United Kingdom
+USA,2015,56469.0089691129,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",US,United States
+URY,2015,21117.8015977599,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",UY,Uruguay
+UZB,2015,6069.97866590926,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",UZ,Uzbekistan
+VUT,2015,2988.85053762441,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",VU,Vanuatu
+VNM,2015,5915.1708326498,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",VN,Vietnam
+YEM,2015,2812.35579731576,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",YE,"Yemen, Rep."
+ZMB,2015,3862.4784831131,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZM,Zambia
+ZWE,2015,2036.31925973492,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",ZW,Zimbabwe

@@ -1,0 +1,263 @@
+iso3c,date,population,indicatorID,indicator,iso2c,country
+ARB,2015,398304960,SP.POP.TOTL,"Population, total",1A,Arab World
+CSS,2015,7204948,SP.POP.TOTL,"Population, total",S3,Caribbean small states
+CEB,2015,103257751,SP.POP.TOTL,"Population, total",B8,Central Europe and the Baltics
+EAR,2015,3127578757,SP.POP.TOTL,"Population, total",V2,Early-demographic dividend
+EAS,2015,2283107673,SP.POP.TOTL,"Population, total",Z4,East Asia & Pacific
+EAP,2015,2038410865,SP.POP.TOTL,"Population, total",4E,East Asia & Pacific (excluding high income)
+TEA,2015,2013132699,SP.POP.TOTL,"Population, total",T4,East Asia & Pacific (IDA & IBRD countries)
+EMU,2015,339486064,SP.POP.TOTL,"Population, total",XC,Euro area
+ECS,2015,907393322,SP.POP.TOTL,"Population, total",Z7,Europe & Central Asia
+ECA,2015,414975737,SP.POP.TOTL,"Population, total",7E,Europe & Central Asia (excluding high income)
+TEC,2015,452962149,SP.POP.TOTL,"Population, total",T7,Europe & Central Asia (IDA & IBRD countries)
+EUU,2015,509670169,SP.POP.TOTL,"Population, total",EU,European Union
+FCS,2015,493919601,SP.POP.TOTL,"Population, total",F1,Fragile and conflict affected situations
+HPC,2015,724482652,SP.POP.TOTL,"Population, total",XE,Heavily indebted poor countries (HIPC)
+HIC,2015,1182932407,SP.POP.TOTL,"Population, total",XD,High income
+IBD,2015,4654715802,SP.POP.TOTL,"Population, total",XF,IBRD only
+IBT,2015,6194063973,SP.POP.TOTL,"Population, total",ZT,IDA & IBRD total
+IDB,2015,509396383,SP.POP.TOTL,"Population, total",XH,IDA blend
+IDX,2015,1029951788,SP.POP.TOTL,"Population, total",XI,IDA only
+IDA,2015,1539348171,SP.POP.TOTL,"Population, total",XG,IDA total
+LTE,2015,2250758316,SP.POP.TOTL,"Population, total",V3,Late-demographic dividend
+LCN,2015,631062661,SP.POP.TOTL,"Population, total",ZJ,Latin America & Caribbean
+LAC,2015,603644865,SP.POP.TOTL,"Population, total",XJ,Latin America & Caribbean (excluding high income)
+TLA,2015,614891969,SP.POP.TOTL,"Population, total",T2,Latin America & the Caribbean (IDA & IBRD countries)
+LDC,2015,956631108,SP.POP.TOTL,"Population, total",XL,Least developed countries: UN classification
+LMY,2015,6174437347,SP.POP.TOTL,"Population, total",XO,Low & middle income
+LIC,2015,641858608,SP.POP.TOTL,"Population, total",XM,Low income
+LMC,2015,2971878425,SP.POP.TOTL,"Population, total",XN,Lower middle income
+MEA,2015,428961724,SP.POP.TOTL,"Population, total",ZQ,Middle East & North Africa
+MNA,2015,367449306,SP.POP.TOTL,"Population, total",XQ,Middle East & North Africa (excluding high income)
+TMN,2015,363027163,SP.POP.TOTL,"Population, total",T3,Middle East & North Africa (IDA & IBRD countries)
+MIC,2015,5532578739,SP.POP.TOTL,"Population, total",XP,Middle income
+NAC,2015,356794381,SP.POP.TOTL,"Population, total",XU,North America
+OED,2015,1281415538,SP.POP.TOTL,"Population, total",OE,OECD members
+OSS,2015,29383324,SP.POP.TOTL,"Population, total",S4,Other small states
+PSS,2015,2358955,SP.POP.TOTL,"Population, total",S2,Pacific island small states
+PST,2015,1097600621,SP.POP.TOTL,"Population, total",V4,Post-demographic dividend
+PRE,2015,854646007,SP.POP.TOTL,"Population, total",V1,Pre-demographic dividend
+SST,2015,38947227,SP.POP.TOTL,"Population, total",S1,Small states
+SAS,2015,1744199944,SP.POP.TOTL,"Population, total",8S,South Asia
+TSA,2015,1744199944,SP.POP.TOTL,"Population, total",T5,South Asia (IDA & IBRD)
+SSF,2015,1005850049,SP.POP.TOTL,"Population, total",ZG,Sub-Saharan Africa
+SSA,2015,1005756630,SP.POP.TOTL,"Population, total",ZF,Sub-Saharan Africa (excluding high income)
+TSS,2015,1005850049,SP.POP.TOTL,"Population, total",T6,Sub-Saharan Africa (IDA & IBRD countries)
+UMC,2015,2560700314,SP.POP.TOTL,"Population, total",XT,Upper middle income
+WLD,2015,7357369754,SP.POP.TOTL,"Population, total",1W,World
+AFG,2015,33736494,SP.POP.TOTL,"Population, total",AF,Afghanistan
+ALB,2015,2880703,SP.POP.TOTL,"Population, total",AL,Albania
+DZA,2015,39871528,SP.POP.TOTL,"Population, total",DZ,Algeria
+ASM,2015,55537,SP.POP.TOTL,"Population, total",AS,American Samoa
+AND,2015,78014,SP.POP.TOTL,"Population, total",AD,Andorra
+AGO,2015,27859305,SP.POP.TOTL,"Population, total",AO,Angola
+ATG,2015,99923,SP.POP.TOTL,"Population, total",AG,Antigua and Barbuda
+ARG,2015,43417765,SP.POP.TOTL,"Population, total",AR,Argentina
+ARM,2015,2916950,SP.POP.TOTL,"Population, total",AM,Armenia
+ABW,2015,104341,SP.POP.TOTL,"Population, total",AW,Aruba
+AUS,2015,23850784,SP.POP.TOTL,"Population, total",AU,Australia
+AUT,2015,8633169,SP.POP.TOTL,"Population, total",AT,Austria
+AZE,2015,9649341,SP.POP.TOTL,"Population, total",AZ,Azerbaijan
+BHS,2015,386838,SP.POP.TOTL,"Population, total",BS,"Bahamas, The"
+BHR,2015,1371855,SP.POP.TOTL,"Population, total",BH,Bahrain
+BGD,2015,161200886,SP.POP.TOTL,"Population, total",BD,Bangladesh
+BRB,2015,284217,SP.POP.TOTL,"Population, total",BB,Barbados
+BLR,2015,9489616,SP.POP.TOTL,"Population, total",BY,Belarus
+BEL,2015,11274196,SP.POP.TOTL,"Population, total",BE,Belgium
+BLZ,2015,359288,SP.POP.TOTL,"Population, total",BZ,Belize
+BEN,2015,10575952,SP.POP.TOTL,"Population, total",BJ,Benin
+BMU,2015,65250,SP.POP.TOTL,"Population, total",BM,Bermuda
+BTN,2015,787386,SP.POP.TOTL,"Population, total",BT,Bhutan
+BOL,2015,10724705,SP.POP.TOTL,"Population, total",BO,Bolivia
+BIH,2015,3535961,SP.POP.TOTL,"Population, total",BA,Bosnia and Herzegovina
+BWA,2015,2209197,SP.POP.TOTL,"Population, total",BW,Botswana
+BRA,2015,205962108,SP.POP.TOTL,"Population, total",BR,Brazil
+VGB,2015,30113,SP.POP.TOTL,"Population, total",VG,British Virgin Islands
+BRN,2015,417542,SP.POP.TOTL,"Population, total",BN,Brunei Darussalam
+BGR,2015,7177991,SP.POP.TOTL,"Population, total",BG,Bulgaria
+BFA,2015,18110624,SP.POP.TOTL,"Population, total",BF,Burkina Faso
+BDI,2015,10199270,SP.POP.TOTL,"Population, total",BI,Burundi
+CPV,2015,532913,SP.POP.TOTL,"Population, total",CV,Cabo Verde
+KHM,2015,15517635,SP.POP.TOTL,"Population, total",KH,Cambodia
+CMR,2015,22834522,SP.POP.TOTL,"Population, total",CM,Cameroon
+CAN,2015,35832513,SP.POP.TOTL,"Population, total",CA,Canada
+CYM,2015,59963,SP.POP.TOTL,"Population, total",KY,Cayman Islands
+CAF,2015,4546100,SP.POP.TOTL,"Population, total",CF,Central African Republic
+TCD,2015,14009413,SP.POP.TOTL,"Population, total",TD,Chad
+CHI,2015,163758,SP.POP.TOTL,"Population, total",JG,Channel Islands
+CHL,2015,17762681,SP.POP.TOTL,"Population, total",CL,Chile
+CHN,2015,1371220000,SP.POP.TOTL,"Population, total",CN,China
+COL,2015,48228697,SP.POP.TOTL,"Population, total",CO,Colombia
+COM,2015,777424,SP.POP.TOTL,"Population, total",KM,Comoros
+COD,2015,76196619,SP.POP.TOTL,"Population, total",CD,"Congo, Dem. Rep."
+COG,2015,4995648,SP.POP.TOTL,"Population, total",CG,"Congo, Rep."
+CRI,2015,4807852,SP.POP.TOTL,"Population, total",CR,Costa Rica
+CIV,2015,23108472,SP.POP.TOTL,"Population, total",CI,Cote d'Ivoire
+HRV,2015,4203604,SP.POP.TOTL,"Population, total",HR,Croatia
+CUB,2015,11461432,SP.POP.TOTL,"Population, total",CU,Cuba
+CUW,2015,157980,SP.POP.TOTL,"Population, total",CW,Curacao
+CYP,2015,1160985,SP.POP.TOTL,"Population, total",CY,Cyprus
+CZE,2015,10546059,SP.POP.TOTL,"Population, total",CZ,Czech Republic
+DNK,2015,5683483,SP.POP.TOTL,"Population, total",DK,Denmark
+DJI,2015,927414,SP.POP.TOTL,"Population, total",DJ,Djibouti
+DMA,2015,73162,SP.POP.TOTL,"Population, total",DM,Dominica
+DOM,2015,10528394,SP.POP.TOTL,"Population, total",DO,Dominican Republic
+ECU,2015,16144368,SP.POP.TOTL,"Population, total",EC,Ecuador
+EGY,2015,93778172,SP.POP.TOTL,"Population, total",EG,"Egypt, Arab Rep."
+SLV,2015,6312478,SP.POP.TOTL,"Population, total",SV,El Salvador
+GNQ,2015,1175389,SP.POP.TOTL,"Population, total",GQ,Equatorial Guinea
+EST,2015,1315407,SP.POP.TOTL,"Population, total",EE,Estonia
+ETH,2015,99873033,SP.POP.TOTL,"Population, total",ET,Ethiopia
+FRO,2015,48965,SP.POP.TOTL,"Population, total",FO,Faroe Islands
+FJI,2015,892149,SP.POP.TOTL,"Population, total",FJ,Fiji
+FIN,2015,5479531,SP.POP.TOTL,"Population, total",FI,Finland
+FRA,2015,66624068,SP.POP.TOTL,"Population, total",FR,France
+PYF,2015,277690,SP.POP.TOTL,"Population, total",PF,French Polynesia
+GAB,2015,1930175,SP.POP.TOTL,"Population, total",GA,Gabon
+GMB,2015,1977590,SP.POP.TOTL,"Population, total",GM,"Gambia, The"
+GEO,2015,3717100,SP.POP.TOTL,"Population, total",GE,Georgia
+DEU,2015,81686611,SP.POP.TOTL,"Population, total",DE,Germany
+GHA,2015,27582821,SP.POP.TOTL,"Population, total",GH,Ghana
+GIB,2015,34228,SP.POP.TOTL,"Population, total",GI,Gibraltar
+GRC,2015,10820883,SP.POP.TOTL,"Population, total",GR,Greece
+GRL,2015,56114,SP.POP.TOTL,"Population, total",GL,Greenland
+GRD,2015,106823,SP.POP.TOTL,"Population, total",GD,Grenada
+GUM,2015,161797,SP.POP.TOTL,"Population, total",GU,Guam
+GTM,2015,16252429,SP.POP.TOTL,"Population, total",GT,Guatemala
+GIN,2015,12091533,SP.POP.TOTL,"Population, total",GN,Guinea
+GNB,2015,1770526,SP.POP.TOTL,"Population, total",GW,Guinea-Bissau
+GUY,2015,768514,SP.POP.TOTL,"Population, total",GY,Guyana
+HTI,2015,10711061,SP.POP.TOTL,"Population, total",HT,Haiti
+HND,2015,8960829,SP.POP.TOTL,"Population, total",HN,Honduras
+HKG,2015,7291300,SP.POP.TOTL,"Population, total",HK,"Hong Kong SAR, China"
+HUN,2015,9843028,SP.POP.TOTL,"Population, total",HU,Hungary
+ISL,2015,330815,SP.POP.TOTL,"Population, total",IS,Iceland
+IND,2015,1309053980,SP.POP.TOTL,"Population, total",IN,India
+IDN,2015,258162113,SP.POP.TOTL,"Population, total",ID,Indonesia
+IRN,2015,79360487,SP.POP.TOTL,"Population, total",IR,"Iran, Islamic Rep."
+IRQ,2015,36115649,SP.POP.TOTL,"Population, total",IQ,Iraq
+IRL,2015,4646554,SP.POP.TOTL,"Population, total",IE,Ireland
+IMN,2015,83167,SP.POP.TOTL,"Population, total",IM,Isle of Man
+ISR,2015,8380100,SP.POP.TOTL,"Population, total",IL,Israel
+ITA,2015,60730582,SP.POP.TOTL,"Population, total",IT,Italy
+JAM,2015,2871934,SP.POP.TOTL,"Population, total",JM,Jamaica
+JPN,2015,127141000,SP.POP.TOTL,"Population, total",JP,Japan
+JOR,2015,9159302,SP.POP.TOTL,"Population, total",JO,Jordan
+KAZ,2015,17544126,SP.POP.TOTL,"Population, total",KZ,Kazakhstan
+KEN,2015,47236259,SP.POP.TOTL,"Population, total",KE,Kenya
+KIR,2015,112407,SP.POP.TOTL,"Population, total",KI,Kiribati
+PRK,2015,25243917,SP.POP.TOTL,"Population, total",KP,"Korea, Dem. People’s Rep."
+KOR,2015,51014947,SP.POP.TOTL,"Population, total",KR,"Korea, Rep."
+XKX,2015,1801800,SP.POP.TOTL,"Population, total",XK,Kosovo
+KWT,2015,3935794,SP.POP.TOTL,"Population, total",KW,Kuwait
+KGZ,2015,5956900,SP.POP.TOTL,"Population, total",KG,Kyrgyz Republic
+LAO,2015,6663967,SP.POP.TOTL,"Population, total",LA,Lao PDR
+LVA,2015,1977527,SP.POP.TOTL,"Population, total",LV,Latvia
+LBN,2015,5851479,SP.POP.TOTL,"Population, total",LB,Lebanon
+LSO,2015,2174645,SP.POP.TOTL,"Population, total",LS,Lesotho
+LBR,2015,4499621,SP.POP.TOTL,"Population, total",LR,Liberia
+LBY,2015,6234955,SP.POP.TOTL,"Population, total",LY,Libya
+LIE,2015,37403,SP.POP.TOTL,"Population, total",LI,Liechtenstein
+LTU,2015,2904910,SP.POP.TOTL,"Population, total",LT,Lithuania
+LUX,2015,569604,SP.POP.TOTL,"Population, total",LU,Luxembourg
+MAC,2015,600942,SP.POP.TOTL,"Population, total",MO,"Macao SAR, China"
+MKD,2015,2079308,SP.POP.TOTL,"Population, total",MK,"Macedonia, FYR"
+MDG,2015,24234088,SP.POP.TOTL,"Population, total",MG,Madagascar
+MWI,2015,17573607,SP.POP.TOTL,"Population, total",MW,Malawi
+MYS,2015,30723155,SP.POP.TOTL,"Population, total",MY,Malaysia
+MDV,2015,418403,SP.POP.TOTL,"Population, total",MV,Maldives
+MLI,2015,17467905,SP.POP.TOTL,"Population, total",ML,Mali
+MLT,2015,431874,SP.POP.TOTL,"Population, total",MT,Malta
+MHL,2015,52994,SP.POP.TOTL,"Population, total",MH,Marshall Islands
+MRT,2015,4182341,SP.POP.TOTL,"Population, total",MR,Mauritania
+MUS,2015,1262605,SP.POP.TOTL,"Population, total",MU,Mauritius
+MEX,2015,125890949,SP.POP.TOTL,"Population, total",MX,Mexico
+FSM,2015,104433,SP.POP.TOTL,"Population, total",FM,"Micronesia, Fed. Sts."
+MDA,2015,3554108,SP.POP.TOTL,"Population, total",MD,Moldova
+MCO,2015,38307,SP.POP.TOTL,"Population, total",MC,Monaco
+MNG,2015,2976877,SP.POP.TOTL,"Population, total",MN,Mongolia
+MNE,2015,622159,SP.POP.TOTL,"Population, total",ME,Montenegro
+MAR,2015,34803322,SP.POP.TOTL,"Population, total",MA,Morocco
+MOZ,2015,28010691,SP.POP.TOTL,"Population, total",MZ,Mozambique
+MMR,2015,52403669,SP.POP.TOTL,"Population, total",MM,Myanmar
+NAM,2015,2425561,SP.POP.TOTL,"Population, total",NA,Namibia
+NRU,2015,12475,SP.POP.TOTL,"Population, total",NR,Nauru
+NPL,2015,28656282,SP.POP.TOTL,"Population, total",NP,Nepal
+NLD,2015,16939923,SP.POP.TOTL,"Population, total",NL,Netherlands
+NCL,2015,272000,SP.POP.TOTL,"Population, total",NC,New Caledonia
+NZL,2015,4595700,SP.POP.TOTL,"Population, total",NZ,New Zealand
+NIC,2015,6082035,SP.POP.TOTL,"Population, total",NI,Nicaragua
+NER,2015,19896965,SP.POP.TOTL,"Population, total",NE,Niger
+NGA,2015,181181744,SP.POP.TOTL,"Population, total",NG,Nigeria
+MNP,2015,54816,SP.POP.TOTL,"Population, total",MP,Northern Mariana Islands
+NOR,2015,5190239,SP.POP.TOTL,"Population, total",NO,Norway
+OMN,2015,4199810,SP.POP.TOTL,"Population, total",OM,Oman
+PAK,2015,189380513,SP.POP.TOTL,"Population, total",PK,Pakistan
+PLW,2015,21288,SP.POP.TOTL,"Population, total",PW,Palau
+PAN,2015,3969249,SP.POP.TOTL,"Population, total",PA,Panama
+PNG,2015,7919825,SP.POP.TOTL,"Population, total",PG,Papua New Guinea
+PRY,2015,6639119,SP.POP.TOTL,"Population, total",PY,Paraguay
+PER,2015,31376671,SP.POP.TOTL,"Population, total",PE,Peru
+PHL,2015,101716359,SP.POP.TOTL,"Population, total",PH,Philippines
+POL,2015,37986412,SP.POP.TOTL,"Population, total",PL,Poland
+PRT,2015,10358076,SP.POP.TOTL,"Population, total",PT,Portugal
+PRI,2015,3473181,SP.POP.TOTL,"Population, total",PR,Puerto Rico
+QAT,2015,2481539,SP.POP.TOTL,"Population, total",QA,Qatar
+ROU,2015,19815481,SP.POP.TOTL,"Population, total",RO,Romania
+RUS,2015,144096870,SP.POP.TOTL,"Population, total",RU,Russian Federation
+RWA,2015,11629553,SP.POP.TOTL,"Population, total",RW,Rwanda
+WSM,2015,193759,SP.POP.TOTL,"Population, total",WS,Samoa
+SMR,2015,32960,SP.POP.TOTL,"Population, total",SM,San Marino
+STP,2015,195553,SP.POP.TOTL,"Population, total",ST,Sao Tome and Principe
+SAU,2015,31557144,SP.POP.TOTL,"Population, total",SA,Saudi Arabia
+SEN,2015,14976994,SP.POP.TOTL,"Population, total",SN,Senegal
+SRB,2015,7095383,SP.POP.TOTL,"Population, total",RS,Serbia
+SYC,2015,93419,SP.POP.TOTL,"Population, total",SC,Seychelles
+SLE,2015,7237025,SP.POP.TOTL,"Population, total",SL,Sierra Leone
+SGP,2015,5535002,SP.POP.TOTL,"Population, total",SG,Singapore
+SXM,2015,38824,SP.POP.TOTL,"Population, total",SX,Sint Maarten (Dutch part)
+SVK,2015,5423801,SP.POP.TOTL,"Population, total",SK,Slovak Republic
+SVN,2015,2063531,SP.POP.TOTL,"Population, total",SI,Slovenia
+SLB,2015,587482,SP.POP.TOTL,"Population, total",SB,Solomon Islands
+SOM,2015,13908129,SP.POP.TOTL,"Population, total",SO,Somalia
+ZAF,2015,55291225,SP.POP.TOTL,"Population, total",ZA,South Africa
+SSD,2015,11882136,SP.POP.TOTL,"Population, total",SS,South Sudan
+ESP,2015,46444832,SP.POP.TOTL,"Population, total",ES,Spain
+LKA,2015,20966000,SP.POP.TOTL,"Population, total",LK,Sri Lanka
+KNA,2015,54288,SP.POP.TOTL,"Population, total",KN,St. Kitts and Nevis
+LCA,2015,177206,SP.POP.TOTL,"Population, total",LC,St. Lucia
+MAF,2015,31754,SP.POP.TOTL,"Population, total",MF,St. Martin (French part)
+VCT,2015,109455,SP.POP.TOTL,"Population, total",VC,St. Vincent and the Grenadines
+SDN,2015,38647803,SP.POP.TOTL,"Population, total",SD,Sudan
+SUR,2015,553208,SP.POP.TOTL,"Population, total",SR,Suriname
+SWZ,2015,1319011,SP.POP.TOTL,"Population, total",SZ,Swaziland
+SWE,2015,9799186,SP.POP.TOTL,"Population, total",SE,Sweden
+CHE,2015,8282396,SP.POP.TOTL,"Population, total",CH,Switzerland
+SYR,2015,18734987,SP.POP.TOTL,"Population, total",SY,Syrian Arab Republic
+TJK,2015,8548651,SP.POP.TOTL,"Population, total",TJ,Tajikistan
+TZA,2015,53879957,SP.POP.TOTL,"Population, total",TZ,Tanzania
+THA,2015,68657600,SP.POP.TOTL,"Population, total",TH,Thailand
+TLS,2015,1240977,SP.POP.TOTL,"Population, total",TL,Timor-Leste
+TGO,2015,7416802,SP.POP.TOTL,"Population, total",TG,Togo
+TON,2015,106364,SP.POP.TOTL,"Population, total",TO,Tonga
+TTO,2015,1360092,SP.POP.TOTL,"Population, total",TT,Trinidad and Tobago
+TUN,2015,11273661,SP.POP.TOTL,"Population, total",TN,Tunisia
+TUR,2015,78271472,SP.POP.TOTL,"Population, total",TR,Turkey
+TKM,2015,5565284,SP.POP.TOTL,"Population, total",TM,Turkmenistan
+TCA,2015,34339,SP.POP.TOTL,"Population, total",TC,Turks and Caicos Islands
+TUV,2015,11001,SP.POP.TOTL,"Population, total",TV,Tuvalu
+UGA,2015,40144870,SP.POP.TOTL,"Population, total",UG,Uganda
+UKR,2015,45154029,SP.POP.TOTL,"Population, total",UA,Ukraine
+ARE,2015,9154302,SP.POP.TOTL,"Population, total",AE,United Arab Emirates
+GBR,2015,65128861,SP.POP.TOTL,"Population, total",GB,United Kingdom
+USA,2015,320896618,SP.POP.TOTL,"Population, total",US,United States
+URY,2015,3431552,SP.POP.TOTL,"Population, total",UY,Uruguay
+UZB,2015,31298900,SP.POP.TOTL,"Population, total",UZ,Uzbekistan
+VUT,2015,264603,SP.POP.TOTL,"Population, total",VU,Vanuatu
+VEN,2015,31155134,SP.POP.TOTL,"Population, total",VE,"Venezuela, RB"
+VNM,2015,93571567,SP.POP.TOTL,"Population, total",VN,Vietnam
+VIR,2015,107710,SP.POP.TOTL,"Population, total",VI,Virgin Islands (U.S.)
+PSE,2015,4422143,SP.POP.TOTL,"Population, total",PS,West Bank and Gaza
+YEM,2015,26916207,SP.POP.TOTL,"Population, total",YE,"Yemen, Rep."
+ZMB,2015,16100587,SP.POP.TOTL,"Population, total",ZM,Zambia
+ZWE,2015,15777451,SP.POP.TOTL,"Population, total",ZW,Zimbabwe

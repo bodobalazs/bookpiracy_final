@@ -15,12 +15,15 @@ library(ggthemes)
 library(lmtest)
 library(sandwich)
 library(jtools)
+library(sjPlot)
+library(lme4)
 
 
 #### Functions ####
 
 # We get in  data from worldbank, rename the value column and set it to a data.table
-# It defaults to using data from 2015
+# It defaults to using data from 2015. it backfills missing data!
+
 wb_data <- function(db = "", name="", date=2015, history=0){
   temp <- wb(indicator = db, startdate = date-history, enddate = date, mrv=10, gapfill=T)
   setDT(temp)
@@ -47,7 +50,6 @@ rmse <- function(fitted, y){
   return(sqrt(mean((y-fitted)^2)))
 }
 
-csv_path <- "~/GitHub/bookpiracy_final/global models/"
 
 theme_set(theme_economist())
 #### Data preparation ####
@@ -72,7 +74,7 @@ prepare_fresh_data <- function(){
   #write.csv(country_dl, file="data-raw/country_download.csv")
   
   #or load the prepared version
-  count_country_day <- read.csv(paste0(csv_path, "country_download.csv"))
+  count_country_day <- read.csv("data-raw/country_download.csv")
   
   # Loading the different datasets. 
   which_date <- 2015
@@ -82,6 +84,8 @@ prepare_fresh_data <- function(){
   literacy <- wb_data("SE.ADT.LITR.ZS", "literacy")%>%dplyr::filter(date==which_date)
   rd <- wb_data("GB.XPD.RSDV.GD.ZS", "rd")%>%dplyr::filter(date==which_date)
   tertiary <- wb_data("SE.TER.ENRR", "tertiary")%>%dplyr::filter(date==which_date)
+  #save(population, gdp, internet, literacy, rd, tertiary, file="data-raw/worldbank_data_20200525.rda")
+  
   
   # Add different variables to a new data.table, don't pollute the first one
   complete_df <- merge(count_country_day, population[, c("population", "iso3c")], all.x=T)
@@ -102,12 +106,12 @@ prepare_fresh_data <- function(){
   
   
   #gov spending on education
-  expenditure <- read_csv( paste0(csv_path, "gov_spending_edu.csv"))
+  expenditure <- read_csv("data-raw/gov_spending_edu.csv")
 
   complete_df <- merge(complete_df, expenditure[, c("exp_tertiary_pstudent", "iso3c")], all.x=T) # Expennditure per student
   
   
-  spending_education <- fread(paste0(csv_path, "public_spending_education_oecd.csv")) %>%
+  spending_education <- fread("data-raw/public_spending_education_oecd.csv") %>%
     dplyr::rename(spending_education=Value, iso3c=LOCATION) %>%
     dplyr::filter(SUBJECT=="TRY")
   
@@ -115,7 +119,7 @@ prepare_fresh_data <- function(){
   
   
   #add citation index
-  citation <- read_excel(paste0(csv_path, 'scimagojr_2015.xlsx')) %>%
+  citation <- read_excel("data-raw/scimagojr_2015.xlsx") %>%
     dplyr::rename(h_index="H index") %>%
     dplyr::mutate(iso3c = countrycode(Country, origin = "country.name", destination = "iso3c"))%>%
     dplyr::rename_all(tolower) 
@@ -123,15 +127,15 @@ prepare_fresh_data <- function(){
   
   complete_df<- merge(complete_df, citation, all.x=T)
   
-  save(complete_df, file = paste0(csv_path, "global_data_20200525.rda"))
+  #save(complete_df, file = "data/global_data.rda")
   
 }
 
 #to prepare data fresh, uncomment the next line:
-prepare_fresh_data()
+#prepare_fresh_data()
 
 #read data file
-load(file = paste0(csv_path, "global_data_20200525.rda"))
+load(file = "data/global_data_20200525.rda")
 
 
 # Plot the density of the dl/pop with built in functions
@@ -139,7 +143,9 @@ plot(density(complete_df$dl_per_pop, na.rm=T))
 
 # Use ggplot for the same
 density_plot <- ggplot() + geom_density(aes(complete_df$dl_per_pop), data=complete_df) + labs(x="Downloads per population(in millions)", title="Density")
-count_country_plot <- transform(complete_df, iso2c = )
+density_plot
+
+
 
 # Density plot with region
 
@@ -159,6 +165,7 @@ bplot
 #### First model: DL/capita ~ population + gdp + internet_per_pop ####
 
 m1 <- glm(formula = dl_per_pop ~ log(pop_per_mil) + log(gdp) + internet_per_pop, data=complete_df)
+
 cor(complete_df$gdp, complete_df$internet_per_pop, use="complete.obs" )
 sqrt(vif(m1))
 summary(m1)
@@ -166,7 +173,6 @@ summary(m1)
 par(mfrow=c(2,2))
 plot(m1)
 par(mfrow=c(1,1))
-
 
 
 m1.pois <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) + log(gdp) + internet_per_pop, data=complete_df, family = "poisson")
@@ -194,6 +200,10 @@ summary(m2.qpois)
 m2.b.qpois <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) +
                   tertiary + exp_tertiary_pstudent + rd + h_index,
                 data=complete_df, family = "quasipoisson")
+
+m2.b.qpois_small <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) +
+                    exp_tertiary_pstudent *rd ,
+                  data=complete_df, family = "quasipoisson")
 summary(m2.b.qpois)
 
 #with interaction
@@ -220,14 +230,12 @@ export_summs(m2.qpois, m2.b.qpois,m2.c.qpois,m2.qpois_small, digits=3, number_fo
 # Random slope:
 line <- c(1:35000)
 m5 <- lmer(formula = dl_per_pop ~ pop_per_mil + log(gdp) + internet_per_pop + exp_tertiary_pstudent + h_index + rd+(1+log(gdp)+exp_tertiary_pstudent|continent), data=complete_df)
+isSingular(m5)
 summary(m5)
 
 # Generalized model with poisson dist
 complete_df$continent<-as.factor(complete_df$continent)
-mm.m5 <- model.matrix( dl_per_pop ~ pop_per_mil + internet_per_pop + log(gdp), data=complete_df)
-mm.m5 <- cbind(complete_df$dl_per_pop, mm.m5, complete_df$continent)
 m5.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |continent), data=complete_df, family=poisson)
-
 m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |continent), data=complete_df, family=poisson)
 
 m5.poiss
@@ -240,75 +248,58 @@ xyplot(dl_per_pop ~ gdp,
        pch = 16, type = c("p", "g", "r"), groups = continent, auto.key = TRUE)
 
 
-
+fitted_rows <- as.integer(names(fitted(m5.poiss)))
+fitted_rows_allvar <- as.integer(names(fitted(m5.poiss.allvar)))
+plot(fitted(m5.poiss) ~ complete_df[fitted_rows, "dl_per_pop"])
+lines(line, line)
 
 rmse(fitted(m5.poiss),complete_df[fitted_rows, "dl_per_pop"])
 rmse(fitted(m5.poiss.allvar),complete_df[fitted_rows_allvar, "dl_per_pop"])
 
-
 # Rescale variables:
 cols_to_scale <- c("dl_per_pop", "internet_per_pop"  ,"pop_per_mil", "gdp", "tertiary", "exp_tertiary_pstudent", 'h_index','rd')
 scaled_data <- complete_df %>%
-  dplyr::mutate_at( dplyr::vars(cols_to_scale), scale )
+  dplyr::mutate_at( dplyr::vars(cols_to_scale), scale ) %>%
+  rename_at(vars(cols_to_scale), funs(str_replace(.,"$","_scaled")))
 
 cor(scaled_data$rd, scaled_data$exp_tertiary_pstudent, use="complete.obs" )
 
 
 #run m5 with scaled
-#these do not run, as the scaled dv has negative values,
-m5.poiss.scaled <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |continent), data=scaled_data, family=poisson)
-m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |continent), data=scaled_data, family=poisson)
+
+m5.poiss.scaled <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled) |continent), data=scaled_data, family=poisson)
+m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled)+tertiary_scaled+rd_scaled |continent), data=scaled_data, family=poisson)
 
 coefficients(m5.poiss.scaled)
-
-xyplot(dl_per_pop_scaled ~ gdp_scaled, 
-       data = count_country_day_scaled, 
-       pch = 16, type = c("p", "g", "r"), groups = continent, auto.key = TRUE)
-
 coefficients(m5.poiss.allvar)
 
 
-
-
 #add income category
-income_cat<-fread(paste0(csv_path, "worldbank_income_category.csv"))
+income_cat<-fread("paste0(csv_path, "data-raw/worldbank_income_category.csv")
 income_cat$income<-as.factor(income_cat$income)
 
 complete_df<-merge(complete_df, income_cat, by="iso3c")
 scaled_data<-merge(scaled_data, income_cat, by="iso3c")
 names(scaled_data)
 
+
+
 #run variable slope and interxcept model on this data
+########################################################HERE#########################################
 
-m6.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop +
-                     (1+rd+exp_tertiary_pstudent|income), data=scaled_data, family=poisson)
 
-m7.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop +
-                    (1+rd+exp_tertiary_pstudent|continent), data=scaled_data, family=poisson)
+m6.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |income), data=complete_df, family=poisson)
+m6.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |income), data=complete_df, family=poisson)
+
+m6.poiss.scaled <- glmer(formula = (1+dl_per_pop_scaled) ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled) |income), data=scaled_data, family=poisson)
+m6.poiss.scaled.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled +(exp_tertiary_pstudent_scaled+rd_scaled |income), data=scaled_data, family=poisson)
+
+
 m6.poiss
 coefficients(m6.poiss)
-coefficients(m7.poiss)
-library(lattice)
+coefficients(m6.poiss.scaled.allvar)
 
-xyplot(fitted(m6.poiss) ~ rd, 
-       data = count_country_day_citation[complete.cases(count_country_day_citation)], pch = 16, type = c("p", "g", "r"), groups = income, auto.key = TRUE)
-#same, but scaled
-
-m6.scaled <- lmer(formula = dl_per_pop_scaled ~ pop_per_mil_scaled + log(gdp_scaled) + 
-                    internet_per_pop_scaled + tertiary_scaled + exp_tertiary_pstudent_scaled +
-                    h_index_scaled + (1|income), data=count_country_day_scaled)
-summary(m6.scaled)
-coefficients(m6.scaled)
-
-
-# m5.scaled <- lmer(formula = dl_per_pop_scaled ~ pop_per_mil_scaled + log(gdp_scaled) + 
-#                     internet_per_pop_scaled + tertiary_scaled + exp_tertiary_pstudent_scaled +
-#                     h_index_scaled + (1+log(gdp_scaled)+h_index_scaled|continent), data=count_country_day_scaled)
-# summary(m5.scaled)
-Anova(m4)
-coefficients(m5)
-coefficients(m5.poiss)
-library(sjPlot)
-library(lme4)
-plot_model(m5, type = "pred")
+coefficients(m6.poiss.scaled)
+m6.poiss.scaled
+names(scaled_data)
 

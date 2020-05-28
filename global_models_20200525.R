@@ -17,6 +17,8 @@ library(sandwich)
 library(jtools)
 library(sjPlot)
 library(lme4)
+library(huxtable)
+library(lattice)
 
 
 #### Functions ####
@@ -235,7 +237,8 @@ summary(m5)
 
 # Generalized model with poisson dist
 complete_df$continent<-as.factor(complete_df$continent)
-m5.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |continent), data=complete_df, family=poisson)
+m5.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |continent),
+                  data=complete_df, family=poisson)
 m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |continent), data=complete_df, family=poisson)
 
 m5.poiss
@@ -272,10 +275,11 @@ m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + inter
 
 coefficients(m5.poiss.scaled)
 coefficients(m5.poiss.allvar)
+rmse(fitted(m5.poiss.scaled),complete_df[as.integer(names(fitted(m5.poiss.scaled))), "dl_per_pop_round"])
 
 
 #add income category
-income_cat<-fread("paste0(csv_path, "data-raw/worldbank_income_category.csv")
+income_cat<-fread("data-raw/worldbank_income_category.csv")
 income_cat$income<-as.factor(income_cat$income)
 
 complete_df<-merge(complete_df, income_cat, by="iso3c")
@@ -284,22 +288,22 @@ names(scaled_data)
 
 
 
-#run variable slope and interxcept model on this data
-########################################################HERE#########################################
-
+#### run variable slope and intercept model on this data #### 
 
 m6.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |income), data=complete_df, family=poisson)
 m6.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |income), data=complete_df, family=poisson)
-
-m6.poiss.scaled <- glmer(formula = (1+dl_per_pop_scaled) ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled) |income), data=scaled_data, family=poisson)
-m6.poiss.scaled.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled +(exp_tertiary_pstudent_scaled+rd_scaled |income), data=scaled_data, family=poisson)
+# Based on: https://stats.stackexchange.com/questions/164457/r-glmer-warnings-model-fails-to-converge-model-is-nearly-unidentifiable
+m6.poiss.scaled <- glmer(formula = (1+dl_per_pop_scaled) ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled) |income),
+                         data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+m6.poiss.scaled.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled +(tertiary_scaled+rd_scaled |income), 
+                                data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
 
 m6.poiss
 coefficients(m6.poiss)
-coefficients(m6.poiss.scaled.allvar)
 
 coefficients(m6.poiss.scaled)
-m6.poiss.scaled
-names(scaled_data)
+coefficients(m6.poiss.scaled.allvar)
+# m6.poiss.scaled
+# names(scaled_data)
 

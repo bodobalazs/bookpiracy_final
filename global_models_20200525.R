@@ -17,6 +17,8 @@ library(sandwich)
 library(jtools)
 library(sjPlot)
 library(lme4)
+library(huxtable)
+library(lattice)
 
 
 #### Functions ####
@@ -275,7 +277,7 @@ coefficients(m5.poiss.allvar)
 
 
 #add income category
-income_cat<-fread("paste0(csv_path, "data-raw/worldbank_income_category.csv")
+income_cat<-fread("data-raw/worldbank_income_category.csv")
 income_cat$income<-as.factor(income_cat$income)
 
 complete_df<-merge(complete_df, income_cat, by="iso3c")
@@ -284,9 +286,7 @@ names(scaled_data)
 
 
 
-#run variable slope and interxcept model on this data
-########################################################HERE#########################################
-
+#### run variable slope and intercept model on this data #### 
 
 m6.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |income), data=complete_df, family=poisson)
 m6.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |income), data=complete_df, family=poisson)

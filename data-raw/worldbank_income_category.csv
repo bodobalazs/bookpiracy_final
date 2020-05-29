@@ -1,0 +1,219 @@
+iso3c	country	income
+AND	Andorra	High income
+ATG	Antigua and Barbuda	High income
+ABW	Aruba	High income
+AUS	Australia	High income
+AUT	Austria	High income
+BHS	Bahamas, The	High income
+BHR	Bahrain	High income
+BRB	Barbados	High income
+BEL	Belgium	High income
+BMU	Bermuda	High income
+VGB	British Virgin Islands	High income
+BRN	Brunei Darussalam	High income
+CAN	Canada	High income
+CYM	Cayman Islands	High income
+CHI	Channel Islands	High income
+CHL	Chile	High income
+HRV	Croatia	High income
+CUW	Curaçao	High income
+CYP	Cyprus	High income
+CZE	Czech Republic	High income
+DNK	Denmark	High income
+EST	Estonia	High income
+FRO	Faeroe Islands	High income
+FIN	Finland	High income
+FRA	France	High income
+PYF	French Polynesia	High income
+DEU	Germany	High income
+GIB	Gibraltar	High income
+GRC	Greece	High income
+GRL	Greenland	High income
+GUM	Guam	High income
+HKG	Hong Kong SAR, China	High income
+HUN	Hungary	High income
+ISL	Iceland	High income
+IRL	Ireland	High income
+IMN	Isle of Man	High income
+ISR	Israel	High income
+ITA	Italy	High income
+JPN	Japan	High income
+KOR	Korea, Rep.	High income
+KWT	Kuwait	High income
+LVA	Latvia	High income
+LIE	Liechtenstein	High income
+LTU	Lithuania	High income
+LUX	Luxembourg	High income
+MAC	Macao SAR, China	High income
+MLT	Malta	High income
+MCO	Monaco	High income
+NRU	Nauru	High income
+NLD	Netherlands	High income
+NCL	New Caledonia	High income
+NZL	New Zealand	High income
+MNP	Northern Mariana Islands	High income
+NOR	Norway	High income
+OMN	Oman	High income
+POL	Poland	High income
+PRT	Portugal	High income
+PRI	Puerto Rico	High income
+QAT	Qatar	High income
+SMR	San Marino	High income
+SAU	Saudi Arabia	High income
+SYC	Seychelles	High income
+SGP	Singapore	High income
+SXM	Sint Maarten (Dutch part)	High income
+SVK	Slovak Republic	High income
+SVN	Slovenia	High income
+ESP	Spain	High income
+KNA	St. Kitts and Nevis	High income
+MAF	St. Martin (French part)	High income
+SWE	Sweden	High income
+CHE	Switzerland	High income
+TWN	Taiwan, China	High income
+TTO	Trinidad and Tobago	High income
+TCA	Turks and Caicos Islands	High income
+ARE	United Arab Emirates	High income
+GBR	United Kingdom	High income
+USA	United States	High income
+URY	Uruguay	High income
+VIR	Virgin Islands (U.S.)	High income
+AFG	Afghanistan	Low income
+BEN	Benin	Low income
+BFA	Burkina Faso	Low income
+BDI	Burundi	Low income
+CAF	Central African Republic	Low income
+TCD	Chad	Low income
+COM	Comoros	Low income
+COD	Congo, Dem. Rep.	Low income
+ERI	Eritrea	Low income
+ETH	Ethiopia	Low income
+GMB	Gambia, The	Low income
+GIN	Guinea	Low income
+GNB	Guinea-Bissau	Low income
+HTI	Haiti	Low income
+PRK	Korea, Dem. Rep.	Low income
+LBR	Liberia	Low income
+MDG	Madagascar	Low income
+MWI	Malawi	Low income
+MLI	Mali	Low income
+MOZ	Mozambique	Low income
+NPL	Nepal	Low income
+NER	Niger	Low income
+RWA	Rwanda	Low income
+SEN	Senegal	Low income
+SLE	Sierra Leone	Low income
+SOM	Somalia	Low income
+SSD	South Sudan	Low income
+TZA	Tanzania	Low income
+TGO	Togo	Low income
+UGA	Uganda	Low income
+ZWE	Zimbabwe	Low income
+ARM	Armenia	Lower middle income
+BGD	Bangladesh	Lower middle income
+BTN	Bhutan	Lower middle income
+BOL	Bolivia	Lower middle income
+CPV	Cabo Verde	Lower middle income
+KHM	Cambodia	Lower middle income
+CMR	Cameroon	Lower middle income
+COG	Congo, Rep.	Lower middle income
+CIV	Côte d'Ivoire	Lower middle income
+DJI	Djibouti	Lower middle income
+EGY	Egypt, Arab Rep.	Lower middle income
+SLV	El Salvador	Lower middle income
+GHA	Ghana	Lower middle income
+GTM	Guatemala	Lower middle income
+HND	Honduras	Lower middle income
+IND	India	Lower middle income
+IDN	Indonesia	Lower middle income
+KEN	Kenya	Lower middle income
+KIR	Kiribati	Lower middle income
+XKX	Kosovo	Lower middle income
+KGZ	Kyrgyz Republic	Lower middle income
+LAO	Lao PDR	Lower middle income
+LSO	Lesotho	Lower middle income
+MRT	Mauritania	Lower middle income
+FSM	Micronesia, Fed. Sts.	Lower middle income
+MDA	Moldova	Lower middle income
+MNG	Mongolia	Lower middle income
+MAR	Morocco	Lower middle income
+MMR	Myanmar	Lower middle income
+NIC	Nicaragua	Lower middle income
+NGA	Nigeria	Lower middle income
+PAK	Pakistan	Lower middle income
+PNG	Papua New Guinea	Lower middle income
+PHL	Philippines	Lower middle income
+WSM	Samoa	Lower middle income
+STP	São Tomé and Principe	Lower middle income
+SLB	Solomon Islands	Lower middle income
+LKA	Sri Lanka	Lower middle income
+SDN	Sudan	Lower middle income
+SWZ	Swaziland	Lower middle income
+SYR	Syrian Arab Republic	Lower middle income
+TJK	Tajikistan	Lower middle income
+TLS	Timor-Leste	Lower middle income
+TON	Tonga	Lower middle income
+TUN	Tunisia	Lower middle income
+UKR	Ukraine	Lower middle income
+UZB	Uzbekistan	Lower middle income
+VUT	Vanuatu	Lower middle income
+VNM	Vietnam	Lower middle income
+PSE	West Bank and Gaza	Lower middle income
+YEM	Yemen, Rep.	Lower middle income
+ZMB	Zambia	Lower middle income
+ALB	Albania	Upper middle income
+DZA	Algeria	Upper middle income
+ASM	American Samoa	Upper middle income
+AGO	Angola	Upper middle income
+ARG	Argentina	Upper middle income
+AZE	Azerbaijan	Upper middle income
+BLR	Belarus	Upper middle income
+BLZ	Belize	Upper middle income
+BIH	Bosnia and Herzegovina	Upper middle income
+BWA	Botswana	Upper middle income
+BRA	Brazil	Upper middle income
+BGR	Bulgaria	Upper middle income
+CHN	China	Upper middle income
+COL	Colombia	Upper middle income
+CRI	Costa Rica	Upper middle income
+CUB	Cuba	Upper middle income
+DMA	Dominica	Upper middle income
+DOM	Dominican Republic	Upper middle income
+ECU	Ecuador	Upper middle income
+GNQ	Equatorial Guinea	Upper middle income
+FJI	Fiji	Upper middle income
+GAB	Gabon	Upper middle income
+GEO	Georgia	Upper middle income
+GRD	Grenada	Upper middle income
+GUY	Guyana	Upper middle income
+IRN	Iran, Islamic Rep.	Upper middle income
+IRQ	Iraq	Upper middle income
+JAM	Jamaica	Upper middle income
+JOR	Jordan	Upper middle income
+KAZ	Kazakhstan	Upper middle income
+LBN	Lebanon	Upper middle income
+LBY	Libya	Upper middle income
+MKD	Macedonia, FYR	Upper middle income
+MYS	Malaysia	Upper middle income
+MDV	Maldives	Upper middle income
+MHL	Marshall Islands	Upper middle income
+MUS	Mauritius	Upper middle income
+MEX	Mexico	Upper middle income
+MNE	Montenegro	Upper middle income
+NAM	Namibia	Upper middle income
+PLW	Palau	Upper middle income
+PAN	Panama	Upper middle income
+PRY	Paraguay	Upper middle income
+PER	Peru	Upper middle income
+ROU	Romania	Upper middle income
+RUS	Russian Federation	Upper middle income
+SRB	Serbia	Upper middle income
+ZAF	South Africa	Upper middle income
+LCA	St. Lucia	Upper middle income
+VCT	St. Vincent and the Grenadines	Upper middle income
+SUR	Suriname	Upper middle income
+THA	Thailand	Upper middle income
+TUR	Turkey	Upper middle income
+TKM	Turkmenistan	Upper middle income
+TUV	Tuvalu	Upper middle income
+VEN	Venezuela, RB	Upper middle income

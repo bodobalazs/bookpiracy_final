@@ -12,7 +12,7 @@ create_choropleth <- function ( dat,
     'grey90', base_color ),
     bias=.5,space="rgb")(((cuts+1)*2)-1)[c(TRUE, FALSE)]
   
-  load ( 'raw_data/geodata_sf.rda') 
+  load ( 'data-raw/geodata_sf.rda') 
   
   if ( level == 0 ) { 
     geodata <- geodata_nuts0

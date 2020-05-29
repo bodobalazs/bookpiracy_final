@@ -44,7 +44,7 @@ bookpiracy_long <- bookpiracy %>%
 # NUTS2016 definitions, as provided by Eurostat and Eurographics.
 # We translated the shapefile to an sf object for easier handling. 
 
-geodata <- readRDS ( 'raw_data/geodata.rds' )
+geodata <- readRDS ( 'data-raw/geodata.rds' )
 
 # add download counts 
 # the data was prepared by .....R

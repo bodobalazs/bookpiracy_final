@@ -1,90 +1,17 @@
 library(tidyverse)
 library(broom)
+## loading file created by helper_code/prepare_data.R
 load (file = file.path("data", "all_data_for_analysis.rda"))
 
-## Auxilliary functions for looping ----------------------
-## Collecting signficance values 
+## load auxilliary functions for looping
+source(file.path("helper_code", "aux_functions_for_looping.R"))
 
-is_all_significant <- function(summaries, critical_value = 1.96) {
-  m <- summaries$coefficients
-  all ( abs(m[,3]) > 1.96)
-}
-
-## Get outlier observations
-get_outlier_obs <- function(m) {
-  m$is.inf[,6] 
-}
-
-## Remove outliers
-df_no_outliers <- function (outliers, 
-                            df = nuts2_dataset_scaled ) {
-  
-  df <- df %>%
-    rownames_to_column() %>%
-    left_join ( tibble::enframe( outliers ) %>%
-                  rename ( rowname = name, 
-                           outlier = value ), by ='rowname') %>%
-    dplyr::filter ( ! outlier) %>%
-    dplyr::select (-outlier)
-}
-
-possibly_without_outliers <- function(outliers) {
-  
-  possibly_no_outliers <- purrr::possibly( 
-  .f = df_no_outliers, otherwise = NULL)
-  possibly_no_outliers(outliers) 
-
-  }
-
-## Get model parameters
-get_params <- function(df) {
-  as.list(df)
-}
-
-## Fit the model
-fit_model <- function (...) {
-  
-  args <- list(...)
-  arg_names <- names(...)
-  
-  if ( "data" %in% arg_names ) { 
-    df = args[[1]]$data
-  } else df <- mtcars
-  
-  if ( "y" %in% arg_names ) { 
-    y = args[[1]]$y
-  } else y <- 'mpg'
-  
-  
-  x1 = args[[1]]$x1
-  x2 <- NA_character_
-  x3 <- NA_character_
-  x2 <- args[[1]]$x2
-  my_formula <- paste0 (y, " ~ ", x1)
-  
-  if ("x2" %in% arg_names)  { 
-    x2 <- args[[1]]$x2
-    if(!is.na(x2)) {
-      my_formula <- paste0(my_formula, ' + ', x2)}
-  }
-  
-  if ("x3" %in% arg_names) { 
-    x3 <- args[[1]]$x3
-    if(!is.na(x3)) {
-      my_formula <- paste0(my_formula, ' + ', x3)}
-  }
-  
-  
-  lm ( as.formula(my_formula), data = df)
-  
-}
-
-params <- collect_results$params[[18]]
 ## Run the models
-run_models <- function(params, 
-                       target_variable = 'count_per_thousand_researchers', 
-                       model_df = nuts2_dataset_scaled) {
-  x1 = unlist(params)[1] 
+run_researcher_models <- function(
+                   params, 
+                   target_variable = 'count_per_thousand_researchers', 
+                   model_df = researchers_dataset_scaled ) {
+  x1 = unlist(params)[1]
   x2 = unlist(params)[2]
   
   vars_to_select <- as.character(
@@ -107,12 +34,14 @@ run_models <- function(params,
   this_model
 }
 
-possibly_run_models <- function(y) {
-  purrr::possibly(run_models, otherwise=NULL)(params = y)
+possibly_run_researcher_models <- function(y) {
+  purrr::possibly(run_researcher_models, otherwise=NULL)(params = y)
 
 }
 
-rerun_models <- function(x, y, 
+rerun_researcher_models <- function(
+                         x, 
+                         y, 
                          target_variable = 'count_per_thousand_researchers') {
   x1 = unlist(y)[1] 
   x2 = unlist(y)[2]
@@ -123,7 +52,8 @@ rerun_models <- function(x, y,
     )) %>%
     tidyr::pivot_longer ( cols = -one_of('geo')) %>%
     dplyr::filter ( complete.cases(.)) %>%
-    tidyr::pivot_wider ( names_from = 'name', values_from = 'value') %>%
+    tidyr::pivot_wider ( names_from = 'name', 
+                         values_from = 'value') %>%
     dplyr::filter ( complete.cases(.))
   
   if ( !is.na(x2) ) {
@@ -137,7 +67,7 @@ rerun_models <- function(x, y,
 
 ## Create parameter combinations ------------------------------------
 
-nuts2_dataset_scaled <- eurostat_eurobarometer_scaled %>%
+researchers_dataset_scaled <- eurostat_eurobarometer_scaled %>%
   dplyr::select ( -all_of(c("count_per_million", 
                             "count_per_capita", 
                             "count_per_area", 
@@ -145,9 +75,11 @@ nuts2_dataset_scaled <- eurostat_eurobarometer_scaled %>%
                             "count_per_researcher",
                             "count")) )
 
-mt_model_parameters <- crossing(x1 = names(eurostat_eurobarometer_scaled)[-1], 
-                                x2 = names(eurostat_eurobarometer_scaled)[-1])%>%
-  rbind ( tibble ( x1 = names(eurostat_eurobarometer_scaled)[-1], 
+mt_researcher_model_parameters <- crossing(
+  x1 = names(researchers_dataset_scaled)[-1],
+  x2 = names(researchers_dataset_scaled)[-1] # [-1] is geo code 
+  ) %>%
+  rbind ( tibble ( x1 = names(researchers_dataset_scaled)[-1], 
                    x2 = NA_character_))  %>%
             filter ( x1 != x2,
                      ! x1 %in% c('geo', 'count', 'method'), 
@@ -157,12 +89,20 @@ mt_model_parameters <- crossing(x1 = names(eurostat_eurobarometer_scaled)[-1],
 
 ## Results with outliers -----------------------------------------------
 
-collect_results <- mt_model_parameters %>%
+collect_researcher_results <- mt_researcher_model_parameters %>%
   rownames_to_column() %>%
   nest ( var_select = c(x1, x2) ) %>%
   dplyr::select (-"rowname") %>%
-  mutate ( params  = map(var_select,  .f=get_params),   #select params and run models
-           models  = map(.x = params, .f=possibly_run_models)) %>%
+  mutate (  # get parameters to list
+            params  = map(.x = var_select,  
+                          .f = get_params) ) %>%
+  mutate (  # and run researcher models
+    models  = map(.x = params,     
+                  .f = possibly_run_researcher_models)
+  ) %>%
+  filter ( #remove potentially errorneous results
+           ! is.null(models)
+           ) %>%
   mutate ( summaries = map (.x = models, 
                             .f=purrr::possibly(summary, NULL)), 
            all_significant = map(.x = summaries, 
@@ -175,31 +115,34 @@ collect_results <- mt_model_parameters %>%
            outliers = map(.x = influental, 
                           purrr::possibly(get_outlier_obs, NULL))) %>%
   mutate (data = map ( .x = outliers,  # create a data frame for next step
-                       .f= possibly_without_outliers )
+                       .f = possibly_without_outliers )
            )
 
-collect_results$params[[18]]
-collect_results$models[[18]]
-
 ## Results without outliers -------------------------------------------
-collect_results_2 <- collect_results %>%  #rerun without outliers
-  mutate ( models  = map2(.x = .$data, .y =.$params, rerun_models ),
-           summaries = map (.x = models, .f=summary))  %>%
-  mutate ( all_significant = map(.x = summaries, .f = possibly(
-                 is_all_significant, NULL ))) %>%
-  mutate (  glanced = map(.x = models, .f=broom::glance), 
-            augmented  = map (.x = models, .f= broom::augment))
-
-is_all_significant(collect_results$summaries[[18]])
+collect_researcher_results_2 <- collect_researcher_results %>%  #rerun without outliers
+  mutate ( #run the individual models with each possible selection of paramters
+           models  = map2(.x = .$data, 
+                          .y = .$params, 
+                          rerun_researcher_models )
+           ) %>%
+  mutate ( # create the model summaries 
+           summaries = map (.x = models, 
+                            .f = summary)
+           )  %>%
+  mutate ( all_significant = map(
+     .x = summaries, 
+     .f = possibly( is_all_significant, otherwise = NULL) )) %>%
+  mutate (  glanced =    map(.x = models, .f=broom::glance), 
+            augmented  = map(.x = models, .f=broom::augment))
 
 ## Summary of results without outliers ---------------------------------
 ## Only variables where all parameters and intercept are significant ---
-collect_results_3 <- collect_results_2 %>%
+collect_researcher_results_3 <- collect_researcher_results_2 %>%
   unnest ( all_significant ) %>%
   dplyr::filter ( all_significant ) %>%
   dplyr::select ( models )
 
-collect_results_3_not_significant <- collect_results_2 %>%
+collect_not_significant_researcher_results_3 <- collect_researcher_results_2 %>%
   unnest ( all_significant ) %>%
   dplyr::filter ( ! all_significant ) %>%
   dplyr::select ( models )
@@ -207,44 +150,45 @@ collect_results_3_not_significant <- collect_results_2 %>%
 ## The data is in many nested data frames ------------------------ 
 ## Unnesting signicant models
 
-coefficient_values <- collect_results_3$models %>%
+coeffiecient_values_researchers <- collect_researcher_results_3$models %>%
   map_dfr( ~ as.data.frame(t(as.matrix(coef(.))))) %>%
   rownames_to_column() %>%
   gather ( names, values, !!3:ncol(.)) %>%
   filter ( !is.na(values) )
 
-coefficient_values_not_significant <- collect_results_3_not_significant$models %>%
+coefficient_values_not_significant <- collect_not_significant_researcher_results_3$models %>%
   map_dfr( ~ as.data.frame(t(as.matrix(coef(.))))) %>%
   rownames_to_column() %>%
   gather ( names, values, !!3:ncol(.)) %>%
   filter ( !is.na(values) )
 
-unique(coefficient_values$names)
+unique(coeffiecient_values_researchers$names)
 unique(coefficient_values_not_significant$names)
 
-r_square_values  <- collect_results_2 %>% 
-  unnest ( cols=c(all_significant, glanced, var_select )) %>%
+r_square_values_researchers_all_models  <- collect_researcher_results_2 %>% 
+  unnest ( cols=c("all_significant", "glanced", "var_select" )) %>%
   unite ( "model", x1:x2, sep = "+") %>%
   dplyr::select ( model, r.squared, adj.r.squared )
 
-r_square_values  <- collect_results_2 %>% 
-  unnest ( cols=c(all_significant, glanced, var_select )) %>%
-  filter ( all_significant ) %>%
+r_square_values_researchers  <- collect_researcher_results_2 %>% 
+  unnest ( cols=c("all_significant", "glanced", "var_select" )) %>%
+  filter ( all_significant ) %>%  ## only the significant models
   unite ( "model", x1:x2, sep = "+") %>%
   dplyr::select ( model, r.squared, adj.r.squared )
 
-coefficients  <- collect_results_2 %>%
+researcher_model_coefficients  <- collect_researcher_results_2 %>%
   unnest ( all_significant ) %>%
   filter ( all_significant ) %>%
   dplyr::select ( var_select  ) %>%
   unnest ( var_select ) %>%
   rownames_to_column() %>%
   unite ( "model", x1:x2, sep = "+") %>%
-  left_join ( r_square_values, by = 'model' ) %>%
-  left_join ( coefficient_values , by = 'rowname') 
+  left_join ( r_square_values_researchers, by = 'model' ) %>%
+  left_join ( coeffiecient_values_researchers, by = 'rowname') 
 
 
-saveRDS(coefficients, file.path('data',
-                                'all_linreg_coefficients_count_per_thousand_researchers.rds')
+saveRDS(researcher_model_coefficients, 
+        file.path('data',
+                   'all_linreg_coefficients_count_per_thousand_researchers.rds')
         )
         

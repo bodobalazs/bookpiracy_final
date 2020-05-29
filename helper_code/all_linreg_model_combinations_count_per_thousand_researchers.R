@@ -5,7 +5,6 @@ load (file = file.path("data", "all_data_for_analysis.rda"))
 ## Auxilliary functions for looping ----------------------
 ## Collecting signficance values 
 
-
 is_all_significant <- function(summaries, critical_value = 1.96) {
   m <- summaries$coefficients
   all ( abs(m[,3]) > 1.96)
@@ -36,7 +35,6 @@ possibly_without_outliers <- function(outliers) {
   possibly_no_outliers(outliers) 
 
   }
-
 
 ## Get model parameters
 get_params <- function(df) {
@@ -157,7 +155,8 @@ mt_model_parameters <- crossing(x1 = names(eurostat_eurobarometer_scaled)[-1],
                      ! grepl ( 'count', x1), 
                      ! grepl ( 'count', x2) ) 
 
-## Results with outliers ------------------------------------------
+## Results with outliers -----------------------------------------------
+
 collect_results <- mt_model_parameters %>%
   rownames_to_column() %>%
   nest ( var_select = c(x1, x2) ) %>%

@@ -9,7 +9,7 @@ library(tidyverse)
 load (file.path('data-raw', 'bookpiracy_2020-04-15.rda'))
 
 # load the Eurobarometer variable
-# The data is available and described in on Zenodo
+# The data is available and described in on FIGSHARE (UPDATE WHEN FINAL)
 # at https://zenodo.org/record/3759811#.XqKbj2gzbIU
 # a longer description of the methodology can be found 
 # https://figshare.com/articles/Regionalized_Cultural_Access_and_Participation_Books_And_Libraries_And_Science_Attitudes_Variables/12170190

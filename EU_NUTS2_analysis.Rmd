@@ -28,6 +28,7 @@ library(colorRamps)
 
 #code to visualize data on the map
 #devtools::install_github("antaldaniel/satellitereport")
+#must be at least 0.1.4
 #satellitereport::create_choropleth()
 
 # data is compiled elsewhere. 
@@ -60,10 +61,13 @@ eurostat_complete_data %>%
   dplyr::mutate ( time = 2013 ) %>%
   dplyr::select ( geo, count, time ) %>%
   dplyr::rename ( values = count ) %>%
-  satellitereport::create_choropleth(., level = 2, n = 7, 
-                                     style = 'pretty', 
-                                     na_color = 'blue',
-                                     color_palette= colorRamps::green2red(7))
+  satellitereport::create_choropleth(
+    dat = ., 
+    n = 7, 
+    style = 'pretty', 
+    na_color = 'blue',
+    color_palette= colorRamps::green2red(7)
+    )
 ```
 
 ## The complete cases for the eurostat+eurobarometer dataset
@@ -74,7 +78,8 @@ eurostat_eurobarometer_complete_data %>%
   dplyr::mutate ( time = 2013 ) %>%
   dplyr::select ( geo, count, time ) %>%
   dplyr::rename ( values = count ) %>%
-  satellitereport::create_choropleth(., level = 2, n = 7, 
+  satellitereport::create_choropleth(., 
+                                     n = 7, 
                                      style = 'pretty', 
                                      na_color = 'blue',
                                      color_palette= colorRamps::green2red(7))
@@ -677,10 +682,13 @@ Educational attainment, disposable income may be relevant for the whole populati
 #count per capita
 cpc_predictor_var_select = Predictor$new(
   cpc_var_select.rf,
-  data = dplyr::select ( cpc_var_select_df , -geo, - count_per_capita),
+  data = dplyr::select ( cpc_var_select_df , 
+                         -geo, -count_per_capita),
   y = as.numeric(cpc_var_select_df$count_per_capita))
 
-cpc_imp <- FeatureImp$new(cpc_predictor_var_select, loss = "mae", n.repetitions = 10)
+cpc_imp <- FeatureImp$new(cpc_predictor_var_select, 
+                          loss = "mae", 
+                          n.repetitions = 10)
 plot(cpc_imp)
 ```
 

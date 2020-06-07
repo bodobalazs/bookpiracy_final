@@ -292,6 +292,7 @@ names(scaled_data)
 
 m6.poiss <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp) |income), data=complete_df, family=poisson)
 m6.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil + internet_per_pop + (1+log(gdp)+tertiary+rd |income), data=complete_df, family=poisson)
+
 # Based on: https://stats.stackexchange.com/questions/164457/r-glmer-warnings-model-fails-to-converge-model-is-nearly-unidentifiable
 m6.poiss.scaled <- glmer(formula = (1+dl_per_pop_scaled) ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled) |income),
                          data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))

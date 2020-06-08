@@ -13,6 +13,9 @@ library(tidyverse)
 # bookpiracy_wide - genereated here from the long-format with metadata
 # loss, the long format version has more metadata, the wide is used for 
 # further computations.
+# The data from Eurobarometer is described 
+# https://figshare.com/account/projects/80837/articles/12389384
+# https://doi.org/10.21942/uva.12389384
 
 load (file.path('data-raw', 'bookpiracy_2020-04-15.rda'))
 

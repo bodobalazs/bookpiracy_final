@@ -1,7 +1,7 @@
 #DATA SETUP - prepare all data
 library(tidyverse)
 
-#load EUrostat variables. Contains the followind frames:
+# Load EUROSTAT variables. Contains the followind frames:
 # bookpiracy - all EUROSTAT data documented in 
 # paper/bookpiracy_final_description_2020_06_07.pdf
 # https://figshare.com/account/projects/80837/articles/12443474

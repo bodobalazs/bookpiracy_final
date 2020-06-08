@@ -1,7 +1,7 @@
 #DATA SETUP - prepare all data
 library(tidyverse)
 
-#load EUrostat variables. Contains the followind frames:
+# Load EUROSTAT variables. Contains the followind frames:
 # bookpiracy - all EUROSTAT data documented in 
 # paper/bookpiracy_final_description_2020_06_07.pdf
 # https://figshare.com/account/projects/80837/articles/12443474
@@ -13,6 +13,9 @@ library(tidyverse)
 # bookpiracy_wide - genereated here from the long-format with metadata
 # loss, the long format version has more metadata, the wide is used for 
 # further computations.
+# The data from Eurobarometer is described 
+# https://figshare.com/account/projects/80837/articles/12389384
+# https://doi.org/10.21942/uva.12389384
 
 load (file.path('data-raw', 'bookpiracy_2020-04-15.rda'))
 

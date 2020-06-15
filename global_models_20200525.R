@@ -20,8 +20,10 @@ library(lme4)
 library(huxtable)
 library(lattice)
 
+setEPS(width = 12, pointsize = 20)
 
 #### Functions ####
+
 
 # We get in  data from worldbank, rename the value column and set it to a data.table
 # It defaults to using data from 2015. it backfills missing data!
@@ -55,7 +57,8 @@ rmse <- function(fitted, y){
 
 theme_set(theme_economist())
 #### Data preparation ####
-prepare_fresh_data <- function(){ 
+
+  prepare_fresh_data <- function(){ 
   oecd_available <- get_datasets()
 
   # Prepare  dl data afresh
@@ -74,6 +77,17 @@ prepare_fresh_data <- function(){
   #            mutate(iso3c = countrycode(country_name, origin = "country.name", destination = "iso3c")) %>%
   #            drop_na()
   #write.csv(country_dl, file="data-raw/country_download.csv")
+  #
+  #create daily download graph
+  #dl_perday<-downloads_latlong %>%
+  #dplyr::mutate(date=as.Date(date,format="%Y-%m-%d"))%>%
+  #  dplyr::count(date) %>%
+  #  as.data.frame()
+  #
+  #
+  #postscript("paper/fig1.eps")
+  #ggplot(dl_perday, aes(x=date, y=n)) + geom_bar(stat="identity") + ggtitle("Daily aggregate download count") + labs(x="Date (day)", y = "count")
+  #dev.off()
   
   #or load the prepared version
   count_country_day <- read.csv("data-raw/country_download.csv")
@@ -129,7 +143,7 @@ prepare_fresh_data <- function(){
   
   complete_df<- merge(complete_df, citation, all.x=T)
   
-  #save(complete_df, file = "data/global_data.rda")
+  #save(complete_df, file = "data/global_data_latest.rda")
   
 }
 
@@ -152,17 +166,25 @@ density_plot
 # Density plot with region
 
 count_country_plot <- transform(complete_df, iso2c = reorder(iso2c, -dl_per_pop))
+count_country_plot 
+
 barchart_plot_continent <- ggplot() + geom_bar(aes(iso2c, dl_per_pop, fill=continent),
                                               data=count_country_plot[count_country_plot$dl_per_pop > 1000 & count_country_plot$continent!="",], stat="identity") +
   labs(x="Countries", y="Downloads per population (in millions)", title="Downloads") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, size=5))
 
+postscript("paper/fig3a.eps")
 barchart_plot_continent
+dev.off()
+
 
 
 # Boxplot
 bplot <- ggplot() + geom_boxplot(aes(x=continent, y=dl_per_pop), data=complete_df)
+postscript("paper/fig3b.eps")
 bplot
+dev.off()
+
 
 #### First model: DL/capita ~ population + gdp + internet_per_pop ####
 

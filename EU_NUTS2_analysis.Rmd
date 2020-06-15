@@ -562,6 +562,17 @@ plot_model(interaction_qplm1,
                                  "gdp_pps [10000,150000]"))
 ```
 
+```{r export interaction graph}
+#export graph
+setEPS(width = 12, pointsize = 20)
+postscript("paper/fig5.eps")
+plot_model(interaction_qplm1, 
+           type = "eff", terms=c("researcher_employment_pct[0.1,1.9]",
+                                 "gdp_pps [10000,150000]"))
+dev.off()
+
+```
+
 A simple interaction at the count model shows that in richer regions download more even if they have a the same share of researchers as poorer regions, and the count grows faster as the share grows.
 This confirms our original hypothesis.
 
@@ -837,7 +848,16 @@ cpc_imp_eb_count_per_capita <- FeatureImp$new(
                           cpc_predictor_eb_var_select, 
                           loss = "mae", 
                           n.repetitions = 100)
+
+
 plot(cpc_imp_eb_count_per_capita)
+```
+
+```{r feature_importance_eurobarometer export Graph, out.width='100%', eval=FALSE}
+#export graph
+postscript("paper/fig6.eps")
+plot(cpc_imp_eb_count_per_capita)
+dev.off()
 ```
 
 ## Count per researcher - with eurobarometer

@@ -4,7 +4,6 @@ This repo will ultimately be turned into a public one to be sent out for reviewe
 The european and global models are contained in separate files in the root folder:
 - global_models_20200525.R: contains the global models
 - EU_NUTS2_analysis.Rmd: contains the EU models
-- Data_description.Rmd: creates the data description files for the EU models
 
 ## Paper
 

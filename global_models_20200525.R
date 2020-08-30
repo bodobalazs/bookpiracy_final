@@ -153,7 +153,6 @@ theme_set(theme_economist())
 #read data file
 load(file = "data/global_data_20200525.rda")
 
-
 # Plot the density of the dl/pop with built in functions
 plot(density(complete_df$dl_per_pop, na.rm=T)) 
 
@@ -204,12 +203,20 @@ summary(m1.pois)
 sqrt(vif(m1.pois))
 coeftest(m1.pois, vcov = sandwich)
 
-m1.qpois <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) + log(gdp) + internet_per_pop, data=complete_df, family = "quasipoisson")
+m1.qpois <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) + log(gdp) + internet_per_pop,
+                data=complete_df, family = "quasipoisson")
+rmse(m1.qpois$fitted.values, complete_df$dl_per_pop_round[as.integer(names(m1.qpois$fitted.values))])
+m1.nb <- glm.nb(formula = dl_per_pop_round ~ log(pop_per_mil) + log(gdp) + internet_per_pop, 
+                data=complete_df)
+rmse(m1.nb$fitted.values, complete_df$dl_per_pop_round[as.integer(names(m1.nb$fitted.values))])
 
 
 export_summs(m1, m1.pois,m1.qpois,digits=3, number_format="%.3g",
              statistics = c(N = "nobs", "Null deviance"="null.deviance", "res.deviance"="deviance")) 
 
+# Adding log - lin regression
+m1.qpois.loglin <- glm(formula = log(dl_per_pop_round) ~ pop_per_mil + I(gdp/1000) + internet_per_pop,
+                data=complete_df, family = "quasipoisson")
 
 
 # R&D, tertiery education, h_index models
@@ -219,11 +226,30 @@ m2.qpois <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) + log(gdp) +
                   internet_per_pop + tertiary + exp_tertiary_pstudent + rd + h_index,
                 data=complete_df, family = "quasipoisson")
 summary(m2.qpois)
+# Log-lin version - PAPER MODEL 4 with LOG LIN
+m4p.ll <- glm(formula = log(dl_per_pop_round) ~ pop_per_mil + I(gdp/1000) +
+                  internet_per_pop + tertiary + exp_tertiary_pstudent + rd + h_index,
+                data=complete_df, family = "quasipoisson")
+summary(m4p.ll)
+
+
 #without  gpd
 
 m2.b.qpois <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) +
                   tertiary + exp_tertiary_pstudent + rd + h_index,
                 data=complete_df, family = "quasipoisson")
+# Log - lin version - PAPER MODEL 5 with LL
+m5p.ll <- glm(formula = log(dl_per_pop_round) ~ pop_per_mil +
+                    tertiary + exp_tertiary_pstudent + rd + h_index,
+                  data=complete_df, family = "quasipoisson")
+summary(m5p.ll)
+
+# Log - lin - PAPER MODEL 6
+m6p.ll <- glm(formula = log(dl_per_pop_round) ~ pop_per_mil +
+                           tertiary*rd + exp_tertiary_pstudent + h_index,
+                         data=complete_df, family = "quasipoisson")
+summary(m6p.ll)
+
 
 m2.b.qpois_small <- glm(formula = dl_per_pop_round ~ log(pop_per_mil) +
                     exp_tertiary_pstudent *rd ,
@@ -293,6 +319,11 @@ cor(scaled_data$rd, scaled_data$exp_tertiary_pstudent, use="complete.obs" )
 #run m5 with scaled
 
 m5.poiss.scaled <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled) |continent), data=scaled_data, family=poisson)
+
+# LOG - LIN - Model 7
+m7p.ll <- glmer(formula = log(dl_per_pop_round) ~ pop_per_mil_scaled + internet_per_pop_scaled + (1+gdp_scaled |continent), data=scaled_data, family=poisson)
+coefficients(m7p.ll)
+
 m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled)+tertiary_scaled+rd_scaled |continent), data=scaled_data, family=poisson)
 
 coefficients(m5.poiss.scaled)
@@ -320,6 +351,12 @@ m6.poiss.scaled <- glmer(formula = (1+dl_per_pop_scaled) ~ pop_per_mil_scaled + 
                          data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 m6.poiss.scaled.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled +(tertiary_scaled+rd_scaled |income), 
                                 data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+# LOG - LIN version model 8 - 9 
+
+m8p.ll <- glmer(formula = log(dl_per_pop_round) ~ pop_per_mil_scaled + internet_per_pop_scaled +(tertiary_scaled+rd_scaled |income), 
+                                data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+m9p.ll <- glmer(formula = log(dl_per_pop_round) ~ pop_per_mil_scaled + internet_per_pop_scaled +(gdp_scaled+1 |income), 
+                data=scaled_data, family=poisson, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
 
 m6.poiss

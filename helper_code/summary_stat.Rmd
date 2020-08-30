@@ -1,0 +1,29 @@
+---
+title: "Summary statistics"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#read data file
+load(file = "../data/global_data_20200525.rda")
+to_summarize <- complete_df[, c("dls", "population", "gdp",
+                            "internet", "rd", "literacy", 
+                            "exp_tertiary_pstudent",
+                            "h_index")]
+colnames(to_summarize) <- c("Downloads",
+                            "Population", 
+                            "GDP", 
+                            "Internet penetration",
+                            "Spending on R&D",
+                            "Literacy rate",
+                            "Expenditure on tertiary ed. per student",
+                            "H - Index")
+# Summary statistics
+summary_df <- skimr::skim_without_charts(to_summarize)
+```
+
+```{r, skimr_digits=3,skimr_include_summary = FALSE}
+summary_df
+```
+

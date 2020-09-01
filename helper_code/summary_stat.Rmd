@@ -4,6 +4,7 @@ output: word_document
 ---
 
 ```{r setup, include=FALSE}
+library(gridExtra)
 knitr::opts_chunk$set(echo = TRUE)
 #read data file
 load(file = "../data/global_data_20200525.rda")
@@ -21,6 +22,10 @@ colnames(to_summarize) <- c("Downloads",
                             "H - Index")
 # Summary statistics
 summary_df <- skimr::skim_without_charts(to_summarize)
+
+pdf("../paper/PLOS/S2_Table.pdf", height=11, width=24)
+grid.table(summary_df)
+dev.off()
 ```
 
 ```{r, skimr_digits=3,skimr_include_summary = FALSE}

@@ -212,7 +212,7 @@ rmse(m1.nb$fitted.values, complete_df$dl_per_pop_round[as.integer(names(m1.nb$fi
 
 
 export_summs(m1, m1.pois,m1.qpois,digits=3, number_format="%.3g",
-             statistics = c(N = "nobs", "Null deviance"="null.deviance", "res.deviance"="deviance")) 
+             statistics = c(N = "nobs", "Null deviance"="null.deviance", "res.deviance"="deviance"), to.file = "docx", file.name = "GitHub/bookpiracy_final/trashcan/table2.docx") 
 
 # Adding log - lin regression
 m1.qpois.loglin <- glm(formula = log(dl_per_pop_round) ~ pop_per_mil + I(gdp/1000) + internet_per_pop,
@@ -269,10 +269,12 @@ summary(m2.d.qpois)
 plot(m2.d.qpois)
 
 m2.qpois_small <- glm(formula = dl_per_pop_round ~  log(pop_per_mil) + exp_tertiary_pstudent*rd, data=complete_df, family = "quasipoisson")
+
 summary(m2.qpois_small)
 
-export_summs(m2.qpois, m2.b.qpois,m2.c.qpois,m2.qpois_small, digits=3, number_format="%.3g",
-             statistics = c(N = "nobs", "Null deviance"="null.deviance", "res.deviance"="deviance"))
+#table 3
+export_summs(m2.qpois, m2.b.qpois,m2.c.qpois, digits=3, number_format="%.3g", statistics = c(N = "nobs", "Null deviance"="null.deviance", "res.deviance"="deviance"))
+
 
 
 # Check for changing effect sizes in different regions
@@ -326,7 +328,9 @@ coefficients(m7p.ll)
 
 m5.poiss.allvar <- glmer(formula = dl_per_pop_round ~ pop_per_mil_scaled + internet_per_pop_scaled + (log(1+gdp_scaled)+tertiary_scaled+rd_scaled |continent), data=scaled_data, family=poisson)
 
+#Table 4 
 coefficients(m5.poiss.scaled)
+
 coefficients(m5.poiss.allvar)
 rmse(fitted(m5.poiss.scaled),complete_df[as.integer(names(fitted(m5.poiss.scaled))), "dl_per_pop_round"])
 

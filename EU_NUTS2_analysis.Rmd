@@ -25,6 +25,7 @@ library (car)
 require(caret); require(randomForest)
 library(satellitereport)
 library(colorRamps)
+library(gridExtra)
 
 #code to visualize data on the map
 #devtools::install_github("antaldaniel/satellitereport")
@@ -63,6 +64,7 @@ eurostat_complete_data %>%
   dplyr::rename ( values = count ) %>%
   satellitereport::create_choropleth(
     dat = ., 
+    level=2,
     n = 7, 
     style = 'pretty', 
     na_color = 'blue',
@@ -80,6 +82,7 @@ eurostat_eurobarometer_complete_data %>%
   dplyr::rename ( values = count ) %>%
   satellitereport::create_choropleth(., 
                                      n = 7, 
+                                     level=2,
                                      style = 'pretty', 
                                      na_color = 'blue',
                                      color_palette= colorRamps::green2red(7))
@@ -347,8 +350,13 @@ vif(percapita_qplm7)
 
 export_summs(percapita_qplm3, percapita_qplm4, percapita_qplm5, percapita_qplm6,percapita_qplm7,
              digits=3, 
-             statistics = c("null.deviance", "deviance")
-             )
+             statistics = c("null.deviance", "deviance"),
+             model.names = c('Model 7','Model 8', 'Model 9', 'Model `10', 'Model 1'),
+             to.file = "docx", 
+             file.name = "trashcan/table7.docx")
+
+
+cor(percapita_qplm3$fitted.values, eurostat_complete_data$count_per_million)^2
 
 summary (percapita_qplm3)  
 library(rsq)
@@ -423,7 +431,10 @@ vif(perresearcher_qplm1)
 summary(perresearcher_qplm1)
 export_summs(perresearcher_qplm1, perresearcher_qplm2,perresearcher_qplm3, 
              digits=3, 
-             statistics = c("null.deviance", "deviance")
+             statistics = c("null.deviance", "deviance"),
+             model.names = c('Model 12','Model 13', 'Model 14'),
+             to.file = "docx", 
+             file.name = "trashcan/table8.docx")
              )
 plot(perresearcher_qplm1)
 ```
@@ -517,7 +528,9 @@ count_qplm4 <- glm (count ~ log(gdp_pps) +
                     internet_purchases_last_year_pc,
                     data = eurostat_complete_data, quasipoisson )
 
-export_summs(count_qplm2,count_qplm3,count_qplm4, digits=10, statistics = "all")
+pdf("paper/PLOS/S3_Table.pdf", height=11, width=24)
+grid.table(export_summs(count_qplm2,count_qplm3,count_qplm4, digits=10, statistics = "all"))
+dev.off()
 
 ```
 
@@ -557,6 +570,14 @@ interaction_qplm1<- glm (count  ~ gdp_pps * researcher_employment_pct,
                          family = quasipoisson )
 
 summary (interaction_qplm1)
+
+export_summs(interaction_qplm1, 
+             digits=3, 
+             statistics = c("null.deviance", "deviance"),
+             model.names = c('Model 15'),
+             to.file = "docx", 
+             file.name = "trashcan/table9.docx")
+             )
 plot_model(interaction_qplm1, 
            type = "eff", terms=c("researcher_employment_pct[0.1,1.9]",
                                  "gdp_pps [10000,150000]"))

@@ -1103,8 +1103,11 @@ export_summs(percapita_qplm3_1,
              perresearcher_qplm3_4,
              digits=3, 
              statistics = c("null.deviance", "deviance"),
-             model.names = c("Model 1:DV:count per capita","Model 2a (DV:count per researcher)","Model 2b (DV:count per researcher)")
-             )
+             model.names = c("Model 1:DV:count per capita","Model 2a (DV:count per researcher)","Model 2b (DV:count per researcher)"),
+             to.file = "docx", 
+             file.name = "trashcan/table10.docx")
+             
+             
 
 ```
 

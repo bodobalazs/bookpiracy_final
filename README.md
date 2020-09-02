@@ -1,4 +1,4 @@
-This repo will ultimately be turned into a public one to be sent out for reviewers.
+[![DOI](https://zenodo.org/badge/254683775.svg)](https://zenodo.org/badge/latestdoi/254683775)
 
 ## R analyses
 The european and global models are contained in separate files in the root folder:
